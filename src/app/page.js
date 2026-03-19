@@ -4,6 +4,11 @@ const tools = [
     description: "Count words, characters, and sentences instantly.",
     link: "/tools/word-counter",
   },
+  {
+    name: "Character Counter",
+    description: "Count characters instantly with or without spaces.",
+    link: "/tools/character-counter",
+  },
 ];
 
 const Home = () => {
@@ -22,14 +27,14 @@ const Home = () => {
       <h2 className="text-2xl font-semibold mb-4">Featured Tools</h2>
 
       <div className="grid gap-4 sm:grid-cols-2 mb-10">
-        {tools.map((tool, index) => (
+        {tools?.map((tool, index) => (
           <a
             key={index}
-            href={tool.link}
+            href={tool?.link}
             className="p-4 border rounded-lg hover:shadow-md transition"
           >
-            <h3 className="text-lg font-semibold">{tool.name}</h3>
-            <p className="text-sm text-gray-500 mt-1">{tool.description}</p>
+            <h3 className="text-lg font-semibold">{tool?.name}</h3>
+            <p className="text-sm text-gray-500 mt-1">{tool?.description}</p>
           </a>
         ))}
       </div>
