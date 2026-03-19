@@ -1,12 +1,13 @@
+import WordCounterTool from "./WordCounterTool";
+
 export const metadata = {
   title: "Word Counter Tool",
-  description: "Free online word counter tool",
+  description:
+    "Free online word counter tool to count words, characters, and sentences instantly.",
 };
 
-export default function WordCounterPage() {
-  return (
-    <div className="p-10">
-      <h1 className="text-2xl font-bold">Word Counter</h1>
-    </div>
-  );
-}
+const Page = () => {
+  return <WordCounterTool />;
+};
+
+export default Page;
