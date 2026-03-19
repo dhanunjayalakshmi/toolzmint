@@ -10,20 +10,50 @@ const WordCounterTool = () => {
   const sentences =
     text.trim() === "" ? 0 : text.split(/[.!?]+/).filter(Boolean).length;
 
+  const handleClear = () => {
+    setText("");
+  };
+
+  const handleCopy = async () => {
+    if (!text) return;
+    await navigator.clipboard.writeText(text);
+    alert("Copied to clipboard!");
+  };
+
   return (
-    <div className="max-w-3xl mx-auto p-6">
+    <div>
+      {/* Textarea */}
       <textarea
-        className="w-full h-40 p-3 border rounded-lg focus:outline-none focus:ring-2"
+        className="w-full h-40 p-3 border rounded-lg focus:outline-none focus:ring-2 resize-none"
         placeholder="Type or paste your text here..."
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
 
+      {/* Actions */}
+      <div className="flex gap-3 mt-3">
+        <button
+          onClick={handleCopy}
+          className="px-4 py-2 border rounded-lg cursor-pointer hover:bg-gray-600"
+        >
+          Copy
+        </button>
+
+        <button
+          onClick={handleClear}
+          className="px-4 py-2 border rounded-lg cursor-pointer hover:bg-gray-600"
+        >
+          Clear
+        </button>
+      </div>
+
+      {/* Info */}
       <p className="text-sm text-gray-500 mt-2">
         Words are counted based on spaces. Sentences are detected using
         punctuation.
       </p>
 
+      {/* Stats */}
       <div className="grid grid-cols-3 gap-4 mt-6 text-center">
         <div className="p-4 border rounded-lg">
           <p className="text-xl font-semibold">{words}</p>
