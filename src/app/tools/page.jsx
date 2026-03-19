@@ -10,7 +10,7 @@ const Page = () => {
           <a
             key={tool?.slug}
             href={`/tools/${tool?.slug}`}
-            className="p-4 border rounded-lg hover:shadow-md transition"
+            className="p-4 border rounded-lg hover:shadow-md transition duration-200"
           >
             <h2 className="text-lg font-semibold">{tool?.name}</h2>
             <p className="text-sm text-gray-500 mt-1">{tool?.description}</p>

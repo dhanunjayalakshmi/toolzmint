@@ -2,7 +2,7 @@ import ToolLayout from "@/app/components/ToolLayout";
 import CharacterCounterTool from "./CharacterCounterTool";
 import { tools } from "@/lib/toolsConfig";
 
-const tool = tools?.find((tool) => tool.slug === "word-counter");
+const tool = tools?.find((tool) => tool.slug === "character-counter");
 
 export const metadata = {
   title: tool?.metaTitle,

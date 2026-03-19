@@ -1,6 +1,9 @@
+import { tools } from "@/lib/toolsConfig";
+
 const ToolLayout = ({ title, description, children }) => {
+  console.log(title);
   return (
-    <div className="max-w-3xl mx-auto p-6">
+    <div className="max-w-3xl mx-auto p-6 space-y-4">
       {/* Title */}
       <h1 className="text-3xl font-bold mb-2">{title}</h1>
 
@@ -23,6 +26,25 @@ const ToolLayout = ({ title, description, children }) => {
           Simply type or paste your text into the input box. The tool will
           automatically calculate and display the results in real time.
         </p>
+      </div>
+
+      {/* Related Tools */}
+      <div className="space-y-4 text-gray-700">
+        <h2 className="text-xl font-semibold mb-4">Related Tools</h2>
+
+        <div className="grid gap-3 sm:grid-cols-2">
+          {tools
+            ?.filter((t) => t.name !== title)
+            ?.map((tool) => (
+              <a
+                key={tool?.slug}
+                href={`/tools/${tool?.slug}`}
+                className="p-3 border rounded-lg hover:bg-blue-50"
+              >
+                {tool?.name}
+              </a>
+            ))}
+        </div>
       </div>
     </div>
   );

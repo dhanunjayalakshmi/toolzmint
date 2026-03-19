@@ -28,14 +28,14 @@ const CharacterCounterTool = () => {
       <div className="flex gap-3 mt-3">
         <button
           onClick={handleCopy}
-          className="px-4 py-2 border rounded-lg hover:bg-blue-50"
+          className="px-4 py-2 border rounded-lg bg-blue-600 hover:bg-blue-700 text-white"
         >
           Copy
         </button>
 
         <button
           onClick={handleClear}
-          className="px-4 py-2 border rounded-lg hover:bg-blue-50"
+          className="px-4 py-2 border rounded-lg bg-blue-600 hover:bg-blue-700 text-white"
         >
           Clear
         </button>

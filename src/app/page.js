@@ -19,8 +19,8 @@ const Home = () => {
         {tools?.map((tool) => (
           <a
             key={tool?.slug}
-            href={`/tools/tool?.slug`}
-            className="p-4 border rounded-lg hover:shadow-md transition"
+            href={`/tools/${tool?.slug}`}
+            className="p-4 border rounded-lg hover:shadow-md transition duration-200"
           >
             <h3 className="text-lg font-semibold">{tool?.name}</h3>
             <p className="text-sm text-gray-500 mt-1">{tool?.description}</p>
