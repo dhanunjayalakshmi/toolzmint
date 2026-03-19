@@ -12,8 +12,6 @@ const WordCounterTool = () => {
 
   return (
     <div className="max-w-3xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-4">Word Counter</h1>
-
       <textarea
         className="w-full h-40 p-3 border rounded-lg focus:outline-none focus:ring-2"
         placeholder="Type or paste your text here..."
