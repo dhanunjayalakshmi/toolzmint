@@ -19,7 +19,7 @@ const RootLayout = ({ children }) => {
               <Link href="/" className="hover:text-blue-600">
                 Home
               </Link>
-              <a href="/tools/word-counter" className="hover:text-blue-600">
+              <a href="/tools" className="hover:text-blue-600">
                 Tools
               </a>
             </nav>
