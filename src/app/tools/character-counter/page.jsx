@@ -1,18 +1,17 @@
 import ToolLayout from "@/app/components/ToolLayout";
 import CharacterCounterTool from "./CharacterCounterTool";
+import { tools } from "@/lib/toolsConfig";
+
+const tool = tools?.find((tool) => tool.slug === "word-counter");
 
 export const metadata = {
-  title: "Character Counter - Count Characters Online",
-  description:
-    "Free online character counter tool. Count characters instantly with this simple and fast tool.",
+  title: tool?.metaTitle,
+  description: tool?.metaDescription,
 };
 
 const Page = () => {
   return (
-    <ToolLayout
-      title="Character Counter"
-      description="Count characters in your text instantly."
-    >
+    <ToolLayout title={tool?.name} description={tool?.description}>
       <CharacterCounterTool />
     </ToolLayout>
   );

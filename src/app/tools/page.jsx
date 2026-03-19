@@ -1,15 +1,4 @@
-const tools = [
-  {
-    name: "Word Counter",
-    description: "Count words, characters, and sentences instantly.",
-    link: "/tools/word-counter",
-  },
-  {
-    name: "Character Counter",
-    description: "Count characters instantly with or without spaces.",
-    link: "/tools/character-counter",
-  },
-];
+import { tools } from "@/lib/toolsConfig";
 
 const Page = () => {
   return (
@@ -17,10 +6,10 @@ const Page = () => {
       <h1 className="text-3xl font-bold mb-6">All Tools</h1>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        {tools.map((tool, index) => (
+        {tools?.map((tool) => (
           <a
-            key={index}
-            href={tool?.link}
+            key={tool?.slug}
+            href={`/tools/${tool?.slug}`}
             className="p-4 border rounded-lg hover:shadow-md transition"
           >
             <h2 className="text-lg font-semibold">{tool?.name}</h2>
