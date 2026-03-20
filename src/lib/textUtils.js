@@ -17,3 +17,7 @@ export const toTitleCase = (text) => {
 export const reverseText = (text) => {
   return text.split("").reverse().join("");
 };
+
+export const removeDuplicateLines = (text) => {
+  return [...new Set(text.split("\n"))].join("\n");
+};

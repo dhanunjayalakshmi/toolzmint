@@ -69,4 +69,9 @@ export const tools = [
     name: "Text Reverser",
     description: "Reverse text instantly online.",
   },
+  {
+    slug: "duplicate-line-remover",
+    name: "Duplicate Line Remover",
+    description: "Remove duplicate lines from text.",
+  },
 ];
