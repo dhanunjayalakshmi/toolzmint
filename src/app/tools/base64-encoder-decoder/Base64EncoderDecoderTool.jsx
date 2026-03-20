@@ -39,31 +39,28 @@ const Base64EncoderDecoderTool = () => {
       <div className="flex flex-wrap gap-3 mt-3">
         <button
           onClick={encodeText}
-          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg"
+          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg cursor-pointer"
         >
           Encode
         </button>
 
         <button
           onClick={decodeText}
-          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg"
+          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg cursor-pointer"
         >
           Decode
         </button>
-      </div>
 
-      {/* Secondary actions */}
-      <div className="flex gap-3 mt-3">
         <button
           onClick={handleCopy}
-          className="px-4 py-2 border rounded-lg hover:bg-blue-50"
+          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg cursor-pointer"
         >
           Copy
         </button>
 
         <button
           onClick={handleClear}
-          className="px-4 py-2 border rounded-lg hover:bg-blue-50"
+          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg cursor-pointer"
         >
           Clear
         </button>

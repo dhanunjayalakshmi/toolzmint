@@ -56,4 +56,12 @@ export const tools = [
     metaDescription:
       "Free online Base64 encoder and decoder tool. Convert text to Base64 and back instantly.",
   },
+  {
+    slug: "text-to-slug",
+    name: "Text to Slug",
+    description: "Convert text into SEO-friendly URL slugs.",
+    metaTitle: "Text to Slug Converter - Generate SEO Friendly URLs",
+    metaDescription:
+      "Free online tool to convert text into SEO-friendly URL slugs instantly.",
+  },
 ];
