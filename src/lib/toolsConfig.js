@@ -79,4 +79,9 @@ export const tools = [
     name: "Line Sorter",
     description: "Sort lines alphabetically.",
   },
+  {
+    slug: "random-string-generator",
+    name: "Random String Generator",
+    description: "Generate random strings easily.",
+  },
 ];
