@@ -15,4 +15,12 @@ export const tools = [
     metaDescription:
       "Free online character counter tool. Count characters instantly.",
   },
+  {
+    slug: "json-formatter",
+    name: "JSON Formatter",
+    description: "Format and validate JSON instantly.",
+    metaTitle: "JSON Formatter & Validator - Format JSON Online",
+    metaDescription:
+      "Free online JSON formatter and validator. Beautify and validate JSON instantly.",
+  },
 ];
