@@ -74,4 +74,9 @@ export const tools = [
     name: "Duplicate Line Remover",
     description: "Remove duplicate lines from text.",
   },
+  {
+    slug: "line-sorter",
+    name: "Line Sorter",
+    description: "Sort lines alphabetically.",
+  },
 ];

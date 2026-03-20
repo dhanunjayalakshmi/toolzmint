@@ -21,3 +21,7 @@ export const reverseText = (text) => {
 export const removeDuplicateLines = (text) => {
   return [...new Set(text.split("\n"))].join("\n");
 };
+
+export const sortLines = (text) => {
+  return text.split("\n").sort().join("\n");
+};
