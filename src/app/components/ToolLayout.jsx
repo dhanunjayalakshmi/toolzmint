@@ -1,7 +1,6 @@
 import { tools } from "@/lib/toolsConfig";
 
 const ToolLayout = ({ title, description, children }) => {
-  console.log(title);
   return (
     <div className="max-w-3xl mx-auto p-6 space-y-4">
       {/* Title */}
@@ -17,14 +16,8 @@ const ToolLayout = ({ title, description, children }) => {
       <div className="space-y-4 text-gray-700">
         <h2 className="text-xl font-semibold">What is this tool?</h2>
         <p>
-          This tool helps you quickly analyze your text by counting words,
-          characters, and sentences instantly.
-        </p>
-
-        <h2 className="text-xl font-semibold">How to use this tool?</h2>
-        <p>
-          Simply type or paste your text into the input box. The tool will
-          automatically calculate and display the results in real time.
+          {description} This tool is designed to give you instant results with a
+          simple and easy-to-use interface.
         </p>
       </div>
 

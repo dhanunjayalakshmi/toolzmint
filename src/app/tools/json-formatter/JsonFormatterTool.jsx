@@ -50,14 +50,14 @@ const JsonFormatterTool = () => {
 
         <button
           onClick={handleCopy}
-          className="px-4 py-2 border rounded-lg hover:bg-blue-50"
+          className="px-4 py-2 rounded-lg hover:bg-blue-50"
         >
           Copy
         </button>
 
         <button
           onClick={handleClear}
-          className="px-4 py-2 border rounded-lg hover:bg-blue-50"
+          className="px-4 py-2 rounded-lg hover:bg-blue-50"
         >
           Clear
         </button>

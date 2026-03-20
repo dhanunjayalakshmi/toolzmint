@@ -23,4 +23,12 @@ export const tools = [
     metaDescription:
       "Free online JSON formatter and validator. Beautify and validate JSON instantly.",
   },
+  {
+    slug: "remove-extra-spaces",
+    name: "Remove Extra Spaces",
+    description: "Remove extra spaces from text instantly.",
+    metaTitle: "Remove Extra Spaces Online - Clean Text Tool",
+    metaDescription:
+      "Free online tool to remove extra spaces from text quickly and easily.",
+  },
 ];

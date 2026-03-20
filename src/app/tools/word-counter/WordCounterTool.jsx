@@ -34,14 +34,14 @@ const WordCounterTool = () => {
       <div className="flex gap-3 mt-3">
         <button
           onClick={handleCopy}
-          className="px-4 py-2 border rounded-lg cursor-pointer bg-blue-600 hover:bg-blue-700 text-white"
+          className="px-4 py-2 rounded-lg cursor-pointer bg-blue-600 hover:bg-blue-700 text-white"
         >
           Copy
         </button>
 
         <button
           onClick={handleClear}
-          className="px-4 py-2 border rounded-lg cursor-pointer bg-blue-600 hover:bg-blue-700 text-white"
+          className="px-4 py-2 rounded-lg cursor-pointer bg-blue-600 hover:bg-blue-700 text-white"
         >
           Clear
         </button>
