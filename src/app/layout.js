@@ -4,6 +4,9 @@ import "./globals.css";
 export const metadata = {
   title: "Toolzmint",
   description: "Free online tools for everyday use",
+  verification: {
+    google: "K8qKF7eQiUAamegngDg817buqx7ekNezCI2XFD3igVU",
+  },
 };
 
 const RootLayout = ({ children }) => {
