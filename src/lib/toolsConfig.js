@@ -40,4 +40,12 @@ export const tools = [
     metaDescription:
       "Free online case converter tool. Convert text to uppercase, lowercase, or title case instantly.",
   },
+  {
+    slug: "url-encoder-decoder",
+    name: "URL Encoder & Decoder",
+    description: "Encode or decode URLs instantly.",
+    metaTitle: "URL Encoder & Decoder Online - Encode URLs Easily",
+    metaDescription:
+      "Free online URL encoder and decoder tool. Encode or decode URLs instantly.",
+  },
 ];

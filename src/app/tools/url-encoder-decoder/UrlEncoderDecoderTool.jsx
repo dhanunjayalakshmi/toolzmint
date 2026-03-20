@@ -1,12 +1,31 @@
 "use client";
 
-import { toLowerCase, toTitleCase, toUpperCase } from "@/lib/textUtils";
+import TextTool from "@/app/components/TextTool";
 import { useState } from "react";
 
-const CaseConverterTool = () => {
+const UrlEncoderDecoderTool = () => {
   const [text, setText] = useState("");
+  const [error, setError] = useState("");
 
-  const handleClear = () => setText("");
+  const encodeText = () => {
+    if (!text) return;
+    setText(encodeURIComponent(text));
+  };
+
+  const decodeText = () => {
+    try {
+      if (!text) return;
+      setText(decodeURIComponent(text));
+      setError("");
+    } catch {
+      setError("Invalid Input");
+    }
+  };
+
+  const handleClear = () => {
+    setText("");
+    setError("");
+  };
 
   const handleCopy = async () => {
     if (!text) return;
@@ -15,36 +34,21 @@ const CaseConverterTool = () => {
   };
 
   return (
-    <div>
-      {/* Input */}
-      <textarea
-        className="w-full h-40 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
-        placeholder="Type or paste your text here..."
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
-
+    <TextTool text={text} setText={setText}>
       {/* Actions */}
       <div className="flex flex-wrap gap-3 mt-3">
         <button
-          onClick={() => setText(toUpperCase(text))}
+          onClick={encodeText}
           className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg"
         >
-          UPPERCASE
+          Encode
         </button>
 
         <button
-          onClick={() => setText(toLowerCase(text))}
+          onClick={decodeText}
           className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg"
         >
-          lowercase
-        </button>
-
-        <button
-          onClick={() => setText(toTitleCase(text))}
-          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg"
-        >
-          Title Case
+          Decode
         </button>
       </div>
 
@@ -63,9 +67,11 @@ const CaseConverterTool = () => {
         >
           Clear
         </button>
+
+        {error && <p className="text-red-500 mt-3">{error}</p>}
       </div>
-    </div>
+    </TextTool>
   );
 };
 
-export default CaseConverterTool;
+export default UrlEncoderDecoderTool;

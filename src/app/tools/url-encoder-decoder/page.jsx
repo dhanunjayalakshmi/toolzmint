@@ -1,8 +1,8 @@
 import ToolLayout from "@/app/components/ToolLayout";
-import CaseConverterTool from "./CaseConverterTool";
 import { tools } from "@/lib/toolsConfig";
+import UrlEncoderDecoderTool from "./UrlEncoderDecoderTool";
 
-const tool = tools?.find((tool) => tool.slug === "case-converter");
+const tool = tools?.find((tool) => tool.slug === "url-encoder-decoder");
 
 export const metadata = {
   title: tool?.metaTitle,
@@ -12,7 +12,7 @@ export const metadata = {
 const Page = () => {
   return (
     <ToolLayout title={tool?.name} description={tool?.description}>
-      <CaseConverterTool />
+      <UrlEncoderDecoderTool />
     </ToolLayout>
   );
 };
