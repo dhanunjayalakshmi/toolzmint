@@ -1,5 +1,6 @@
 import Link from "next/link";
 import "./globals.css";
+import Footer from "./components/Footer";
 
 export const metadata = {
   title: "Toolzmint",
@@ -31,6 +32,9 @@ const RootLayout = ({ children }) => {
 
         {/* Main Content */}
         <main>{children}</main>
+
+        {/* Footer */}
+        <Footer />
       </body>
     </html>
   );
