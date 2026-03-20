@@ -84,4 +84,9 @@ export const tools = [
     name: "Random String Generator",
     description: "Generate random strings easily.",
   },
+  {
+    slug: "word-duplicator",
+    name: "Word Duplicator",
+    description: "Duplicate words or sentences quickly.",
+  },
 ];

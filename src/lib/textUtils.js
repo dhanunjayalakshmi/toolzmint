@@ -34,3 +34,10 @@ export const generateRandomString = (length = 10) => {
     () => chars[Math.floor(Math.random() * chars.length)],
   ).join("");
 };
+
+export const duplicateWords = (text) => {
+  return text
+    .split(" ")
+    .map((word) => word + " " + word)
+    .join(" ");
+};
