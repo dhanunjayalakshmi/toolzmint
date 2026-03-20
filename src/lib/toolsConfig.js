@@ -31,4 +31,13 @@ export const tools = [
     metaDescription:
       "Free online tool to remove extra spaces from text quickly and easily.",
   },
+  {
+    slug: "case-converter",
+    name: "Case Converter",
+    description:
+      "Convert text to uppercase, lowercase, or title case instantly.",
+    metaTitle: "Case Converter - Uppercase, Lowercase, Title Case Online",
+    metaDescription:
+      "Free online case converter tool. Convert text to uppercase, lowercase, or title case instantly.",
+  },
 ];
