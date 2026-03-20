@@ -48,4 +48,12 @@ export const tools = [
     metaDescription:
       "Free online URL encoder and decoder tool. Encode or decode URLs instantly.",
   },
+  {
+    slug: "base64-encoder-decoder",
+    name: "Base64 Encoder & Decoder",
+    description: "Encode or decode Base64 strings instantly.",
+    metaTitle: "Base64 Encoder & Decoder Online Tool",
+    metaDescription:
+      "Free online Base64 encoder and decoder tool. Convert text to Base64 and back instantly.",
+  },
 ];
