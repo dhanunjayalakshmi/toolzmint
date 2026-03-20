@@ -64,4 +64,9 @@ export const tools = [
     metaDescription:
       "Free online tool to convert text into SEO-friendly URL slugs instantly.",
   },
+  {
+    slug: "text-reverser",
+    name: "Text Reverser",
+    description: "Reverse text instantly online.",
+  },
 ];

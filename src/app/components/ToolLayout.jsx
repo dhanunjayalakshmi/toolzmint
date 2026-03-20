@@ -14,11 +14,21 @@ const ToolLayout = ({ title, description, children }) => {
 
       {/* SEO Content */}
       <div className="space-y-4 text-gray-700">
-        <h2 className="text-xl font-semibold">What is this tool?</h2>
+        <h2 className="text-lg font-semibold mb-2">About this tool</h2>
+
         <p>
-          {description} This tool is designed to give you instant results with a
-          simple and easy-to-use interface.
+          {description}. This tool helps you easily process your text online
+          without installing any software. It works directly in your browser and
+          provides instant results.
         </p>
+
+        <h2 className="text-lg font-semibold mt-4 mb-2">How to use</h2>
+
+        <ul className="list-disc ml-5">
+          <li>Enter your text</li>
+          <li>View the result instantly</li>
+          <li>Copy output if needed</li>
+        </ul>
       </div>
 
       {/* Related Tools */}
