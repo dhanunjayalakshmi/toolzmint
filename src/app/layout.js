@@ -1,6 +1,13 @@
 import Link from "next/link";
 import "./globals.css";
 import Footer from "./components/Footer";
+import { Inter } from "next/font/google";
+import Script from "next/script";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 export const metadata = {
   title: "Toolzmint",
@@ -12,8 +19,20 @@ export const metadata = {
 
 const RootLayout = ({ children }) => {
   return (
-    <html lang="en">
-      <body className="bg-white text-black">
+    <html lang="en" className={inter?.variable} suppressHydrationWarning>
+      <head>
+        <Script id="theme-script" strategy="beforeInteractive">
+          {`
+            (function() {
+              const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+              if (prefersDark) {
+                document.documentElement.classList.add('dark');
+              }
+            })();
+          `}
+        </Script>
+      </head>
+      <body className="font-sans antialiased bg-white text-black">
         {/* Navbar */}
         <header className="border-b">
           <div className="max-w-5xl mx-auto flex items-center justify-between p-4">
