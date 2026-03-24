@@ -4,13 +4,16 @@ import { Card, CardContent } from "@/components/ui/card";
 const ToolLayout = ({ title, description, children }) => {
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-10 space-y-10">
-      <div className="w-full space-y-2">
-        <h1 className="text-3xl font-semibold tracking-tight">{title}</h1>
-        <p className="w-full text-muted-foreground max-w-2xl">{description}</p>
+      <div className="space-y-3">
+        <h1 className="text-4xl font-semibold tracking-tight">{title}</h1>
+
+        <p className="text-base text-muted-foreground max-w-2xl leading-relaxed">
+          {description}
+        </p>
       </div>
 
-      <Card className="w-full shadow-lg border border-border rounded-xl">
-        <CardContent className="p-5 w-full">{children}</CardContent>
+      <Card className="w-full bg-card shadow-lg border-0 focus:outline-none rounded-2xl">
+        <CardContent className="p-6">{children}</CardContent>
       </Card>
 
       {/* SEO Content */}

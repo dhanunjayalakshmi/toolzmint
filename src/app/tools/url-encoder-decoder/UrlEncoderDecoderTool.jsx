@@ -46,11 +46,19 @@ const UrlEncoderDecoderTool = () => {
 
       {/* Modifier Actions */}
       <div className="flex flex-wrap gap-2">
-        <Button size="sm" onClick={encodeText}>
+        <Button
+          size="sm"
+          onClick={encodeText}
+          className="rounded-lg cursor-pointer"
+        >
           Encode
         </Button>
 
-        <Button size="sm" onClick={decodeText}>
+        <Button
+          size="sm"
+          onClick={decodeText}
+          className="rounded-lg cursor-pointer"
+        >
           Decode
         </Button>
       </div>

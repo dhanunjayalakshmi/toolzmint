@@ -33,27 +33,33 @@ const RootLayout = ({ children }) => {
         </Script>
       </head> */}
       <body className="font-sans antialiased bg-background text-foreground">
-        {/* Navbar */}
-        <header className="border-b">
-          <div className="w-full max-w-5xl mx-auto flex items-center justify-between p-4">
-            <h1 className="text-xl font-bold text-primary">Toolzmint</h1>
+        <div className="min-h-screen flex flex-col">
+          {/* Navbar */}
+          <header className="border-b">
+            <div className="w-full max-w-5xl mx-auto flex items-center justify-between p-4">
+              <h1 className="text-xl font-bold text-primary">Toolzmint</h1>
 
-            <nav className="flex gap-6 text-sm">
-              <Link href="/" className="hover:text-primary">
-                Home
-              </Link>
-              <a href="/tools" className="hover:text-primary">
-                Tools
-              </a>
-            </nav>
-          </div>
-        </header>
+              <nav className="flex gap-6 text-md text-foreground">
+                <Link href="/" className="hover:text-primary transition-colors">
+                  Home
+                </Link>
 
-        {/* Main Content */}
-        <main>{children}</main>
+                <Link
+                  href="/tools"
+                  className="hover:text-primary transition-colors"
+                >
+                  Tools
+                </Link>
+              </nav>
+            </div>
+          </header>
 
-        {/* Footer */}
-        <Footer />
+          {/* Main Content */}
+          <main className="flex-1">{children}</main>
+
+          {/* Footer */}
+          <Footer />
+        </div>
       </body>
     </html>
   );

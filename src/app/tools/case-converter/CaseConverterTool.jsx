@@ -28,15 +28,27 @@ export default function CaseConverterTool() {
 
       {/* Modifier Actions */}
       <div className="flex flex-wrap gap-2">
-        <Button size="sm" onClick={() => setText(toUpperCase(text))}>
+        <Button
+          size="sm"
+          onClick={() => setText(toUpperCase(text))}
+          className="rounded-lg cursor-pointer"
+        >
           UPPERCASE
         </Button>
 
-        <Button size="sm" onClick={() => setText(toLowerCase(text))}>
+        <Button
+          size="sm"
+          onClick={() => setText(toLowerCase(text))}
+          className="rounded-lg cursor-pointer"
+        >
           lowercase
         </Button>
 
-        <Button size="sm" onClick={() => setText(toTitleCase(text))}>
+        <Button
+          size="sm"
+          onClick={() => setText(toTitleCase(text))}
+          className="rounded-lg cursor-pointer"
+        >
           Title Case
         </Button>
       </div>

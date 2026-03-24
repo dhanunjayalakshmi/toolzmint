@@ -29,7 +29,7 @@ const RandomStringGeneratorTool = () => {
   return (
     <div className="w-full space-y-4">
       {/* Input */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div className="space-y-2 flex flex-col">
           <label className="text-sm font-medium text-muted-foreground">
             Text Length
@@ -46,7 +46,11 @@ const RandomStringGeneratorTool = () => {
           "
           />
 
-          <Button size="sm" onClick={handleGenerate} className="m-auto">
+          <Button
+            size="sm"
+            onClick={handleGenerate}
+            className="m-auto rounded-lg cursor-pointer"
+          >
             Generate
           </Button>
         </div>

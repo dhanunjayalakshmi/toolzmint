@@ -2,15 +2,26 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="border-t mt-10 py-6 text-center text-sm text-muted-foreground">
-      <div className="space-x-4">
-        <Link href="/about">About</Link>
-        <Link href="/contact">Contact</Link>
-        <Link href="/privacy-policy">Privacy</Link>
-        <Link href="/terms">Terms</Link>
+    <footer className="border-t mt-10 py-8 text-center text-sm text-muted-foreground">
+      <div className="space-x-6">
+        <Link href="/about" className="hover:text-primary transition-colors">
+          About
+        </Link>
+        <Link href="/contact" className="hover:text-primary transition-colors">
+          Contact
+        </Link>
+        <Link
+          href="/privacy-policy"
+          className="hover:text-primary transition-colors"
+        >
+          Privacy
+        </Link>
+        <Link href="/terms" className="hover:text-primary transition-colors">
+          Terms
+        </Link>
       </div>
 
-      <p className="mt-2">© {new Date().getFullYear()} Toolzmint</p>
+      <p className="mt-3">© {new Date().getFullYear()} Toolzmint</p>
     </footer>
   );
 };
