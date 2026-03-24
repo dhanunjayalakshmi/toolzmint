@@ -17,7 +17,7 @@ export default function CaseConverterTool() {
   const handleClear = () => setText("");
 
   return (
-    <>
+    <div className="w-full space-y-4">
       {/* Input */}
       <ToolTextarea
         label="Text"
@@ -47,6 +47,6 @@ export default function CaseConverterTool() {
         onCopy={handleCopy}
         disableCopy={!text}
       />
-    </>
+    </div>
   );
 }

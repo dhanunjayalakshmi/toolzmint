@@ -5,7 +5,7 @@ export const metadata = {
 
 const ContactPage = () => {
   return (
-    <div className="max-w-3xl mx-auto py-10 px-4">
+    <div className="w-full max-w-3xl mx-auto py-10 px-4">
       <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
 
       <p className="mb-4">
@@ -17,7 +17,7 @@ const ContactPage = () => {
         📧 Email:{" "}
         <a
           href="mailto:support@toolzmint.com"
-          className="text-blue-600 underline"
+          className="text-primary underline"
         >
           support@toolzmint.com
         </a>

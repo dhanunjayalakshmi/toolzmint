@@ -32,17 +32,17 @@ const RootLayout = ({ children }) => {
           `}
         </Script>
       </head> */}
-      <body className="font-sans antialiased bg-white text-black">
+      <body className="font-sans antialiased bg-background text-foreground">
         {/* Navbar */}
         <header className="border-b">
-          <div className="max-w-5xl mx-auto flex items-center justify-between p-4">
-            <h1 className="text-xl font-bold text-blue-600">Toolzmint</h1>
+          <div className="w-full max-w-5xl mx-auto flex items-center justify-between p-4">
+            <h1 className="text-xl font-bold text-primary">Toolzmint</h1>
 
             <nav className="flex gap-6 text-sm">
-              <Link href="/" className="hover:text-blue-600">
+              <Link href="/" className="hover:text-primary">
                 Home
               </Link>
-              <a href="/tools" className="hover:text-blue-600">
+              <a href="/tools" className="hover:text-primary">
                 Tools
               </a>
             </nav>

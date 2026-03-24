@@ -2,13 +2,13 @@ import { tools } from "@/lib/toolsConfig";
 
 const Home = () => {
   return (
-    <div className="max-w-5xl mx-auto p-6">
+    <div className="w-full max-w-5xl mx-auto p-6">
       {/* Hero */}
       <h1 className="text-4xl font-bold mb-4">
         Simple Tools. Instant Results.
       </h1>
 
-      <p className="text-gray-600 mb-8">
+      <p className="text-muted-foreground mb-8">
         Toolzmint offers fast, free, and easy-to-use tools for everyday tasks.
       </p>
 
@@ -23,7 +23,9 @@ const Home = () => {
             className="p-4 border rounded-lg hover:shadow-md transition duration-200"
           >
             <h3 className="text-lg font-semibold">{tool?.name}</h3>
-            <p className="text-sm text-gray-500 mt-1">{tool?.description}</p>
+            <p className="text-sm text-muted-foreground mt-1">
+              {tool?.description}
+            </p>
           </a>
         ))}
       </div>
@@ -31,13 +33,13 @@ const Home = () => {
       {/* CTA */}
       <a
         href="/tools"
-        className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg"
+        className="inline-block px-6 py-3 bg-primary text-primary-foreground rounded-lg"
       >
         Explore All Tools
       </a>
 
       {/* SEO Content */}
-      <div className="mt-12 space-y-4 text-gray-700">
+      <div className="mt-12 space-y-4 text-foreground">
         <h2 className="text-xl font-semibold">What is Toolzmint?</h2>
         <p>
           Toolzmint is a collection of free online tools designed to help you

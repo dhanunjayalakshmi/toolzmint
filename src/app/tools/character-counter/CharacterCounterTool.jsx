@@ -16,11 +16,10 @@ const CharacterCounterTool = () => {
   const handleCopy = async () => {
     if (!text) return;
     await navigator.clipboard.writeText(text);
-    alert("Copied to clipboard!");
   };
 
   return (
-    <div className="space-y-4">
+    <div className="w-full space-y-4">
       {/* Input */}
       <ToolTextarea
         value={text}

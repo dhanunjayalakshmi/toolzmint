@@ -27,39 +27,38 @@ const RandomStringGeneratorTool = () => {
   };
 
   return (
-    <>
+    <div className="w-full space-y-4">
       {/* Input */}
-      <div className="space-y-2">
-        <label className="text-sm font-medium text-muted-foreground">
-          Text Length
-        </label>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="space-y-2 flex flex-col">
+          <label className="text-sm font-medium text-muted-foreground">
+            Text Length
+          </label>
 
-        <input
-          type="number"
-          value={length}
-          onChange={(e) => setLength(e.target.value)}
-          className="
-            w-full rounded-lg p-3
-            bg-muted
+          <input
+            type="number"
+            value={length}
+            onChange={(e) => setLength(e.target.value)}
+            className="
+            border border-border rounded-lg p-3
+            bg-foreground
             focus:outline-none focus:ring-2 focus:ring-primary/40
           "
+          />
+
+          <Button size="sm" onClick={handleGenerate} className="m-auto">
+            Generate
+          </Button>
+        </div>
+
+        {/* Output */}
+        <ToolTextarea
+          label="Generated Text"
+          value={output}
+          readOnly
+          placeholder="Generated text will appear here..."
         />
       </div>
-
-      {/* Generate Button */}
-      <div>
-        <Button onClick={handleGenerate} className="w-full">
-          Generate
-        </Button>
-      </div>
-
-      {/* Output */}
-      <ToolTextarea
-        label="Generated Text"
-        value={output}
-        readOnly
-        placeholder="Generated text will appear here..."
-      />
 
       {/* Actions */}
       <ToolActions
@@ -67,7 +66,7 @@ const RandomStringGeneratorTool = () => {
         onCopy={handleCopy}
         disableCopy={!output}
       />
-    </>
+    </div>
   );
 };
 

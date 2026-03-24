@@ -33,33 +33,34 @@ const JsonFormatterTool = () => {
   const handleCopy = async () => {
     if (!output) return;
     await navigator.clipboard.writeText(output);
-    alert("Copied to clipboard!");
   };
 
   return (
-    <>
-      <ToolTextarea
-        label="Input"
-        value={input}
-        onChange={setInput}
-        placeholder="Type or paste your text here..."
-      />
+    <div className="w-full space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <ToolTextarea
+          label="Input"
+          value={input}
+          onChange={setInput}
+          placeholder="Type or paste your text here..."
+        />
 
-      <ToolTextarea
-        label="Output"
-        value={output}
-        readOnly
-        placeholder="Output..."
-      />
+        <ToolTextarea
+          label="Output"
+          value={output}
+          readOnly
+          placeholder="Output..."
+        />
+      </div>
 
-      {error & <p className="text-red-500 mt-3">{error}</p>}
+      {error && <p className="text-red-500 mt-3">{error}</p>}
 
       <ToolActions
         onClear={handleClear}
         onCopy={handleCopy}
         disableCopy={!output}
       />
-    </>
+    </div>
   );
 };
 

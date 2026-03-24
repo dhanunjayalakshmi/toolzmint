@@ -16,10 +16,8 @@ const ToolTextarea = ({
         onChange={(e) => onChange?.(e.target.value)}
         readOnly={readOnly}
         placeholder={placeholder}
-        className={`w-full rounded-lg p-3 text-foreground placeholder:text-muted-foreground focus:outline-none resize-none ${
-          readOnly
-            ? "bg-muted/70 shadow-inner"
-            : "bg-muted focus:ring-2 focus:ring-primary/40"
+        className={`w-full rounded-lg p-3 text-foreground bg-muted placeholder:text-muted-foreground focus:outline-none resize-none ${
+          readOnly ? "shadow-inner" : "focus:ring-2 focus:ring-primary/40"
         }`}
         rows={8}
       />

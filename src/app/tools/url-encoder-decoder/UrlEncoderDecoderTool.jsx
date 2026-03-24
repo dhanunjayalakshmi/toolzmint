@@ -1,6 +1,5 @@
 "use client";
 
-import TextTool from "@/app/components/TextTool";
 import ToolActions from "@/app/components/tools/ToolActions";
 import ToolTextarea from "@/app/components/tools/ToolTextarea";
 import { Button } from "@/components/ui/button";
@@ -33,11 +32,10 @@ const UrlEncoderDecoderTool = () => {
   const handleCopy = async () => {
     if (!text) return;
     await navigator.clipboard.writeText(text);
-    alert("Copied to clipboard!");
   };
 
   return (
-    <>
+    <div className="w-full space-y-4">
       {/* Input */}
       <ToolTextarea
         label="Text"
@@ -65,7 +63,7 @@ const UrlEncoderDecoderTool = () => {
         onCopy={handleCopy}
         disableCopy={!text}
       />
-    </>
+    </div>
   );
 };
 

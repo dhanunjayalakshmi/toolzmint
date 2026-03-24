@@ -32,11 +32,10 @@ const Base64EncoderDecoderTool = () => {
   const handleCopy = async () => {
     if (!text) return;
     await navigator.clipboard.writeText(text);
-    alert("Copied to clipboard!");
   };
 
   return (
-    <>
+    <div className="w-full space-y-4">
       {/* Input */}
       <ToolTextarea
         label="Text"
@@ -64,7 +63,7 @@ const Base64EncoderDecoderTool = () => {
         onCopy={handleCopy}
         disableCopy={!text}
       />
-    </>
+    </div>
   );
 };
 
