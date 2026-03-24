@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const ToolLayout = ({ title, description, children }) => {
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 py-10 space-y-10">
+    <div className="w-full max-w-5xl mx-auto px-4 py-10 space-y-12">
       <div className="space-y-3">
         <h1 className="text-4xl font-semibold tracking-tight">{title}</h1>
 
@@ -46,7 +46,7 @@ const ToolLayout = ({ title, description, children }) => {
               <a
                 key={tool?.slug}
                 href={`/tools/${tool?.slug}`}
-                className="p-3 rounded-lg border border-border/60 bg-card hover:bg-muted transition"
+                className="p-4 rounded-lg bg-card shadow-sm hover:shadow-md transition"
               >
                 {tool?.name}
               </a>

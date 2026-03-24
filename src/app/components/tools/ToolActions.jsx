@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 
-const ToolActions = ({ onClear, onCopy, disableCopy }) => {
+const ToolActions = ({ onClear, onCopy, disableCopy, copied }) => {
   return (
     <div className="w-full flex justify-between items-center">
       <p className="text-xs text-muted-foreground">Changes update instantly</p>
@@ -10,7 +10,7 @@ const ToolActions = ({ onClear, onCopy, disableCopy }) => {
           variant="outline"
           size="sm"
           onClick={onClear}
-          className="rounded-lg cursor-pointer"
+          className="rounded-lg cursor-pointer shadow-sm active:scale-95 transition"
         >
           Clear
         </Button>
@@ -19,9 +19,9 @@ const ToolActions = ({ onClear, onCopy, disableCopy }) => {
           size="sm"
           onClick={onCopy}
           disabled={disableCopy}
-          className="rounded-lg shadow-sm cursor-pointer"
+          className="rounded-lg shadow-sm cursor-pointer active:scale-95 transition disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Copy
+          {copied ? "copied" : "copy"}
         </Button>
       </div>
     </div>

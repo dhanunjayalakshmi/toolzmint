@@ -49,7 +49,7 @@ const RandomStringGeneratorTool = () => {
           <Button
             size="sm"
             onClick={handleGenerate}
-            className="m-auto rounded-lg cursor-pointer"
+            className="m-auto rounded-lg cursor-pointer shadow-sm active:scale-95 transition"
           >
             Generate
           </Button>

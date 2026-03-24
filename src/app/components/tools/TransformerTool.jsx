@@ -3,8 +3,15 @@ import ToolActions from "./ToolActions";
 import ToolTextarea from "./ToolTextarea";
 
 const TransformerTool = ({ transformFn }) => {
-  const { input, setInput, output, handleClear, handleCopy, hasOutput } =
-    useTransformer(transformFn);
+  const {
+    input,
+    setInput,
+    output,
+    handleClear,
+    handleCopy,
+    hasOutput,
+    copied,
+  } = useTransformer(transformFn);
 
   return (
     <div className="w-full space-y-4">
@@ -20,7 +27,7 @@ const TransformerTool = ({ transformFn }) => {
           label="Output"
           value={output}
           readOnly
-          placeholder="Output..."
+          placeholder="Output will appear here..."
         />
       </div>
 
@@ -28,6 +35,7 @@ const TransformerTool = ({ transformFn }) => {
         onClear={handleClear}
         onCopy={handleCopy}
         disableCopy={!hasOutput}
+        copied={copied}
       />
     </div>
   );
