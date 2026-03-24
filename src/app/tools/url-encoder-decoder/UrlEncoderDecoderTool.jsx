@@ -7,6 +7,7 @@ import { useState } from "react";
 
 const UrlEncoderDecoderTool = () => {
   const [text, setText] = useState("");
+  const [copied, setCopied] = useState(false);
   const [error, setError] = useState("");
 
   const encodeText = () => {
@@ -32,6 +33,9 @@ const UrlEncoderDecoderTool = () => {
   const handleCopy = async () => {
     if (!text) return;
     await navigator.clipboard.writeText(text);
+
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
   };
 
   return (
@@ -70,6 +74,7 @@ const UrlEncoderDecoderTool = () => {
         onClear={handleClear}
         onCopy={handleCopy}
         disableCopy={!text}
+        copied={copied}
       />
     </div>
   );

@@ -9,6 +9,7 @@ import ToolTextarea from "@/app/components/tools/ToolTextarea";
 const RandomStringGeneratorTool = () => {
   const [length, setLength] = useState(10);
   const [output, setOutput] = useState("");
+  const [copied, setCopied] = useState(false);
 
   const handleGenerate = () => {
     const len = Number(length) || 0;
@@ -19,6 +20,9 @@ const RandomStringGeneratorTool = () => {
   const handleCopy = async () => {
     if (!output) return;
     await navigator.clipboard.writeText(output);
+
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
   };
 
   const handleClear = () => {
@@ -69,6 +73,7 @@ const RandomStringGeneratorTool = () => {
         onClear={handleClear}
         onCopy={handleCopy}
         disableCopy={!output}
+        copied={copied}
       />
     </div>
   );

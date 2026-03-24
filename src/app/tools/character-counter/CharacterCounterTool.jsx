@@ -7,6 +7,7 @@ import { useState } from "react";
 
 const CharacterCounterTool = () => {
   const [text, setText] = useState("");
+  const [copied, setCopied] = useState(false);
 
   const characters = text?.length;
   const charactersNoSpaces = text?.replace(/\s/g, "").length;
@@ -16,6 +17,9 @@ const CharacterCounterTool = () => {
   const handleCopy = async () => {
     if (!text) return;
     await navigator.clipboard.writeText(text);
+
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
   };
 
   return (
@@ -32,6 +36,7 @@ const CharacterCounterTool = () => {
         onClear={handleClear}
         onCopy={handleCopy}
         disableCopy={!text}
+        copied={copied}
       />
 
       {/* Info */}

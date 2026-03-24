@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 const JsonFormatterTool = () => {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
+  const [copied, setCopied] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -33,6 +34,9 @@ const JsonFormatterTool = () => {
   const handleCopy = async () => {
     if (!output) return;
     await navigator.clipboard.writeText(output);
+
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
   };
 
   return (
@@ -59,6 +63,7 @@ const JsonFormatterTool = () => {
         onClear={handleClear}
         onCopy={handleCopy}
         disableCopy={!output}
+        copied={copied}
       />
     </div>
   );

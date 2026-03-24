@@ -8,10 +8,14 @@ import ToolActions from "@/app/components/tools/ToolActions";
 
 export default function CaseConverterTool() {
   const [text, setText] = useState("");
+  const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
     if (!text) return;
     await navigator.clipboard.writeText(text);
+
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
   };
 
   const handleClear = () => setText("");
@@ -58,6 +62,7 @@ export default function CaseConverterTool() {
         onClear={handleClear}
         onCopy={handleCopy}
         disableCopy={!text}
+        copied={copied}
       />
     </div>
   );

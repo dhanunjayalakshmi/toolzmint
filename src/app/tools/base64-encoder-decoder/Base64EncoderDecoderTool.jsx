@@ -7,6 +7,7 @@ import { useState } from "react";
 
 const Base64EncoderDecoderTool = () => {
   const [text, setText] = useState("");
+  const [copied, setCopied] = useState(false);
   const [error, setError] = useState("");
 
   const encodeText = () => {
@@ -32,6 +33,9 @@ const Base64EncoderDecoderTool = () => {
   const handleCopy = async () => {
     if (!text) return;
     await navigator.clipboard.writeText(text);
+
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
   };
 
   return (
@@ -70,6 +74,7 @@ const Base64EncoderDecoderTool = () => {
         onClear={handleClear}
         onCopy={handleCopy}
         disableCopy={!text}
+        copied={copied}
       />
     </div>
   );

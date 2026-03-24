@@ -7,6 +7,7 @@ import ToolStatsCard from "@/app/components/tools/ToolStatsCard";
 
 const WordCounterTool = () => {
   const [text, setText] = useState("");
+  const [copied, setCopied] = useState(false);
 
   const words = text.trim() ? text.trim().split(/\s+/).length : 0;
   const characters = text.length;
@@ -19,6 +20,9 @@ const WordCounterTool = () => {
   const handleCopy = async () => {
     if (!text) return;
     await navigator.clipboard.writeText(text);
+
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
   };
 
   return (
@@ -35,6 +39,7 @@ const WordCounterTool = () => {
         onClear={handleClear}
         onCopy={handleCopy}
         disableCopy={!text}
+        copied={copied}
       />
 
       {/* Info */}
