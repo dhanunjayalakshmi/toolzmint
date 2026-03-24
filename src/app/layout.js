@@ -20,7 +20,7 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en" className={inter?.variable} suppressHydrationWarning>
-      <head>
+      {/* <head>
         <Script id="theme-script" strategy="beforeInteractive">
           {`
             (function() {
@@ -31,7 +31,7 @@ const RootLayout = ({ children }) => {
             })();
           `}
         </Script>
-      </head>
+      </head> */}
       <body className="font-sans antialiased bg-white text-black">
         {/* Navbar */}
         <header className="border-b">

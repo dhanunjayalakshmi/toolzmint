@@ -1,6 +1,6 @@
 import ToolLayout from "@/app/components/ToolLayout";
-import WordCounterTool from "./WordCounterTool";
 import { tools } from "@/lib/toolsConfig";
+import WordCounterTool from "./WordCounterTool";
 
 const tool = tools?.find((tool) => tool.slug === "word-counter");
 
@@ -11,7 +11,11 @@ export const metadata = {
 
 const Page = () => {
   return (
-    <ToolLayout title={tool?.name} description={tool?.description}>
+    <ToolLayout
+      title={tool?.name}
+      description={tool?.description}
+      type={tool?.type}
+    >
       <WordCounterTool />
     </ToolLayout>
   );

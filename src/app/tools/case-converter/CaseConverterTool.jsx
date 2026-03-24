@@ -1,68 +1,52 @@
 "use client";
 
-import { toLowerCase, toTitleCase, toUpperCase } from "@/lib/textUtils";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { toLowerCase, toTitleCase, toUpperCase } from "@/lib/textUtils";
+import ToolTextarea from "@/app/components/tools/ToolTextarea";
+import ToolActions from "@/app/components/tools/ToolActions";
 
-const CaseConverterTool = () => {
+export default function CaseConverterTool() {
   const [text, setText] = useState("");
-
-  const handleClear = () => setText("");
 
   const handleCopy = async () => {
     if (!text) return;
     await navigator.clipboard.writeText(text);
-    alert("Copied to clipboard!");
   };
 
+  const handleClear = () => setText("");
+
   return (
-    <div>
+    <>
       {/* Input */}
-      <textarea
-        className="w-full h-40 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
-        placeholder="Type or paste your text here..."
+      <ToolTextarea
+        label="Text"
         value={text}
-        onChange={(e) => setText(e.target.value)}
+        onChange={setText}
+        placeholder="Type or paste your text here..."
       />
 
-      {/* Actions */}
-      <div className="flex flex-wrap gap-3 mt-3">
-        <button
-          onClick={() => setText(toUpperCase(text))}
-          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg cursor-pointer"
-        >
+      {/* Modifier Actions */}
+      <div className="flex flex-wrap gap-2">
+        <Button size="sm" onClick={() => setText(toUpperCase(text))}>
           UPPERCASE
-        </button>
+        </Button>
 
-        <button
-          onClick={() => setText(toLowerCase(text))}
-          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg cursor-pointer"
-        >
+        <Button size="sm" onClick={() => setText(toLowerCase(text))}>
           lowercase
-        </button>
+        </Button>
 
-        <button
-          onClick={() => setText(toTitleCase(text))}
-          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg cursor-pointer"
-        >
+        <Button size="sm" onClick={() => setText(toTitleCase(text))}>
           Title Case
-        </button>
-
-        <button
-          onClick={handleCopy}
-          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg cursor-pointer"
-        >
-          Copy
-        </button>
-
-        <button
-          onClick={handleClear}
-          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg cursor-pointer"
-        >
-          Clear
-        </button>
+        </Button>
       </div>
-    </div>
-  );
-};
 
-export default CaseConverterTool;
+      {/* Utility Actions */}
+      <ToolActions
+        onClear={handleClear}
+        onCopy={handleCopy}
+        disableCopy={!text}
+      />
+    </>
+  );
+}

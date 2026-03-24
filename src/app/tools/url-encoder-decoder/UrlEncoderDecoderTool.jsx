@@ -1,6 +1,9 @@
 "use client";
 
 import TextTool from "@/app/components/TextTool";
+import ToolActions from "@/app/components/tools/ToolActions";
+import ToolTextarea from "@/app/components/tools/ToolTextarea";
+import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 const UrlEncoderDecoderTool = () => {
@@ -34,40 +37,35 @@ const UrlEncoderDecoderTool = () => {
   };
 
   return (
-    <TextTool text={text} setText={setText}>
-      {/* Actions */}
-      <div className="flex flex-wrap gap-3 mt-3">
-        <button
-          onClick={encodeText}
-          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg cursor-pointer"
-        >
+    <>
+      {/* Input */}
+      <ToolTextarea
+        label="Text"
+        value={text}
+        onChange={setText}
+        placeholder="Type or paste your text here..."
+      />
+
+      {/* Modifier Actions */}
+      <div className="flex flex-wrap gap-2">
+        <Button size="sm" onClick={encodeText}>
           Encode
-        </button>
+        </Button>
 
-        <button
-          onClick={decodeText}
-          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg cursor-pointer"
-        >
+        <Button size="sm" onClick={decodeText}>
           Decode
-        </button>
-
-        <button
-          onClick={handleCopy}
-          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg  cursor-pointer"
-        >
-          Copy
-        </button>
-
-        <button
-          onClick={handleClear}
-          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg  cursor-pointer"
-        >
-          Clear
-        </button>
-
-        {error && <p className="text-red-500 mt-3">{error}</p>}
+        </Button>
       </div>
-    </TextTool>
+
+      {error && <p className="text-red-500 mt-3">{error}</p>}
+
+      {/* Utility Actions */}
+      <ToolActions
+        onClear={handleClear}
+        onCopy={handleCopy}
+        disableCopy={!text}
+      />
+    </>
   );
 };
 

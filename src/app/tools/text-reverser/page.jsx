@@ -11,7 +11,11 @@ export const metadata = {
 
 const Page = () => {
   return (
-    <ToolLayout title={tool?.name} description={tool?.description}>
+    <ToolLayout
+      title={tool?.name}
+      description={tool?.description}
+      type={tool?.type}
+    >
       <TextReverserTool />
     </ToolLayout>
   );

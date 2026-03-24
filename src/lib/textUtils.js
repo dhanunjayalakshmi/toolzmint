@@ -41,3 +41,14 @@ export const duplicateWords = (text) => {
     .map((word) => word + " " + word)
     .join(" ");
 };
+
+export const textToSlug = (text) => {
+  const formattedText = text
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]+/g, "")
+    .replace(/--+/g, "");
+
+  return formattedText;
+};
