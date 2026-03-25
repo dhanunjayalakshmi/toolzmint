@@ -27,7 +27,7 @@
   --ring: 79 70 229;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
     --background: 17 24 39;
     --foreground: 243 244 246;
@@ -46,7 +46,7 @@
     --input: 55 65 81;
     --ring: 99 102 241;
   }
-} */
+}
 
 /* =========================
    BASE
