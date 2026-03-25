@@ -52,3 +52,7 @@ export const textToSlug = (text) => {
 
   return formattedText;
 };
+
+export const removeLineBreaks = (text) => {
+  return text?.replace(/\n+/g, " ");
+};

@@ -117,4 +117,18 @@ export const tools = [
       },
     ],
   },
+  {
+    slug: "line-break-remover",
+    name: "Line Break Remover",
+    type: "transformer",
+    description: "Remove all line breaks from text.",
+    metaTitle: "Line Break Remover - Online Tool",
+    metaDescription: "Remove new lines from text instantly.",
+    examples: [
+      {
+        input: "Hello\nWorld",
+        output: "Hello World",
+      },
+    ],
+  },
 ];
