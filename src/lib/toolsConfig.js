@@ -102,4 +102,19 @@ export const tools = [
     description: "Duplicate words or sentences quickly.",
     type: "transformer",
   },
+  {
+    slug: "text-repeater",
+    name: "Text Repeater",
+    type: "generator",
+    description: "Repeat text multiple times instantly.",
+    metaTitle: "Text Repeater - Repeat Text Online",
+    metaDescription:
+      "Free online text repeater tool. Repeat any text multiple times instantly.",
+    examples: [
+      {
+        input: "Hello (3 times)",
+        output: "Hello Hello Hello",
+      },
+    ],
+  },
 ];

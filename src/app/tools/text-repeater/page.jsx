@@ -1,8 +1,8 @@
 import ToolLayout from "@/app/components/ToolLayout";
 import { tools } from "@/lib/toolsConfig";
-import DuplicateLineRemoverTool from "./DuplicateLineRemoverTool";
+import TextRepeaterTool from "./TextRepeatorTool";
 
-const tool = tools?.find((tool) => tool.slug === "duplicate-line-remover");
+const tool = tools?.find((tool) => tool.slug === "text-repeater");
 
 export const metadata = {
   title: tool?.metaTitle,
@@ -17,7 +17,7 @@ const Page = () => {
       type={tool?.type}
       examples={tool?.examples}
     >
-      <DuplicateLineRemoverTool />
+      <TextRepeaterTool />
     </ToolLayout>
   );
 };

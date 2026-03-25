@@ -1,7 +1,7 @@
 import { tools } from "@/lib/toolsConfig";
 import { Card, CardContent } from "@/components/ui/card";
 
-const ToolLayout = ({ title, description, children }) => {
+const ToolLayout = ({ title, description, examples = [], children }) => {
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-10 space-y-12">
       <div className="space-y-3">
@@ -15,6 +15,29 @@ const ToolLayout = ({ title, description, children }) => {
       <Card className="w-full bg-card shadow-lg border-0 focus:outline-none rounded-2xl">
         <CardContent className="p-6">{children}</CardContent>
       </Card>
+
+      {/* Example Input and Output */}
+      {examples?.length > 0 && (
+        <div className="space-y-4 max-w-2xl">
+          <h2 className="text-lg font-semibold">Examples</h2>
+
+          <div className="space-y-4">
+            {examples?.map((example, index) => (
+              <div key={index} className="bg-muted/50 rounded-xl p-4 space-y-2">
+                <p className="text-sm font-medium">Input</p>
+                <pre className="text-sm text-muted-foreground whitespace-pre-wrap">
+                  {example?.input}
+                </pre>
+
+                <p className="text-sm font-medium mt-2">Output</p>
+                <pre className="text-sm text-muted-foreground whitespace-pre-wrap">
+                  {example?.output}
+                </pre>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* SEO Content */}
       <div className="w-full space-y-4 max-w-2xl">

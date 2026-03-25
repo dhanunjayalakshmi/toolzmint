@@ -15,6 +15,7 @@ const Page = () => {
       title={tool?.name}
       description={tool?.description}
       type={tool?.type}
+      examples={tool?.examples}
     >
       <WordCounterTool />
     </ToolLayout>
