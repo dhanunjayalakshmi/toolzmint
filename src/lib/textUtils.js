@@ -9,6 +9,7 @@ export const generatePassword = ({
   numbers,
   symbols,
   excludeSimilar,
+  seed = 0,
 }) => {
   let chars = "";
 

@@ -19,6 +19,7 @@ const labels = {
 
 const PasswordGeneratorTool = () => {
   const [length, setLength] = useState(12);
+  const [seed, setSeed] = useState(0);
 
   const [copied, setCopied] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -40,6 +41,7 @@ const PasswordGeneratorTool = () => {
   const password = generatePassword({
     length,
     ...options,
+    seed,
   });
 
   const strength = getPasswordStrength(password);
@@ -72,7 +74,16 @@ const PasswordGeneratorTool = () => {
   return (
     <div className="space-y-6">
       {/* Output */}
-      <ToolTextarea value={password} readOnly label="Generated Password" />
+      <div className="flex items-center gap-2">
+        <ToolTextarea value={password} readOnly label="Generated Password" />
+
+        <button
+          onClick={() => setSeed((prev) => prev + 1)}
+          className="px-3 py-2 text-sm bg-muted rounded-lg hover:bg-muted/80"
+        >
+          ↻
+        </button>
+      </div>
 
       {/* Length */}
       <div className="space-y-2">
