@@ -2,6 +2,53 @@ export const removeExtraSpaces = (text) => {
   return text.replace(/\s+/g, " ").trim();
 };
 
+export const generatePassword = ({
+  length,
+  uppercase,
+  lowercase,
+  numbers,
+  symbols,
+  excludeSimilar,
+}) => {
+  let chars = "";
+
+  const lower = "abcdefghijklmnopqrstuvwxyz";
+  const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const nums = "0123456789";
+  const sym = "!@#$%^&*()_+[]{}|;:,.<>?";
+
+  if (lowercase) chars += lower;
+  if (uppercase) chars += upper;
+  if (numbers) chars += nums;
+  if (symbols) chars += sym;
+
+  if (excludeSimilar) {
+    chars = chars.replace(/[lI1O0]/g, "");
+  }
+
+  if (!chars) return "";
+
+  let password = "";
+  for (let i = 0; i < length; i++) {
+    password += chars[Math.floor(Math.random() * chars.length)];
+  }
+
+  return password;
+};
+
+export const getPasswordStrength = (password) => {
+  let score = 0;
+
+  if (password.length >= 8) score++;
+  if (/[A-Z]/.test(password)) score++;
+  if (/[0-9]/.test(password)) score++;
+  if (/[^A-Za-z0-9]/.test(password)) score++;
+
+  if (score <= 1) return { label: "Weak", color: "bg-red-500" };
+  if (score === 2) return { label: "Medium", color: "bg-yellow-500" };
+  return { label: "Strong", color: "bg-green-500" };
+};
+
 export const toUpperCase = (text) => text.toUpperCase();
 
 export const toLowerCase = (text) => text.toLowerCase();

@@ -1,5 +1,20 @@
 export const tools = [
   {
+    slug: "password-generator",
+    name: "Password Generator",
+    type: "generator",
+    description: "Generate secure passwords with customizable options.",
+    metaTitle: "Free Password Generator - Secure Random Passwords",
+    metaDescription:
+      "Generate strong, secure passwords instantly with options for symbols, numbers, and more.",
+    examples: [
+      {
+        input: "Length: 12, Uppercase, Lowercase, Numbers",
+        output: "aB3kL9xQ2mP1",
+      },
+    ],
+  },
+  {
     slug: "word-counter",
     name: "Word Counter",
     description: "Count words, characters, and sentences instantly.",

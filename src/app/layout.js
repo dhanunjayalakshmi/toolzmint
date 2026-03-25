@@ -2,7 +2,6 @@ import Link from "next/link";
 import "./globals.css";
 import Footer from "./components/Footer";
 import { Inter } from "next/font/google";
-import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,19 +18,7 @@ export const metadata = {
 
 const RootLayout = ({ children }) => {
   return (
-    <html lang="en" className={inter?.variable} suppressHydrationWarning>
-      {/* <head>
-        <Script id="theme-script" strategy="beforeInteractive">
-          {`
-            (function() {
-              const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-              if (prefersDark) {
-                document.documentElement.classList.add('dark');
-              }
-            })();
-          `}
-        </Script>
-      </head> */}
+    <html lang="en" className={inter?.variable}>
       <body className="font-sans antialiased bg-background text-foreground">
         <div className="min-h-screen flex flex-col">
           {/* Navbar */}

@@ -22,23 +22,31 @@
   --muted-foreground: 107 114 128;
 
   --radius: 0.75rem;
+
+  --input: 229 231 235; /* light gray */
+  --ring: 79 70 229;
 }
 
-.dark {
-  --background: 17 24 39;
-  --foreground: 243 244 246;
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: 17 24 39;
+    --foreground: 243 244 246;
 
-  --card: 31 41 55;
-  --card-foreground: 243 244 246;
+    --card: 31 41 55;
+    --card-foreground: 243 244 246;
 
-  --border: 55 65 81;
+    --border: 55 65 81;
 
-  --primary: 99 102 241;
-  --primary-foreground: 255 255 255;
+    --primary: 99 102 241;
+    --primary-foreground: 255 255 255;
 
-  --muted: 55 65 81;
-  --muted-foreground: 156 163 175;
-}
+    --muted: 55 65 81;
+    --muted-foreground: 156 163 175;
+
+    --input: 55 65 81;
+    --ring: 99 102 241;
+  }
+} */
 
 /* =========================
    BASE
@@ -48,6 +56,9 @@ body {
   background-color: rgb(var(--background));
   color: rgb(var(--foreground));
   font-family: var(--font-inter);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 /* =========================
@@ -97,5 +108,9 @@ body {
 
   .hover\:text-primary:hover {
     color: rgb(var(--primary));
+  }
+
+  .bg-input {
+    background-color: rgb(var(--input));
   }
 }
