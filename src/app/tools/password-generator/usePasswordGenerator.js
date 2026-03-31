@@ -5,7 +5,7 @@ import {
   generatePassphrase,
   generatePassword,
   getPasswordStrength,
-} from "@/lib/textUtils";
+} from "@/lib/passwordUtils";
 import {
   CHARACTER_OPTION_KEYS,
   DEFAULT_OPTIONS,
