@@ -43,17 +43,13 @@ const RandomStringGeneratorTool = () => {
             type="number"
             value={length}
             onChange={(e) => setLength(e.target.value)}
-            className="
-            border border-border rounded-lg p-3
-            bg-foreground
-            focus:outline-none focus:ring-2 focus:ring-primary/40
-          "
+            className="rounded-3xl bg-muted px-4 py-3 text-foreground shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-primary/30"
           />
 
           <Button
             size="sm"
             onClick={handleGenerate}
-            className="m-auto rounded-lg cursor-pointer shadow-sm active:scale-95 transition"
+            className="m-auto rounded-full cursor-pointer shadow-sm transition-all hover:shadow-md active:scale-95"
           >
             Generate
           </Button>

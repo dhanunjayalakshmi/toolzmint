@@ -7,44 +7,44 @@
 ========================= */
 
 :root {
-  --background: 255 255 255;
-  --foreground: 17 24 39;
+  --background: 246 248 247;
+  --foreground: 20 32 38;
 
   --card: 255 255 255;
-  --card-foreground: 17 24 39;
+  --card-foreground: 20 32 38;
 
-  --border: 229 231 235;
+  --border: 214 224 221;
 
-  --primary: 79 70 229;
+  --primary: 15 139 141;
   --primary-foreground: 255 255 255;
 
-  --muted: 243 244 246;
-  --muted-foreground: 107 114 128;
+  --muted: 232 239 237;
+  --muted-foreground: 95 115 121;
 
   --radius: 0.75rem;
 
-  --input: 229 231 235; /* light gray */
-  --ring: 79 70 229;
+  --input: 220 228 226;
+  --ring: 15 139 141;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: 17 24 39;
-    --foreground: 243 244 246;
+    --background: 15 23 32;
+    --foreground: 234 242 240;
 
-    --card: 31 41 55;
-    --card-foreground: 243 244 246;
+    --card: 22 33 43;
+    --card-foreground: 234 242 240;
 
-    --border: 55 65 81;
+    --border: 43 59 67;
 
-    --primary: 99 102 241;
+    --primary: 44 177 181;
     --primary-foreground: 255 255 255;
 
-    --muted: 55 65 81;
-    --muted-foreground: 156 163 175;
+    --muted: 28 44 53;
+    --muted-foreground: 149 166 171;
 
-    --input: 55 65 81;
-    --ring: 99 102 241;
+    --input: 34 51 59;
+    --ring: 44 177 181;
   }
 }
 
@@ -53,7 +53,9 @@
 ========================= */
 
 body {
-  background-color: rgb(var(--background));
+  background:
+    radial-gradient(circle at top, rgb(var(--muted) / 0.55), transparent 36%),
+    linear-gradient(180deg, rgb(var(--background)), rgb(var(--background)));
   color: rgb(var(--foreground));
   font-family: var(--font-inter);
   transition:

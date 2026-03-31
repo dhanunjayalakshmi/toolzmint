@@ -53,7 +53,7 @@ const Base64EncoderDecoderTool = () => {
         <Button
           size="sm"
           onClick={encodeText}
-          className="rounded-lg cursor-pointer shadow-sm active:scale-95 transition"
+          className="rounded-full cursor-pointer shadow-sm transition-all hover:shadow-md active:scale-95"
         >
           Encode
         </Button>
@@ -61,7 +61,7 @@ const Base64EncoderDecoderTool = () => {
         <Button
           size="sm"
           onClick={decodeText}
-          className="rounded-lg cursor-pointer shadow-sm active:scale-95 transition"
+          className="rounded-full cursor-pointer shadow-sm transition-all hover:shadow-md active:scale-95"
         >
           Decode
         </Button>

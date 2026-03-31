@@ -43,14 +43,14 @@ const TextRepeaterTool = () => {
             type="number"
             value={count}
             onChange={(e) => setCount(e.target.value)}
-            className="w-full p-3 rounded-lg bg-muted"
+            className="w-full rounded-3xl bg-muted px-4 py-3 shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-primary/30"
             placeholder="Repeat count"
           />
 
           <Button
             size="sm"
             onClick={handleGenerate}
-            className="mr-auto rounded-lg cursor-pointer shadow-sm active:scale-95 transition"
+            className="mr-auto rounded-full cursor-pointer shadow-sm transition-all hover:shadow-md active:scale-95"
           >
             Generate
           </Button>

@@ -35,7 +35,7 @@ export default function CaseConverterTool() {
         <Button
           size="sm"
           onClick={() => setText(toUpperCase(text))}
-          className="rounded-lg cursor-pointer shadow-sm active:scale-95 transition"
+          className="rounded-full cursor-pointer shadow-sm transition-all hover:shadow-md active:scale-95"
         >
           UPPERCASE
         </Button>
@@ -43,7 +43,7 @@ export default function CaseConverterTool() {
         <Button
           size="sm"
           onClick={() => setText(toLowerCase(text))}
-          className="rounded-lg cursor-pointer shadow-sm active:scale-95 transition"
+          className="rounded-full cursor-pointer shadow-sm transition-all hover:shadow-md active:scale-95"
         >
           lowercase
         </Button>
@@ -51,7 +51,7 @@ export default function CaseConverterTool() {
         <Button
           size="sm"
           onClick={() => setText(toTitleCase(text))}
-          className="rounded-lg cursor-pointer shadow-sm active:scale-95 transition"
+          className="rounded-full cursor-pointer shadow-sm transition-all hover:shadow-md active:scale-95"
         >
           Title Case
         </Button>

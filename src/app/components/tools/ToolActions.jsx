@@ -10,7 +10,7 @@ const ToolActions = ({ onClear, onCopy, disableCopy, copied }) => {
           variant="outline"
           size="sm"
           onClick={onClear}
-          className="rounded-lg cursor-pointer shadow-sm active:scale-95 transition"
+          className="rounded-full border-0 bg-muted shadow-sm cursor-pointer transition-all hover:bg-muted/80 hover:shadow-md active:scale-95"
         >
           Clear
         </Button>
@@ -19,7 +19,7 @@ const ToolActions = ({ onClear, onCopy, disableCopy, copied }) => {
           size="sm"
           onClick={onCopy}
           disabled={disableCopy}
-          className="rounded-lg shadow-sm cursor-pointer active:scale-95 transition disabled:opacity-50 disabled:cursor-not-allowed"
+          className="rounded-full shadow-sm cursor-pointer transition-all hover:shadow-md active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {copied ? "copied" : "copy"}
         </Button>

@@ -12,8 +12,8 @@ const ToolLayout = ({ title, description, examples = [], children }) => {
         </p>
       </div>
 
-      <Card className="w-full bg-card shadow-lg border-0 focus:outline-none rounded-2xl">
-        <CardContent className="p-6">{children}</CardContent>
+      <Card className="w-full rounded-[2rem] border-0 bg-linear-to-br from-card via-card to-muted/55 shadow-xl shadow-black/8 focus:outline-none">
+        <CardContent className="p-5 sm:p-6">{children}</CardContent>
       </Card>
 
       {/* Example Input and Output */}
@@ -23,7 +23,10 @@ const ToolLayout = ({ title, description, examples = [], children }) => {
 
           <div className="space-y-4">
             {examples?.map((example, index) => (
-              <div key={index} className="bg-muted/50 rounded-xl p-4 space-y-2">
+              <div
+                key={index}
+                className="rounded-2xl bg-muted/40 p-4 space-y-2 shadow-sm"
+              >
                 <p className="text-sm font-medium">Input</p>
                 <pre className="text-sm text-muted-foreground whitespace-pre-wrap">
                   {example?.input}
@@ -69,7 +72,7 @@ const ToolLayout = ({ title, description, examples = [], children }) => {
               <a
                 key={tool?.slug}
                 href={`/tools/${tool?.slug}`}
-                className="p-4 rounded-lg bg-card shadow-sm hover:shadow-md transition"
+                className="rounded-2xl bg-card/90 p-4 shadow-sm transition hover:shadow-md"
               >
                 {tool?.name}
               </a>
