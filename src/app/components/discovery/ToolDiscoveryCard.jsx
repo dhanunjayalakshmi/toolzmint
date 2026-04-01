@@ -4,7 +4,7 @@ const ToolDiscoveryCard = ({ tool, compact = false }) => {
   return (
     <Link
       href={`/tools/${tool.slug}`}
-      className={`group block rounded-3xl bg-muted p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md ${compact ? "space-y-2" : "space-y-3"}`}
+      className={`group block cursor-pointer rounded-3xl bg-card p-4 shadow-sm shadow-black/5 transition-all hover:-translate-y-0.5 hover:shadow-md hover:shadow-black/8 ${compact ? "space-y-2" : "space-y-3"}`}
     >
       <div className="space-y-1">
         <h3

@@ -15,7 +15,7 @@ const MODE_DATE_TO_TIMESTAMP = "date-to-timestamp";
 
 const ResultCard = ({ label, value }) => {
   return (
-    <div className="rounded-3xl bg-background p-4 shadow-sm">
+    <div className="rounded-3xl bg-card p-4 shadow-sm shadow-black/5">
       <p className="text-sm font-medium text-foreground">{label}</p>
       <p className="mt-2 break-all text-sm text-muted-foreground">
         {value || "Value will appear here..."}
