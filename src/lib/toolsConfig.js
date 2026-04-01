@@ -138,6 +138,22 @@ export const tools = [
     ],
   },
   {
+    slug: "unix-timestamp-converter",
+    name: "Unix Timestamp Converter",
+    type: "modifier",
+    description: "Convert Unix timestamps to readable dates and back.",
+    metaTitle: "Unix Timestamp Converter - Convert Time Online",
+    metaDescription:
+      "Free online Unix timestamp converter. Convert timestamps to readable local and UTC dates instantly.",
+    examples: [
+      {
+        input: "1712126400",
+        output:
+          "Local Time: readable date | UTC Time: Wed, 03 Apr 2024 10:00:00 GMT",
+      },
+    ],
+  },
+  {
     slug: "text-to-slug",
     name: "Text to Slug",
     type: "transformer",
