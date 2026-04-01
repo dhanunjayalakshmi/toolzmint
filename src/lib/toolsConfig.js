@@ -121,6 +121,23 @@ export const tools = [
     ],
   },
   {
+    slug: "jwt-decoder",
+    name: "JWT Decoder",
+    type: "modifier",
+    description: "Decode JWT header and payload instantly.",
+    metaTitle: "JWT Decoder - Decode JWT Tokens Online",
+    metaDescription:
+      "Free online JWT decoder tool. Decode JWT header and payload instantly in your browser.",
+    examples: [
+      {
+        input:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+        output:
+          'Header: {"alg":"HS256","typ":"JWT"} | Payload: {"sub":"1234567890","name":"John Doe","admin":true}',
+      },
+    ],
+  },
+  {
     slug: "text-to-slug",
     name: "Text to Slug",
     type: "transformer",

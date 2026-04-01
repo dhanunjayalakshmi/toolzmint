@@ -1,3 +1,4 @@
+import ToolDiscoveryCard from "@/app/components/discovery/ToolDiscoveryCard";
 import { tools } from "@/lib/toolsConfig";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -69,13 +70,7 @@ const ToolLayout = ({ title, description, examples = [], children }) => {
             ?.filter((t) => t.name !== title)
             ?.slice(0, 6)
             ?.map((tool) => (
-              <a
-                key={tool?.slug}
-                href={`/tools/${tool?.slug}`}
-                className="rounded-2xl bg-card/90 p-4 shadow-sm transition hover:shadow-md"
-              >
-                {tool?.name}
-              </a>
+              <ToolDiscoveryCard key={tool?.slug} tool={tool} compact />
             ))}
         </div>
       </div>
