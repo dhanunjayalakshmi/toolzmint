@@ -2,7 +2,22 @@ import ToolDiscoveryCard from "@/app/components/discovery/ToolDiscoveryCard";
 import { tools } from "@/lib/toolsConfig";
 import { Card, CardContent } from "@/components/ui/card";
 
-const ToolLayout = ({ title, description, examples = [], children }) => {
+const DEFAULT_STEPS = [
+  "Enter your input.",
+  "View the result instantly.",
+  "Copy the output if needed.",
+];
+
+const ToolLayout = ({
+  title,
+  description,
+  examples = [],
+  children,
+  aboutText,
+  howToSteps = DEFAULT_STEPS,
+  seoSections = [],
+  faqItems = [],
+}) => {
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-12 space-y-14">
       <div className="space-y-4">
@@ -47,8 +62,8 @@ const ToolLayout = ({ title, description, examples = [], children }) => {
           <h2 className="text-xl font-semibold tracking-tight">About this tool</h2>
 
           <p className="max-w-3xl text-muted-foreground">
-            {description}. This tool helps you process input instantly in your
-            browser without installing any software.
+            {aboutText ||
+              `${description}. This tool helps you process input instantly in your browser without installing any software.`}
           </p>
         </div>
 
@@ -56,21 +71,57 @@ const ToolLayout = ({ title, description, examples = [], children }) => {
           <h2 className="text-xl font-semibold tracking-tight">How to use</h2>
 
           <ul className="space-y-3 text-muted-foreground">
-            <li className="flex items-start gap-3">
-              <span className="mt-2 inline-block size-2.5 shrink-0 rounded-full bg-primary/70" />
-              <span>Enter your input.</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="mt-2 inline-block size-2.5 shrink-0 rounded-full bg-primary/70" />
-              <span>View the result instantly.</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="mt-2 inline-block size-2.5 shrink-0 rounded-full bg-primary/70" />
-              <span>Copy the output if needed.</span>
-            </li>
+            {howToSteps.map((step) => (
+              <li key={step} className="flex items-start gap-3">
+                <span className="mt-2 inline-block size-2.5 shrink-0 rounded-full bg-primary/70" />
+                <span>{step}</span>
+              </li>
+            ))}
           </ul>
         </div>
       </section>
+
+      {seoSections.length > 0 && (
+        <section className="space-y-6">
+          {seoSections.map((section) => (
+            <div key={section.title} className="space-y-2">
+              <h2 className="text-xl font-semibold tracking-tight">
+                {section.title}
+              </h2>
+              {section.paragraphs?.map((paragraph) => (
+                <p
+                  key={paragraph}
+                  className="max-w-3xl text-muted-foreground leading-relaxed"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          ))}
+        </section>
+      )}
+
+      {faqItems.length > 0 && (
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold tracking-tight">FAQ</h2>
+
+          <div className="space-y-4">
+            {faqItems.map((item) => (
+              <div
+                key={item.question}
+                className="rounded-3xl bg-card p-5 shadow-sm shadow-black/5"
+              >
+                <h3 className="text-base font-semibold tracking-tight">
+                  {item.question}
+                </h3>
+                <p className="mt-2 max-w-3xl text-muted-foreground leading-relaxed">
+                  {item.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="space-y-4">
         <h2 className="text-xl font-semibold tracking-tight">Related Tools</h2>

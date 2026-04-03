@@ -12,6 +12,49 @@ export const tools = [
         input: "Length: 12, Uppercase, Lowercase, Numbers",
         output: "aB3kL9xQ2mP1",
       },
+      {
+        input: "Length: 16, Symbols, Numbers, Exclude Similar",
+        output: "fK7!mR2@qT9#xL4%",
+      },
+    ],
+    aboutText:
+      "Use this password generator to create strong random passwords or memorable passphrases right in your browser. It is useful for account signups, password resets, and replacing reused passwords with something safer.",
+    howToSteps: [
+      "Choose password or passphrase mode.",
+      "Adjust the length and the options you want to include.",
+      "Generate, review the strength, and copy the result.",
+    ],
+    seoSections: [
+      {
+        title: "Why use a password generator",
+        paragraphs: [
+          "A password generator helps you create stronger passwords than most people make manually. Random passwords are harder to guess and reduce the risk of using predictable patterns across multiple accounts.",
+          "This tool lets you generate secure passwords with uppercase letters, lowercase letters, numbers, symbols, and options that make the result easier to use when a site has specific password rules.",
+        ],
+      },
+      {
+        title: "Password or passphrase",
+        paragraphs: [
+          "If you want maximum randomness, use password mode. If you want something easier to remember, use passphrase mode. Both options are useful depending on the account and the level of security you need.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "Is this password generator secure?",
+        answer:
+          "It generates passwords locally in your browser, which means your generated password does not need to be sent anywhere just to be created.",
+      },
+      {
+        question: "What makes a strong password?",
+        answer:
+          "A strong password is usually long, random, and difficult to predict. Mixing character types and avoiding reused passwords improves security further.",
+      },
+      {
+        question: "Should I use a password or a passphrase?",
+        answer:
+          "Use a password when you want dense randomness and a passphrase when you want something easier to remember. The better choice depends on the site requirements and your workflow.",
+      },
     ],
   },
   {
@@ -26,6 +69,49 @@ export const tools = [
       {
         input: "Hello world. This is Toolzmint!",
         output: "Words: 5, Characters: 31, Sentences: 2",
+      },
+      {
+        input: "One short paragraph with two sentences. It reads clearly.",
+        output: "Words: 9, Characters: 57, Sentences: 2",
+      },
+    ],
+    aboutText:
+      "Use this word counter to count words, characters, and sentences instantly while you write or edit. It is useful for essays, blog posts, social captions, assignments, and any writing that needs a quick length check.",
+    howToSteps: [
+      "Paste or type your text into the input area.",
+      "Review the live word, character, and sentence counts.",
+      "Edit your text until it matches your target length.",
+    ],
+    seoSections: [
+      {
+        title: "What a word counter helps with",
+        paragraphs: [
+          "A word counter helps you measure the length of your writing instantly. It is useful for checking essay limits, article length, social media copy, and writing tasks with minimum or maximum word requirements.",
+          "This online word counter also tracks characters and sentences, which makes it easier to refine text for readability, SEO, or platform-specific limits.",
+        ],
+      },
+      {
+        title: "When to use a character and sentence count",
+        paragraphs: [
+          "Character counts are useful for titles, meta descriptions, and short-form writing. Sentence counts help when you want to keep writing concise or compare drafts more clearly.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "Does this word counter count characters too?",
+        answer:
+          "Yes. It counts words, characters, and sentences so you can check multiple writing limits in one place.",
+      },
+      {
+        question: "Can I use this for essays and blog posts?",
+        answer:
+          "Yes. It works well for essays, assignments, articles, captions, and other writing where length matters.",
+      },
+      {
+        question: "Is the count updated live?",
+        answer:
+          "Yes. The counts update as you type or paste text, so you can adjust your writing immediately.",
       },
     ],
   },
@@ -262,13 +348,62 @@ export const tools = [
     slug: "line-break-remover",
     name: "Line Break Remover",
     type: "transformer",
-    description: "Remove all line breaks from text.",
-    metaTitle: "Line Break Remover - Online Tool",
-    metaDescription: "Remove new lines from text instantly.",
+    description:
+      "Remove line breaks, paragraph breaks, and extra new lines from text instantly.",
+    metaTitle: "Line Break Remover Online - Remove Line Breaks from Text",
+    metaDescription:
+      "Free online line break remover. Remove line breaks, paragraph breaks, and extra new lines from text instantly.",
     examples: [
       {
         input: "Hello\nWorld",
         output: "Hello World",
+      },
+      {
+        input: "First line\nSecond line\nThird line",
+        output: "First line Second line Third line",
+      },
+      {
+        input: "Paragraph one.\n\nParagraph two.",
+        output: "Paragraph one. Paragraph two.",
+      },
+    ],
+    aboutText:
+      "Use this line break remover to turn multi-line text into a clean single line. It is useful when you need to remove paragraph breaks, pasted email formatting, or extra new lines before sending text to forms, spreadsheets, or code fields.",
+    howToSteps: [
+      "Paste or type the text that contains line breaks.",
+      "Review the cleaned single-line output instantly.",
+      "Copy the result and use it wherever you need plain text.",
+    ],
+    seoSections: [
+      {
+        title: "When to use a line break remover",
+        paragraphs: [
+          "A line break remover is helpful when copied text contains unwanted new lines from PDFs, emails, websites, or documents. Instead of manually deleting each break, you can clean the text in one step.",
+          "This is especially useful for converting multi-line text into a single line for spreadsheets, CMS fields, database entries, prompts, or form inputs that should not contain paragraph breaks.",
+        ],
+      },
+      {
+        title: "What this tool removes",
+        paragraphs: [
+          "This tool removes line breaks and paragraph breaks while keeping the text readable. It is a simple way to strip new lines from text without installing any software.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "What does a line break remover do?",
+        answer:
+          "It removes new lines and paragraph breaks from text so multiple lines can be turned into a cleaner single line.",
+      },
+      {
+        question: "Does this tool remove paragraph breaks too?",
+        answer:
+          "Yes. It removes both regular line breaks and empty-line paragraph breaks from pasted text.",
+      },
+      {
+        question: "How is this different from removing extra spaces?",
+        answer:
+          "Removing extra spaces cleans repeated spaces, while a line break remover specifically removes new lines and paragraph breaks between lines of text.",
       },
     ],
   },
