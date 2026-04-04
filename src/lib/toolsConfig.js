@@ -253,6 +253,49 @@ export const tools = [
         input: "Hello",
         output: "SGVsbG8=",
       },
+      {
+        input: "SGVsbG8gV29ybGQh",
+        output: "Hello World!",
+      },
+    ],
+    aboutText:
+      "Use this Base64 encoder and decoder to convert text into Base64 or decode Base64 back into readable text. It is useful for working with APIs, tokens, encoded payloads, and technical data that is shared in Base64 format.",
+    howToSteps: [
+      "Choose whether you want to encode text or decode Base64.",
+      "Paste your input into the active text area.",
+      "Review the output and copy the result when it is ready.",
+    ],
+    seoSections: [
+      {
+        title: "What Base64 encoding is used for",
+        paragraphs: [
+          "Base64 encoding is commonly used to represent text or binary data in a plain-text format that is easier to transmit through systems that expect text. You will often see it in APIs, tokens, embedded assets, and encoded payloads.",
+          "This tool helps you encode text to Base64 and decode Base64 back into readable text directly in your browser.",
+        ],
+      },
+      {
+        title: "Encode or decode Base64",
+        paragraphs: [
+          "Use encode mode when you want to convert normal text into Base64. Use decode mode when you already have a Base64 string and want to turn it back into readable text.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "Does this tool support decoding Base64 back into text?",
+        answer:
+          "Yes. You can switch to decode mode and convert a Base64 string back into readable text instantly.",
+      },
+      {
+        question: "What is Base64 used for?",
+        answer:
+          "Base64 is used to safely represent data as text for transport, embedding, or storage in places where raw binary data would be awkward or unsupported.",
+      },
+      {
+        question: "Can I paste Base64 with spaces or line breaks?",
+        answer:
+          "Yes. The decoder ignores whitespace so you can paste Base64 that contains spacing or line breaks.",
+      },
     ],
   },
   {
