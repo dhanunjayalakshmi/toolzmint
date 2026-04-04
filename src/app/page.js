@@ -1,11 +1,9 @@
 import Link from "next/link";
-import ToolDiscoveryCard from "@/app/components/discovery/ToolDiscoveryCard";
-import ToolGroupSection from "@/app/components/discovery/ToolGroupSection";
+import HomeToolSearchSection from "@/app/components/discovery/HomeToolSearchSection";
 import { tools } from "@/lib/toolsConfig";
-import { getFeaturedTools, getToolGroups } from "@/lib/toolDiscovery";
+import { getToolGroups } from "@/lib/toolDiscovery";
 
 const Home = () => {
-  const featuredTools = getFeaturedTools(tools);
   const toolGroups = getToolGroups(tools, 3);
   const totalTools = tools.length;
 
@@ -55,45 +53,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="space-y-4">
-        <div className="space-y-1">
-          <h2 className="text-2xl font-semibold tracking-tight">
-            Start with the essentials
-          </h2>
-          <p className="text-sm text-muted-foreground">
-            A curated set of tools people tend to use first.
-          </p>
-        </div>
-
-        <div className="grid gap-4 md:grid-cols-2">
-          {featuredTools.map((tool) => (
-            <ToolDiscoveryCard key={tool.slug} tool={tool} />
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-6">
-        <div className="space-y-1">
-          <h2 className="text-2xl font-semibold tracking-tight">
-            Browse by what you need to do
-          </h2>
-          <p className="text-sm text-muted-foreground">
-            Explore categories instead of scrolling through one long flat list.
-          </p>
-        </div>
-
-        <div className="grid gap-8 lg:grid-cols-2">
-          {toolGroups.map((group) => (
-            <ToolGroupSection
-              key={group.type}
-              title={group.label}
-              description={group.description}
-              tools={group.tools}
-              compact
-            />
-          ))}
-        </div>
-      </section>
+      <HomeToolSearchSection tools={tools} />
 
       <section className="space-y-4 text-foreground">
         <h2 className="text-xl font-semibold">What is Toolzmint?</h2>

@@ -32,8 +32,6 @@ export const FEATURED_TOOL_SLUGS = [
 ];
 
 export const getFeaturedTools = (tools) => {
-  const featuredSet = new Set(FEATURED_TOOL_SLUGS);
-
   return FEATURED_TOOL_SLUGS.map((slug) =>
     tools.find((tool) => tool.slug === slug),
   ).filter(Boolean);
@@ -54,4 +52,28 @@ export const getToolGroups = (tools, perGroupLimit) => {
       tools: visibleTools,
     };
   }).filter((group) => group.count > 0);
+};
+
+export const searchTools = (tools, query) => {
+  const normalizedQuery = query.trim().toLowerCase();
+
+  if (!normalizedQuery) {
+    return tools;
+  }
+
+  return tools.filter((tool) => {
+    const haystack = [
+      tool.name,
+      tool.slug,
+      tool.description,
+      tool.metaTitle,
+      tool.metaDescription,
+      tool.type,
+    ]
+      .filter(Boolean)
+      .join(" ")
+      .toLowerCase();
+
+    return haystack.includes(normalizedQuery);
+  });
 };
