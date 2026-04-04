@@ -143,6 +143,55 @@ export const tools = [
         input: '{"name":"Toolzmint","type":"tool"}',
         output: '{\n  "name": "Toolzmint",\n  "type": "tool"\n}',
       },
+      {
+        input: '{"user":{"id":1,"name":"Dhanunjaya"},"active":true}',
+        output:
+          '{\n  "user": {\n    "id": 1,\n    "name": "Dhanunjaya"\n  },\n  "active": true\n}',
+      },
+      {
+        input:
+          '{\n  "name": "Toolzmint",\n  "type": "tool",\n  "active": true\n}',
+        output: '{"name":"Toolzmint","type":"tool","active":true}',
+      },
+    ],
+    aboutText:
+      "Use this JSON formatter to beautify, validate, and minify JSON directly in your browser. It helps when you need readable API responses, cleaner configuration files, or compact JSON for transport and storage.",
+    howToSteps: [
+      "Paste your JSON into the input box.",
+      "Choose whether you want to format or minify it.",
+      "Review the output and copy the result when it looks right.",
+    ],
+    seoSections: [
+      {
+        title: "What a JSON formatter helps with",
+        paragraphs: [
+          "A JSON formatter makes raw JSON easier to read by adding indentation and line breaks. This is useful when you are inspecting API responses, editing configuration files, or debugging structured data.",
+          "This tool also validates JSON while you paste it, so you can quickly tell whether the structure is correct before using it elsewhere.",
+        ],
+      },
+      {
+        title: "Format or minify JSON",
+        paragraphs: [
+          "Use formatted JSON when you want readability and easier debugging. Use minified JSON when you want a compact version with less whitespace for copying, sharing, or transport.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "Does this tool validate JSON too?",
+        answer:
+          "Yes. It attempts to parse the JSON and shows whether the input is valid before displaying formatted or minified output.",
+      },
+      {
+        question: "What is the difference between formatting and minifying JSON?",
+        answer:
+          "Formatting adds whitespace and indentation to improve readability, while minifying removes unnecessary whitespace to make the JSON smaller and more compact.",
+      },
+      {
+        question: "Can I use this for API responses?",
+        answer:
+          "Yes. It is useful for beautifying JSON from APIs, logs, configuration files, or any other source that returns structured JSON data.",
+      },
     ],
   },
   {
