@@ -238,6 +238,49 @@ export const tools = [
         input: "https://toolzmint.com/tools?name=hello world",
         output: "https%3A%2F%2Ftoolzmint.com%2Ftools%3Fname%3Dhello%20world",
       },
+      {
+        input: "hello%20world%20from%20Toolzmint",
+        output: "hello world from Toolzmint",
+      },
+    ],
+    aboutText:
+      "Use this URL encoder and decoder to convert text into URL-safe encoded values or decode encoded URLs back into readable text. It is helpful when you work with query parameters, API requests, redirects, or pasted encoded links.",
+    howToSteps: [
+      "Choose whether you want to encode or decode a URL value.",
+      "Paste your input into the active field.",
+      "Review the result and copy the converted output.",
+    ],
+    seoSections: [
+      {
+        title: "What URL encoding is used for",
+        paragraphs: [
+          "URL encoding converts special characters, spaces, and symbols into a safe format that can be used inside URLs and query strings. This helps browsers and servers interpret the data correctly.",
+          "This tool makes it easy to encode URLs for sharing or API use and decode encoded URLs back into readable text when you need to inspect or edit them.",
+        ],
+      },
+      {
+        title: "When to encode or decode a URL",
+        paragraphs: [
+          "Use encoding when you need to safely include text in a URL or query parameter. Use decoding when you receive encoded text and want to read or debug the original value.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "What does URL encoding do?",
+        answer:
+          "It replaces spaces and special characters with URL-safe encoded values so the text can be used reliably in a URL or query string.",
+      },
+      {
+        question: "Can I decode an encoded URL back into readable text?",
+        answer:
+          "Yes. Switch to decode mode and the tool will convert URL-encoded text back into readable characters and spaces.",
+      },
+      {
+        question: "When should I use a URL encoder?",
+        answer:
+          "Use it when you need to place text inside URLs, query parameters, or redirect links without breaking the URL structure.",
+      },
     ],
   },
   {
