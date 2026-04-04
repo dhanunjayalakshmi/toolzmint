@@ -28,7 +28,7 @@ const CharacterCounterTool = () => {
       <ToolTextarea
         value={text}
         onChange={setText}
-        placeholder="Enter text..."
+        placeholder="Paste or type your text here..."
       />
 
       {/* Actions */}
@@ -41,12 +41,11 @@ const CharacterCounterTool = () => {
 
       {/* Info */}
       <p className="text-sm text-muted-foreground">
-        Words are counted based on spaces. Sentences are detected using
-        punctuation.
+        Count total characters with and without spaces while you type.
       </p>
 
       {/* Stats */}
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <ToolStatsCard label="Characters (with spaces)" value={characters} />
         <ToolStatsCard
           label="Characters (no spaces)"

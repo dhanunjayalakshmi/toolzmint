@@ -11,9 +11,15 @@ const WordCounterTool = () => {
 
   const words = text.trim() ? text.trim().split(/\s+/).length : 0;
   const characters = text.length;
+  const charactersNoSpaces = text.replace(/\s/g, "").length;
   const sentences = text.trim()
     ? text.split(/[.!?]+/).filter(Boolean).length
     : 0;
+  const paragraphs = text.trim()
+    ? text.split(/\n\s*\n/).filter((paragraph) => paragraph.trim()).length
+    : 0;
+  const readingTimeMinutes =
+    words === 0 ? "0 min" : words < 200 ? "< 1 min" : `${Math.ceil(words / 200)} min`;
 
   const handleClear = () => setText("");
 
@@ -31,7 +37,7 @@ const WordCounterTool = () => {
       <ToolTextarea
         value={text}
         onChange={setText}
-        placeholder="Enter text..."
+        placeholder="Paste your essay, article, message, or caption here..."
       />
 
       {/* Actions */}
@@ -44,15 +50,21 @@ const WordCounterTool = () => {
 
       {/* Info */}
       <p className="text-sm text-muted-foreground">
-        Words are counted based on spaces. Sentences are detected using
-        punctuation.
+        See live counts for words, characters, sentences, paragraphs, and
+        estimated reading time as you type.
       </p>
 
       {/* Stats */}
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-5">
         <ToolStatsCard label="Words" value={words} />
         <ToolStatsCard label="Characters" value={characters} />
+        <ToolStatsCard
+          label="Characters (No Spaces)"
+          value={charactersNoSpaces}
+        />
         <ToolStatsCard label="Sentences" value={sentences} />
+        <ToolStatsCard label="Paragraphs" value={paragraphs} />
+        <ToolStatsCard label="Reading Time" value={readingTimeMinutes} />
       </div>
     </div>
   );
