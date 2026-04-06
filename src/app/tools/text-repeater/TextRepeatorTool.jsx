@@ -25,6 +25,7 @@ const TextRepeaterTool = () => {
   };
 
   const handleClear = () => {
+    setInput("");
     setOutput("");
     setCount(1);
   };
@@ -37,8 +38,11 @@ const TextRepeaterTool = () => {
             label="Input"
             value={input}
             onChange={setInput}
-            placeholder="Type or paste your text here..."
+            placeholder="Type or paste the text you want to repeat..."
           />
+          <p className="text-sm text-muted-foreground">
+            Repeat the same text multiple times with spaces between each entry.
+          </p>
           <input
             type="number"
             value={count}

@@ -27,8 +27,12 @@ export default function CaseConverterTool() {
         label="Text"
         value={text}
         onChange={setText}
-        placeholder="Type or paste your text here..."
+        placeholder="Type or paste text you want to convert..."
       />
+
+      <p className="text-sm text-muted-foreground">
+        Convert your text to uppercase, lowercase, or title case instantly.
+      </p>
 
       {/* Modifier Actions */}
       <div className="flex flex-wrap gap-2">
