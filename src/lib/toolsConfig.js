@@ -225,6 +225,55 @@ export const tools = [
         input: "Hello    world   from   Toolzmint",
         output: "Hello world from Toolzmint",
       },
+      {
+        input: "Too     many      spaces     here",
+        output: "Too many spaces here",
+      },
+    ],
+    aboutText:
+      "Use this tool to remove extra spaces from text and clean up uneven spacing instantly. It is useful when text is copied from websites, PDFs, emails, or documents and you want a cleaner result before sharing or editing it.",
+    howToSteps: [
+      "Paste the text that contains extra spaces.",
+      "Review the cleaned output instantly.",
+      "Copy the normalized text and use it where you need it.",
+    ],
+    seoSections: [
+      {
+        title: "When to remove extra spaces from text",
+        paragraphs: [
+          "Extra spaces often appear when text is copied from PDFs, web pages, emails, or formatted documents. Cleaning them up makes the text easier to read and reuse.",
+          "This tool removes repeated spaces and trims the final result so your text looks cleaner in forms, articles, spreadsheets, and plain-text editors.",
+        ],
+      },
+      {
+        title: "What this text cleaner does",
+        paragraphs: [
+          "This text cleaner collapses multiple spaces into a single space and removes unnecessary leading or trailing spaces from the result.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "What does remove extra spaces do?",
+        answer:
+          "It replaces repeated spaces with a single space and trims unnecessary space from the beginning and end of the text.",
+      },
+      {
+        question: "Is this useful for copied text from PDFs or websites?",
+        answer:
+          "Yes. It is especially helpful when pasted text contains uneven spacing from PDFs, websites, emails, or rich-text documents.",
+      },
+      {
+        question: "Does it change the words in my text?",
+        answer:
+          "No. It only normalizes spacing and leaves the actual words unchanged.",
+      },
+    ],
+    relatedToolSlugs: [
+      "line-break-remover",
+      "word-counter",
+      "duplicate-line-remover",
+      "text-to-slug",
     ],
   },
   {
@@ -417,6 +466,55 @@ export const tools = [
         input: "Hello World From Toolzmint",
         output: "hello-world-from-toolzmint",
       },
+      {
+        input: "My First Blog Post 2026!",
+        output: "my-first-blog-post-2026",
+      },
+    ],
+    aboutText:
+      "Use this text to slug converter to turn titles or phrases into clean URL slugs. It is useful for blog posts, product pages, CMS entries, and SEO-friendly links.",
+    howToSteps: [
+      "Type or paste a title, heading, or phrase.",
+      "Review the generated slug instantly.",
+      "Copy the slug for your URL, article, or content system.",
+    ],
+    seoSections: [
+      {
+        title: "What a slug is",
+        paragraphs: [
+          "A slug is the readable part of a URL that identifies a page, post, or resource. Clean slugs are easier to read and work better for organization and SEO.",
+          "This tool converts text into a lowercase, hyphenated slug that removes unnecessary special characters automatically.",
+        ],
+      },
+      {
+        title: "When to use a text to slug converter",
+        paragraphs: [
+          "Use it when you are creating blog posts, landing pages, product URLs, or CMS entries and want a clean SEO-friendly path instead of a messy title string.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "What is a URL slug?",
+        answer:
+          "A URL slug is the part of a web address that identifies a page in a readable way, usually made from words separated by hyphens.",
+      },
+      {
+        question: "Does this tool remove special characters?",
+        answer:
+          "Yes. It lowercases the text, replaces spaces with hyphens, and removes special characters that do not belong in a clean slug.",
+      },
+      {
+        question: "Can I use this for blog post URLs?",
+        answer:
+          "Yes. It is useful for blog posts, product pages, category pages, and other SEO-friendly URLs.",
+      },
+    ],
+    relatedToolSlugs: [
+      "remove-extra-spaces",
+      "case-converter",
+      "word-counter",
+      "line-break-remover",
     ],
   },
   {
@@ -447,6 +545,49 @@ export const tools = [
         input: "apple\nbanana\napple",
         output: "apple\nbanana",
       },
+      {
+        input: "cat\ndog\ncat\nbird\ndog",
+        output: "cat\ndog\nbird",
+      },
+    ],
+    aboutText:
+      "Use this duplicate line remover to clean repeated lines from text instantly. It is useful for lists, exported data, copied logs, and text files that contain duplicate entries.",
+    howToSteps: [
+      "Paste the list or lines of text that contain duplicates.",
+      "Review the cleaned output with only unique lines.",
+      "Copy the result and reuse it where needed.",
+    ],
+    seoSections: [
+      {
+        title: "When to remove duplicate lines",
+        paragraphs: [
+          "Duplicate lines are common in copied lists, logs, exported data, email entries, and manually built text files. Removing duplicates helps you clean and organize text faster.",
+          "This tool keeps the first occurrence of each line and removes repeated lines from the output automatically.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "What does duplicate line remover do?",
+        answer:
+          "It removes repeated lines from your text and keeps only the first occurrence of each unique line.",
+      },
+      {
+        question: "Can I use this for lists and exported data?",
+        answer:
+          "Yes. It works well for lists, logs, copied entries, and exported text where duplicate lines need to be cleaned quickly.",
+      },
+      {
+        question: "Does it keep the line order?",
+        answer:
+          "Yes. It keeps the first appearance of each line and preserves the original order of unique entries.",
+      },
+    ],
+    relatedToolSlugs: [
+      "line-sorter",
+      "remove-extra-spaces",
+      "line-break-remover",
+      "word-counter",
     ],
   },
   {
