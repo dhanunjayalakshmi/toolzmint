@@ -41,10 +41,13 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="rounded-[2rem] bg-muted/70 p-5 shadow-sm">
+        <div className="home-stats-shell rounded-[2rem] bg-muted/70 p-5 shadow-sm">
           <div className="grid grid-cols-2 gap-3">
             {toolGroups.map((group) => (
-              <div key={group.type} className="rounded-3xl bg-background/70 p-4 shadow-sm">
+              <div
+                key={group.type}
+                className="home-stats-card rounded-3xl bg-background/70 p-4 shadow-sm"
+              >
                 <p className="text-2xl font-semibold">{group.count}</p>
                 <p className="text-sm text-muted-foreground">{group.label}</p>
               </div>

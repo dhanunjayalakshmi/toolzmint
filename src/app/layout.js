@@ -40,17 +40,17 @@ const RootLayout = ({ children }) => {
                 </div>
               </Link>
 
-              <nav className="flex items-center gap-2 rounded-full bg-muted/75 p-1.5 shadow-sm">
+              <nav className="app-shell-nav flex items-center gap-2 rounded-full bg-muted/75 p-1.5 shadow-sm">
                 <Link
                   href="/"
-                  className="rounded-full px-4 py-2 text-sm text-foreground transition-all hover:-translate-y-0.5 hover:bg-card hover:text-primary hover:shadow-sm"
+                  className="app-shell-link rounded-full px-4 py-2 text-sm text-foreground transition-all hover:-translate-y-0.5 hover:bg-card hover:text-primary hover:shadow-sm"
                 >
                   Home
                 </Link>
 
                 <Link
                   href="/tools"
-                  className="rounded-full px-4 py-2 text-sm text-foreground transition-all hover:-translate-y-0.5 hover:bg-card hover:text-primary hover:shadow-sm"
+                  className="app-shell-link rounded-full px-4 py-2 text-sm text-foreground transition-all hover:-translate-y-0.5 hover:bg-card hover:text-primary hover:shadow-sm"
                 >
                   Tools
                 </Link>

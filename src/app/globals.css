@@ -32,19 +32,43 @@
     --background: 15 23 32;
     --foreground: 234 242 240;
 
-    --card: 22 33 43;
+    --card: 31 45 56;
     --card-foreground: 234 242 240;
 
-    --border: 43 59 67;
+    --border: 63 82 92;
 
     --primary: 44 177 181;
     --primary-foreground: 255 255 255;
 
-    --muted: 28 44 53;
+    --muted: 24 36 45;
     --muted-foreground: 149 166 171;
 
-    --input: 34 51 59;
+    --input: 35 50 61;
     --ring: 44 177 181;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at top, rgb(var(--muted) / 0.38), transparent 34%),
+      linear-gradient(180deg, rgb(var(--background)), rgb(var(--background)));
+  }
+
+  .app-shell-nav,
+  .app-footer-shell,
+  .home-stats-shell,
+  .tool-search-shell {
+    box-shadow:
+      0 10px 30px rgb(0 0 0 / 0.24),
+      inset 0 1px 0 rgb(255 255 255 / 0.03);
+  }
+
+  .app-shell-link:hover,
+  .app-footer-link:hover,
+  .home-stats-card,
+  .tool-search-input {
+    box-shadow:
+      0 8px 22px rgb(0 0 0 / 0.22),
+      inset 0 1px 0 rgb(255 255 255 / 0.03);
   }
 }
 
