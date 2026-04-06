@@ -56,6 +56,12 @@ export const tools = [
           "Use a password when you want dense randomness and a passphrase when you want something easier to remember. The better choice depends on the site requirements and your workflow.",
       },
     ],
+    relatedToolSlugs: [
+      "random-string-generator",
+      "word-counter",
+      "base64-encoder-decoder",
+      "jwt-decoder",
+    ],
   },
   {
     slug: "word-counter",
@@ -113,6 +119,12 @@ export const tools = [
         answer:
           "Yes. The counts update as you type or paste text, so you can adjust your writing immediately.",
       },
+    ],
+    relatedToolSlugs: [
+      "character-counter",
+      "line-break-remover",
+      "remove-extra-spaces",
+      "text-reverser",
     ],
   },
   {
@@ -192,6 +204,12 @@ export const tools = [
         answer:
           "Yes. It is useful for beautifying JSON from APIs, logs, configuration files, or any other source that returns structured JSON data.",
       },
+    ],
+    relatedToolSlugs: [
+      "base64-encoder-decoder",
+      "jwt-decoder",
+      "url-encoder-decoder",
+      "unix-timestamp-converter",
     ],
   },
   {
@@ -282,6 +300,12 @@ export const tools = [
           "Use it when you need to place text inside URLs, query parameters, or redirect links without breaking the URL structure.",
       },
     ],
+    relatedToolSlugs: [
+      "base64-encoder-decoder",
+      "json-formatter",
+      "jwt-decoder",
+      "unix-timestamp-converter",
+    ],
   },
   {
     slug: "base64-encoder-decoder",
@@ -339,6 +363,12 @@ export const tools = [
         answer:
           "Yes. The decoder ignores whitespace so you can paste Base64 that contains spacing or line breaks.",
       },
+    ],
+    relatedToolSlugs: [
+      "url-encoder-decoder",
+      "jwt-decoder",
+      "json-formatter",
+      "unix-timestamp-converter",
     ],
   },
   {
@@ -540,6 +570,12 @@ export const tools = [
         answer:
           "Removing extra spaces cleans repeated spaces, while a line break remover specifically removes new lines and paragraph breaks between lines of text.",
       },
+    ],
+    relatedToolSlugs: [
+      "remove-extra-spaces",
+      "word-counter",
+      "duplicate-line-remover",
+      "line-sorter",
     ],
   },
 ];

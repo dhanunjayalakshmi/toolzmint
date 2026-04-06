@@ -1,4 +1,5 @@
 import ToolDiscoveryCard from "@/app/components/discovery/ToolDiscoveryCard";
+import { getRelatedTools } from "@/lib/toolDiscovery";
 import { tools } from "@/lib/toolsConfig";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -10,6 +11,7 @@ const DEFAULT_STEPS = [
 
 const ToolLayout = ({
   title,
+  type,
   description,
   examples = [],
   children,
@@ -17,7 +19,16 @@ const ToolLayout = ({
   howToSteps = DEFAULT_STEPS,
   seoSections = [],
   faqItems = [],
+  relatedToolSlugs = [],
 }) => {
+  const relatedTools = getRelatedTools({
+    tools,
+    currentTitle: title,
+    currentType: type,
+    relatedToolSlugs,
+    limit: 6,
+  });
+
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-12 space-y-14">
       <div className="space-y-4">
@@ -127,12 +138,9 @@ const ToolLayout = ({
         <h2 className="text-xl font-semibold tracking-tight">Related Tools</h2>
 
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {tools
-            ?.filter((t) => t.name !== title)
-            ?.slice(0, 6)
-            ?.map((tool) => (
-              <ToolDiscoveryCard key={tool?.slug} tool={tool} compact />
-            ))}
+          {relatedTools.map((tool) => (
+            <ToolDiscoveryCard key={tool?.slug} tool={tool} compact />
+          ))}
         </div>
       </section>
     </div>

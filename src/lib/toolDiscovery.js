@@ -25,10 +25,11 @@ export const TOOL_TYPE_PRESENTATION = {
 };
 
 export const FEATURED_TOOL_SLUGS = [
+  "line-break-remover",
   "password-generator",
   "word-counter",
   "json-formatter",
-  "text-repeater",
+  "base64-encoder-decoder",
 ];
 
 export const getFeaturedTools = (tools) => {
@@ -76,4 +77,34 @@ export const searchTools = (tools, query) => {
 
     return haystack.includes(normalizedQuery);
   });
+};
+
+export const getRelatedTools = ({
+  tools,
+  currentTitle,
+  currentType,
+  relatedToolSlugs = [],
+  limit = 6,
+}) => {
+  const currentToolName = currentTitle?.trim().toLowerCase();
+  const excludedTools = tools.filter(
+    (tool) => tool.name.trim().toLowerCase() !== currentToolName,
+  );
+
+  const manualMatches = relatedToolSlugs
+    .map((slug) => excludedTools.find((tool) => tool.slug === slug))
+    .filter(Boolean);
+
+  const seen = new Set(manualMatches.map((tool) => tool.slug));
+
+  const sameTypeMatches = excludedTools.filter(
+    (tool) => tool.type === currentType && !seen.has(tool.slug),
+  );
+
+  const fallbackMatches = excludedTools.filter((tool) => !seen.has(tool.slug));
+
+  return [...manualMatches, ...sameTypeMatches, ...fallbackMatches].slice(
+    0,
+    limit,
+  );
 };
