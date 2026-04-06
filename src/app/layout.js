@@ -1,6 +1,7 @@
 import Link from "next/link";
 import "./globals.css";
 import Footer from "./components/Footer";
+import ThemeToggle from "./components/ThemeToggle";
 import { Inter } from "next/font/google";
 
 const inter = Inter({
@@ -40,21 +41,25 @@ const RootLayout = ({ children }) => {
                 </div>
               </Link>
 
-              <nav className="app-shell-nav flex items-center gap-2 rounded-full bg-muted/75 p-1.5 shadow-sm">
-                <Link
-                  href="/"
-                  className="app-shell-link rounded-full px-4 py-2 text-sm text-foreground transition-all hover:-translate-y-0.5 hover:bg-card hover:text-primary hover:shadow-sm"
-                >
-                  Home
-                </Link>
+              <div className="flex items-center gap-2">
+                <nav className="app-shell-nav rounded-full p-1.5 shadow-sm flex items-center gap-2 bg-muted/75">
+                  <Link
+                    href="/"
+                    className="app-shell-link rounded-full px-4 py-2 text-sm text-foreground transition-all hover:-translate-y-0.5 hover:bg-card hover:text-primary hover:shadow-sm"
+                  >
+                    Home
+                  </Link>
 
-                <Link
-                  href="/tools"
-                  className="app-shell-link rounded-full px-4 py-2 text-sm text-foreground transition-all hover:-translate-y-0.5 hover:bg-card hover:text-primary hover:shadow-sm"
-                >
-                  Tools
-                </Link>
-              </nav>
+                  <Link
+                    href="/tools"
+                    className="app-shell-link rounded-full px-4 py-2 text-sm text-foreground transition-all hover:-translate-y-0.5 hover:bg-card hover:text-primary hover:shadow-sm"
+                  >
+                    Tools
+                  </Link>
+
+                  <ThemeToggle />
+                </nav>
+              </div>
             </div>
           </header>
 
