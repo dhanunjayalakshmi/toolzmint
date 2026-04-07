@@ -1,13 +1,11 @@
 import ToolLayout from "@/app/components/ToolLayout";
+import { getToolMetadata } from "@/lib/metadata";
 import { tools } from "@/lib/toolsConfig";
 import UnixTimestampConverterTool from "./UnixTimestampConverterTool";
 
 const tool = tools?.find((tool) => tool.slug === "unix-timestamp-converter");
 
-export const metadata = {
-  title: tool?.metaTitle,
-  description: tool?.metaDescription,
-};
+export const metadata = getToolMetadata(tool);
 
 const Page = () => {
   return (

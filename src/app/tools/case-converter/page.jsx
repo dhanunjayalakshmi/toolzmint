@@ -1,13 +1,11 @@
 import ToolLayout from "@/app/components/ToolLayout";
 import CaseConverterTool from "./CaseConverterTool";
+import { getToolMetadata } from "@/lib/metadata";
 import { tools } from "@/lib/toolsConfig";
 
 const tool = tools?.find((tool) => tool.slug === "case-converter");
 
-export const metadata = {
-  title: tool?.metaTitle,
-  description: tool?.metaDescription,
-};
+export const metadata = getToolMetadata(tool);
 
 const Page = () => {
   return (

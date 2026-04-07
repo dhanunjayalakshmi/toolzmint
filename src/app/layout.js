@@ -12,6 +12,7 @@ const inter = Inter({
 export const metadata = {
   title: "Toolzmint",
   description: "Free online tools for everyday use",
+  metadataBase: new URL("https://toolzmint.com"),
   verification: {
     google: "K8qKF7eQiUAamegngDg817buqx7ekNezCI2XFD3igVU",
   },

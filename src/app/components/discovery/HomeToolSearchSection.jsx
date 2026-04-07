@@ -68,7 +68,7 @@ const HomeToolSearchSection = ({ tools }) => {
             ))}
           </div>
         ) : (
-          <div className="rounded-[2rem] bg-muted/55 p-6 text-sm text-muted-foreground shadow-sm shadow-black/5">
+          <div className="rounded-4xl bg-muted/55 p-6 text-sm text-muted-foreground shadow-sm shadow-black/5">
             No tools matched your search yet. Try a shorter or broader term.
           </div>
         )}
@@ -97,7 +97,7 @@ const HomeToolSearchSection = ({ tools }) => {
             ))}
           </div>
         ) : (
-          <div className="rounded-[2rem] bg-muted/55 p-6 text-sm text-muted-foreground shadow-sm shadow-black/5">
+          <div className="rounded-4xl bg-muted/55 p-6 text-sm text-muted-foreground shadow-sm shadow-black/5">
             No categories to show for this search.
           </div>
         )}

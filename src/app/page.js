@@ -1,7 +1,14 @@
 import Link from "next/link";
 import HomeToolSearchSection from "@/app/components/discovery/HomeToolSearchSection";
+import { getMetadata } from "@/lib/metadata";
 import { tools } from "@/lib/toolsConfig";
 import { getToolGroups } from "@/lib/toolDiscovery";
+
+export const metadata = getMetadata({
+  title: "Toolzmint",
+  description: "Free online tools for everyday use",
+  path: "/",
+});
 
 const Home = () => {
   const toolGroups = getToolGroups(tools, 3);

@@ -1,7 +1,10 @@
-export const metadata = {
+import { getMetadata } from "@/lib/metadata";
+
+export const metadata = getMetadata({
   title: "Contact Toolzmint",
   description: "Get in touch with Toolzmint for support or suggestions.",
-};
+  path: "/contact",
+});
 
 const ContactPage = () => {
   return (

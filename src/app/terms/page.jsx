@@ -1,7 +1,10 @@
-export const metadata = {
+import { getMetadata } from "@/lib/metadata";
+
+export const metadata = getMetadata({
   title: "Terms & Conditions - Toolzmint",
   description: "Terms and conditions for Toolzmint.",
-};
+  path: "/terms",
+});
 
 const TermsPage = () => {
   return (

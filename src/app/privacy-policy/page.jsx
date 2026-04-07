@@ -1,7 +1,10 @@
-export const metadata = {
+import { getMetadata } from "@/lib/metadata";
+
+export const metadata = getMetadata({
   title: "Privacy Policy - Toolzmint",
   description: "Privacy policy for Toolzmint.",
-};
+  path: "/privacy-policy",
+});
 
 const PrivacyPolicy = () => {
   return (

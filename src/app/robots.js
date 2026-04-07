@@ -6,6 +6,7 @@ const robots = () => {
         allow: "/",
       },
     ],
+    host: "https://toolzmint.com",
     sitemap: "https://toolzmint.com/sitemap.xml",
   };
 };

@@ -1,8 +1,11 @@
-export const metadata = {
+import { getMetadata } from "@/lib/metadata";
+
+export const metadata = getMetadata({
   title: "About Toolzmint",
   description:
     "Learn about Toolzmint - a free online platform offering fast and simple utility tools.",
-};
+  path: "/about",
+});
 
 const AboutPage = () => {
   return (
