@@ -205,9 +205,9 @@ export const tools = [
         output: '{\n  "name": "Toolzmint",\n  "type": "tool"\n}',
       },
       {
-        input: '{"user":{"id":1,"name":"Toolzmint"},"active":true}',
+        input: '{"user":{"id":1,"name":"Dhanunjaya"},"active":true}',
         output:
-          '{\n  "user": {\n    "id": 1,\n    "name": "Toolzmint"\n  },\n  "active": true\n}',
+          '{\n  "user": {\n    "id": 1,\n    "name": "Dhanunjaya"\n  },\n  "active": true\n}',
       },
       {
         input:
@@ -525,7 +525,7 @@ export const tools = [
         input:
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
         output:
-          'Header: {"alg":"HS256","typ":"JWT"} | Payload: {"sub":"1234567890","name":"Toolzmint","admin":true}',
+          'Header: {"alg":"HS256","typ":"JWT"} | Payload: {"sub":"1234567890","name":"John Doe","admin":true}',
       },
     ],
   },
