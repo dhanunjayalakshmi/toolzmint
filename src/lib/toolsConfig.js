@@ -140,6 +140,55 @@ export const tools = [
         input: "Hello Toolzmint",
         output: "Characters (with spaces): 15, Characters (without spaces): 14",
       },
+      {
+        input: "Line one\nLine two",
+        output: "Characters (with spaces): 17, Characters (without spaces): 15, Lines: 2",
+      },
+    ],
+    aboutText:
+      "Use this character counter to count total characters with and without spaces instantly. It is useful for meta descriptions, titles, social posts, forms, and any writing with strict character limits.",
+    howToSteps: [
+      "Paste or type your text into the input area.",
+      "Review the live character counts and line count.",
+      "Edit the text until it fits your required limit.",
+    ],
+    seoSections: [
+      {
+        title: "When to use a character counter",
+        paragraphs: [
+          "A character counter helps when you need to stay within strict limits for titles, descriptions, usernames, form inputs, social posts, or other short text fields.",
+          "This online character counter shows totals with and without spaces so you can quickly match the exact rule a platform requires.",
+        ],
+      },
+      {
+        title: "With spaces or without spaces",
+        paragraphs: [
+          "Some platforms count every visible character, including spaces, while others care more about letters and symbols only. Seeing both totals makes it easier to check your text accurately.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "Does this character counter count spaces too?",
+        answer:
+          "Yes. It shows character totals both with spaces and without spaces so you can use the count that matches your requirement.",
+      },
+      {
+        question: "Can I use this for meta descriptions or social captions?",
+        answer:
+          "Yes. It is useful for meta descriptions, titles, captions, form fields, and any content with character limits.",
+      },
+      {
+        question: "Does it count lines as well?",
+        answer:
+          "Yes. It also shows the total number of lines in the current text.",
+      },
+    ],
+    relatedToolSlugs: [
+      "word-counter",
+      "remove-extra-spaces",
+      "line-break-remover",
+      "text-to-slug",
     ],
   },
   {

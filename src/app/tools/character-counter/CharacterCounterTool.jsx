@@ -11,6 +11,7 @@ const CharacterCounterTool = () => {
 
   const characters = text?.length;
   const charactersNoSpaces = text?.replace(/\s/g, "").length;
+  const lines = text ? text.split("\n").length : 0;
 
   const handleClear = () => setText("");
 
@@ -41,16 +42,17 @@ const CharacterCounterTool = () => {
 
       {/* Info */}
       <p className="text-sm text-muted-foreground">
-        Count total characters with and without spaces while you type.
+        Count characters with spaces, without spaces, and by line while you type.
       </p>
 
       {/* Stats */}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <ToolStatsCard label="Characters (with spaces)" value={characters} />
         <ToolStatsCard
           label="Characters (no spaces)"
           value={charactersNoSpaces}
         />
+        <ToolStatsCard label="Lines" value={lines} />
       </div>
     </div>
   );
