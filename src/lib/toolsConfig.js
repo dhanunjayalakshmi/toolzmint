@@ -205,9 +205,9 @@ export const tools = [
         output: '{\n  "name": "Toolzmint",\n  "type": "tool"\n}',
       },
       {
-        input: '{"user":{"id":1,"name":"Dhanunjaya"},"active":true}',
+        input: '{"user":{"id":1,"name":"Toolzmint"},"active":true}',
         output:
-          '{\n  "user": {\n    "id": 1,\n    "name": "Dhanunjaya"\n  },\n  "active": true\n}',
+          '{\n  "user": {\n    "id": 1,\n    "name": "Toolzmint"\n  },\n  "active": true\n}',
       },
       {
         input:
@@ -339,6 +339,49 @@ export const tools = [
         input: "toolzmint rocks",
         output: "TOOLZMINT ROCKS / toolzmint rocks / Toolzmint Rocks",
       },
+      {
+        input: "my first blog title",
+        output: "MY FIRST BLOG TITLE / my first blog title / My First Blog Title",
+      },
+    ],
+    aboutText:
+      "Use this case converter to change text to uppercase, lowercase, or title case instantly. It is useful for headings, content cleanup, formatting names, and standardizing text for documents or websites.",
+    howToSteps: [
+      "Paste or type the text you want to convert.",
+      "Choose uppercase, lowercase, or title case.",
+      "Review the converted output and copy the version you need.",
+    ],
+    seoSections: [
+      {
+        title: "What a case converter helps with",
+        paragraphs: [
+          "A case converter helps you quickly switch text between uppercase, lowercase, and title case without editing each word manually. This is useful for headings, labels, UI copy, blog titles, and general text cleanup.",
+          "This online case converter keeps the original input visible while showing the converted output, which makes it easier to compare formats before copying.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "Can I convert text to uppercase and lowercase?",
+        answer:
+          "Yes. This tool supports uppercase, lowercase, and title case conversions.",
+      },
+      {
+        question: "What is title case?",
+        answer:
+          "Title case capitalizes the first letter of each word, which is often useful for headings and titles.",
+      },
+      {
+        question: "Does the tool change my original text?",
+        answer:
+          "No. Your original input stays visible while the converted version appears separately.",
+      },
+    ],
+    relatedToolSlugs: [
+      "text-to-slug",
+      "remove-extra-spaces",
+      "word-counter",
+      "character-counter",
     ],
   },
   {
@@ -482,7 +525,7 @@ export const tools = [
         input:
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
         output:
-          'Header: {"alg":"HS256","typ":"JWT"} | Payload: {"sub":"1234567890","name":"John Doe","admin":true}',
+          'Header: {"alg":"HS256","typ":"JWT"} | Payload: {"sub":"1234567890","name":"Toolzmint","admin":true}',
       },
     ],
   },

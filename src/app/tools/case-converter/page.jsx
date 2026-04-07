@@ -14,6 +14,11 @@ const Page = () => {
       description={tool?.description}
       type={tool?.type}
       examples={tool?.examples}
+      aboutText={tool?.aboutText}
+      howToSteps={tool?.howToSteps}
+      seoSections={tool?.seoSections}
+      faqItems={tool?.faqItems}
+      relatedToolSlugs={tool?.relatedToolSlugs}
     >
       <CaseConverterTool />
     </ToolLayout>
