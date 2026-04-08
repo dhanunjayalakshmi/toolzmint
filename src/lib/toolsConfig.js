@@ -205,9 +205,9 @@ export const tools = [
         output: '{\n  "name": "Toolzmint",\n  "type": "tool"\n}',
       },
       {
-        input: '{"user":{"id":1,"name":"Dhanunjaya"},"active":true}',
+        input: '{"user":{"id":1,"name":"Toolzmint"},"active":true}',
         output:
-          '{\n  "user": {\n    "id": 1,\n    "name": "Dhanunjaya"\n  },\n  "active": true\n}',
+          '{\n  "user": {\n    "id": 1,\n    "name": "Toolzmint"\n  },\n  "active": true\n}',
       },
       {
         input:
@@ -510,6 +510,71 @@ export const tools = [
       "jwt-decoder",
       "json-formatter",
       "unix-timestamp-converter",
+    ],
+  },
+  {
+    slug: "uuid-generator",
+    name: "UUID Generator",
+    type: "generator",
+    description: "Generate secure UUID v4 values instantly.",
+    metaTitle: "UUID Generator - Generate UUID v4 Online",
+    metaDescription:
+      "Free online UUID generator. Generate secure UUID v4 values instantly with standard or hyphenless format.",
+    examples: [
+      {
+        input: "Generate 1 UUID",
+        output: "550e8400-e29b-41d4-a716-446655440000",
+      },
+      {
+        input: "Generate 3 UUIDs without hyphens",
+        output:
+          "550e8400e29b41d4a716446655440000\n9b2c5d0c0ef14d03a6f2c4a1a4f9d8b7\n7d6f4fd381e54c4ba3aef80f28e42f13",
+      },
+    ],
+    aboutText:
+      "Use this UUID generator to create UUID v4 values directly in your browser. It is useful for database records, API payloads, testing, identifiers, and any workflow that needs unique random IDs.",
+    howToSteps: [
+      "Choose how many UUIDs you want to generate.",
+      "Decide whether you want the standard hyphenated format.",
+      "Generate the UUIDs and copy the result.",
+    ],
+    seoSections: [
+      {
+        title: "What a UUID generator is used for",
+        paragraphs: [
+          "A UUID generator creates unique identifiers that are commonly used in databases, APIs, distributed systems, test data, and application records. UUID v4 values are random and help reduce the chance of collisions.",
+          "This online UUID generator is useful when you need one ID quickly or a short batch of UUIDs without opening a terminal or writing custom code.",
+        ],
+      },
+      {
+        title: "Standard or hyphenless UUID format",
+        paragraphs: [
+          "The standard UUID format includes hyphens and is the most common choice for APIs, logs, and stored identifiers. Some workflows prefer a continuous 32-character string without hyphens, and this tool supports both.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "What is a UUID v4?",
+        answer:
+          "UUID v4 is a randomly generated universally unique identifier commonly used to label records, requests, and objects in software systems.",
+      },
+      {
+        question: "Are these UUIDs generated locally?",
+        answer:
+          "Yes. The UUIDs are generated in your browser using secure random values, so the tool does not need to send them elsewhere to create them.",
+      },
+      {
+        question: "Can I generate UUIDs without hyphens?",
+        answer:
+          "Yes. You can switch to a hyphenless format if your workflow expects a continuous 32-character value.",
+      },
+    ],
+    relatedToolSlugs: [
+      "random-string-generator",
+      "password-generator",
+      "jwt-decoder",
+      "base64-encoder-decoder",
     ],
   },
   {

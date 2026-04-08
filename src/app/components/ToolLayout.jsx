@@ -68,7 +68,7 @@ const ToolLayout = ({
         </section>
       )}
 
-      <section className="space-y-5 rounded-[2rem] bg-muted/55 p-6 shadow-sm shadow-black/5">
+      <section className="tool-info-shell space-y-5 rounded-[2rem] bg-muted/55 p-6 shadow-sm shadow-black/5">
         <div className="space-y-2">
           <h2 className="text-xl font-semibold tracking-tight">About this tool</h2>
 
