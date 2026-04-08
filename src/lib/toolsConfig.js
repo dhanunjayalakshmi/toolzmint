@@ -686,15 +686,64 @@ export const tools = [
     slug: "line-sorter",
     name: "Line Sorter",
     type: "transformer",
-    description: "Sort lines alphabetically.",
-    metaTitle: "Line Sorter - Sort Text Lines Online",
+    description: "Sort text lines alphabetically instantly.",
+    metaTitle: "Line Sorter - Sort Text Lines Alphabetically Online",
     metaDescription:
-      "Free online line sorter tool. Sort text lines alphabetically in seconds.",
+      "Free online line sorter tool. Sort text lines alphabetically instantly and clean up lists faster.",
     examples: [
       {
         input: "banana\napple\ncherry",
         output: "apple\nbanana\ncherry",
       },
+      {
+        input: "Toolzmint\nApple\nbanana",
+        output: "Apple\nToolzmint\nbanana",
+      },
+    ],
+    aboutText:
+      "Use this line sorter to sort text lines alphabetically in your browser. It is useful for lists, keyword sets, names, tags, copied exports, and any text that becomes easier to scan once the lines are ordered.",
+    howToSteps: [
+      "Paste the lines of text you want to sort.",
+      "Review the alphabetically sorted output instantly.",
+      "Copy the sorted list and reuse it where needed.",
+    ],
+    seoSections: [
+      {
+        title: "What a line sorter helps with",
+        paragraphs: [
+          "A line sorter helps you organize text lists quickly by putting each line into alphabetical order. It is useful for names, tags, keyword lists, exports, and any text that is easier to review once sorted.",
+          "This online line sorter works instantly in the browser, which makes it convenient when you want to clean a list without using a spreadsheet or writing a quick script.",
+        ],
+      },
+      {
+        title: "When to sort text lines alphabetically",
+        paragraphs: [
+          "Use it when you want to compare lists more easily, clean copied data, prepare sorted entries for documentation, or make repeated values easier to spot before additional cleanup.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "What does line sorter do?",
+        answer:
+          "It sorts each line of your text into alphabetical order so lists become easier to read, compare, and clean.",
+      },
+      {
+        question: "Can I use this for keyword lists or names?",
+        answer:
+          "Yes. It is useful for keyword lists, names, tags, copied exports, and other line-based text.",
+      },
+      {
+        question: "Does line sorter remove duplicates too?",
+        answer:
+          "No. It sorts the lines only. If you need to remove repeated entries first, use the duplicate line remover.",
+      },
+    ],
+    relatedToolSlugs: [
+      "duplicate-line-remover",
+      "remove-extra-spaces",
+      "line-break-remover",
+      "text-to-slug",
     ],
   },
   {

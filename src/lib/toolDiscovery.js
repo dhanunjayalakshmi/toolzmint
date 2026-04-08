@@ -29,7 +29,7 @@ export const FEATURED_TOOL_SLUGS = [
   "password-generator",
   "word-counter",
   "json-formatter",
-  "base64-encoder-decoder",
+  "text-to-slug",
 ];
 
 export const getFeaturedTools = (tools) => {
