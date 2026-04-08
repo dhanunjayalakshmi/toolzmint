@@ -797,9 +797,9 @@ export const tools = [
     type: "transformer",
     description:
       "Remove line breaks, paragraph breaks, and extra new lines from text instantly.",
-    metaTitle: "Line Break Remover Online - Remove Line Breaks from Text",
+    metaTitle: "Line Break Remover - Remove Line Breaks from Text Online",
     metaDescription:
-      "Free online line break remover. Remove line breaks, paragraph breaks, and extra new lines from text instantly.",
+      "Remove line breaks, paragraph breaks, and extra new lines from text instantly with this free online line break remover.",
     examples: [
       {
         input: "Hello\nWorld",
@@ -812,6 +812,10 @@ export const tools = [
       {
         input: "Paragraph one.\n\nParagraph two.",
         output: "Paragraph one. Paragraph two.",
+      },
+      {
+        input: "Name: Toolzmint\nRole: Utility Website\nStatus: Active",
+        output: "Name: Toolzmint Role: Utility Website Status: Active",
       },
     ],
     aboutText:
@@ -833,6 +837,7 @@ export const tools = [
         title: "What this tool removes",
         paragraphs: [
           "This tool removes line breaks and paragraph breaks while keeping the text readable. It is a simple way to strip new lines from text without installing any software.",
+          "If you need to remove line breaks online after copying content from a PDF, email, or website, this tool turns the text into a single line quickly and keeps the workflow simple.",
         ],
       },
     ],

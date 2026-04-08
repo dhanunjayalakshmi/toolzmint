@@ -90,21 +90,26 @@ export const getRelatedTools = ({
   const excludedTools = tools.filter(
     (tool) => tool.name.trim().toLowerCase() !== currentToolName,
   );
+  const seen = new Set();
+  const related = [];
+  const pushUnique = (tool) => {
+    if (!tool || seen.has(tool.slug)) {
+      return;
+    }
 
-  const manualMatches = relatedToolSlugs
+    seen.add(tool.slug);
+    related.push(tool);
+  };
+
+  relatedToolSlugs
     .map((slug) => excludedTools.find((tool) => tool.slug === slug))
-    .filter(Boolean);
+    .forEach(pushUnique);
 
-  const seen = new Set(manualMatches.map((tool) => tool.slug));
+  excludedTools
+    .filter((tool) => tool.type === currentType)
+    .forEach(pushUnique);
 
-  const sameTypeMatches = excludedTools.filter(
-    (tool) => tool.type === currentType && !seen.has(tool.slug),
-  );
+  excludedTools.forEach(pushUnique);
 
-  const fallbackMatches = excludedTools.filter((tool) => !seen.has(tool.slug));
-
-  return [...manualMatches, ...sameTypeMatches, ...fallbackMatches].slice(
-    0,
-    limit,
-  );
+  return related.slice(0, limit);
 };
