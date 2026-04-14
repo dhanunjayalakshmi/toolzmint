@@ -142,7 +142,8 @@ export const tools = [
       },
       {
         input: "Line one\nLine two",
-        output: "Characters (with spaces): 17, Characters (without spaces): 15, Lines: 2",
+        output:
+          "Characters (with spaces): 17, Characters (without spaces): 15, Lines: 2",
       },
     ],
     aboutText:
@@ -244,7 +245,8 @@ export const tools = [
           "Yes. It attempts to parse the JSON and shows whether the input is valid before displaying formatted or minified output.",
       },
       {
-        question: "What is the difference between formatting and minifying JSON?",
+        question:
+          "What is the difference between formatting and minifying JSON?",
         answer:
           "Formatting adds whitespace and indentation to improve readability, while minifying removes unnecessary whitespace to make the JSON smaller and more compact.",
       },
@@ -341,7 +343,8 @@ export const tools = [
       },
       {
         input: "my first blog title",
-        output: "MY FIRST BLOG TITLE / my first blog title / My First Blog Title",
+        output:
+          "MY FIRST BLOG TITLE / my first blog title / My First Blog Title",
       },
     ],
     aboutText:
@@ -578,6 +581,71 @@ export const tools = [
     ],
   },
   {
+    slug: "markdown-previewer",
+    name: "Markdown Previewer",
+    type: "transformer",
+    description: "Preview markdown and render it instantly.",
+    metaTitle: "Markdown Previewer - Preview Markdown Online",
+    metaDescription:
+      "Free online markdown previewer. Write markdown, preview the rendered output instantly, and copy the generated HTML.",
+    examples: [
+      {
+        input: "# Toolzmint\n\nWrite **markdown** faster.",
+        output: "Renders a heading and bold text in the live preview.",
+      },
+      {
+        input:
+          "- First item\n- Second item\n\n[Toolzmint](https://toolzmint.com)",
+        output: "Renders a list and a clickable link in the preview panel.",
+      },
+    ],
+    aboutText:
+      "Use this markdown previewer to write markdown and see the rendered output immediately. It is useful for README drafts, documentation notes, issue templates, blog snippets, and any workflow where you want to check formatting before publishing.",
+    howToSteps: [
+      "Type or paste markdown into the input panel.",
+      "Review the rendered preview instantly on the right.",
+      "Copy the generated HTML if you need the rendered output elsewhere.",
+    ],
+    seoSections: [
+      {
+        title: "What a markdown previewer helps with",
+        paragraphs: [
+          "A markdown previewer helps you check how markdown will render before you publish it. This is useful for README files, documentation, comments, notes, and articles that rely on markdown formatting.",
+          "Instead of guessing how headings, lists, links, or code blocks will appear, you can write markdown on one side and inspect the rendered result immediately.",
+        ],
+      },
+      {
+        title: "Write markdown and preview it instantly",
+        paragraphs: [
+          "This tool is useful when you want a fast markdown preview online without opening a larger editor. It keeps the workflow simple while still giving you immediate feedback on formatting.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "What can this markdown previewer render?",
+        answer:
+          "It supports common markdown elements such as headings, paragraphs, lists, links, blockquotes, inline code, and fenced code blocks.",
+      },
+      {
+        question: "Does this tool render markdown locally?",
+        answer:
+          "Yes. The preview is generated in your browser, so you can check markdown formatting without sending it elsewhere just to render it.",
+      },
+      {
+        question: "Can I copy the rendered result?",
+        answer:
+          "Yes. The copy action copies the rendered HTML output so you can reuse it where needed.",
+      },
+    ],
+    relatedToolSlugs: [
+      "text-to-slug",
+      "word-counter",
+      "json-formatter",
+      "line-break-remover",
+    ],
+  },
+  {
     slug: "jwt-decoder",
     name: "JWT Decoder",
     type: "modifier",
@@ -590,7 +658,7 @@ export const tools = [
         input:
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
         output:
-          'Header: {"alg":"HS256","typ":"JWT"} | Payload: {"sub":"1234567890","name":"John Doe","admin":true}',
+          'Header: {"alg":"HS256","typ":"JWT"} | Payload: {"sub":"1234567890","name":"Toolzmint","admin":true}',
       },
     ],
   },

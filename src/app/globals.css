@@ -199,3 +199,94 @@ body {
     background-color: rgb(var(--input));
   }
 }
+
+.markdown-preview h1,
+.markdown-preview h2,
+.markdown-preview h3,
+.markdown-preview h4,
+.markdown-preview h5,
+.markdown-preview h6 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.markdown-preview h1 {
+  font-size: 1.5rem;
+}
+
+.markdown-preview h2 {
+  font-size: 1.25rem;
+}
+
+.markdown-preview h3 {
+  font-size: 1.125rem;
+}
+
+.markdown-preview p,
+.markdown-preview ul,
+.markdown-preview ol,
+.markdown-preview blockquote,
+.markdown-preview pre {
+  margin-top: 0.75rem;
+}
+
+.markdown-preview ul,
+.markdown-preview ol {
+  padding-left: 1.25rem;
+}
+
+.markdown-preview ul {
+  list-style: disc;
+}
+
+.markdown-preview ol {
+  list-style: decimal;
+}
+
+.markdown-preview blockquote {
+  border-left: 3px solid rgb(var(--primary) / 0.6);
+  padding-left: 1rem;
+  color: rgb(var(--muted-foreground));
+}
+
+.markdown-preview code {
+  border-radius: 0.5rem;
+  background: rgb(var(--background));
+  padding: 0.15rem 0.4rem;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    "Courier New",
+    monospace;
+  font-size: 0.9em;
+}
+
+.markdown-preview pre {
+  overflow-x: auto;
+  border-radius: 1rem;
+  background: rgb(var(--background));
+  padding: 1rem;
+}
+
+.markdown-preview pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.markdown-preview a {
+  color: rgb(var(--primary));
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.markdown-preview hr {
+  margin-top: 1rem;
+  border: 0;
+  border-top: 1px solid rgb(var(--border));
+}
