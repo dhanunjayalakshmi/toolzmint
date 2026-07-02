@@ -974,6 +974,70 @@ export const tools = [
     ],
   },
   {
+    slug: "qr-code-generator",
+    name: "QR Code Generator",
+    type: "generator",
+    description: "Generate QR codes from any URL, text, email, or phone number instantly.",
+    metaTitle: "QR Code Generator - Free Online QR Code Maker",
+    metaDescription:
+      "Generate QR codes from URLs, text, emails, or phone numbers instantly. Download as PNG for free.",
+    examples: [
+      {
+        input: "https://toolzmint.com",
+        output: "A scannable QR code image ready to download as PNG",
+      },
+      {
+        input: "Hello from Toolzmint!",
+        output: "QR code encoding plain text, scannable by any QR reader",
+      },
+    ],
+    aboutText:
+      "Use this QR code generator to create scannable QR codes from URLs, plain text, email addresses, phone numbers, or any other content. The code generates instantly as you type and can be downloaded as a PNG image.",
+    howToSteps: [
+      "Type or paste the URL or text you want to encode.",
+      "Choose an error correction level if needed.",
+      "Download the QR code as a PNG image.",
+    ],
+    seoSections: [
+      {
+        title: "What you can encode in a QR code",
+        paragraphs: [
+          "QR codes can encode URLs, plain text, email addresses, phone numbers, SMS messages, Wi-Fi credentials, and more. Any scanner will read the encoded content and act on it.",
+          "The most common use case is encoding a URL so users can scan the code to open a website without typing the address. This is useful for print materials, posters, business cards, and presentations.",
+        ],
+      },
+      {
+        title: "Error correction levels",
+        paragraphs: [
+          "Error correction determines how much of the QR code can be damaged or obscured while still being readable. Low (L) gives the smallest code, while High (H) adds more redundancy and creates a denser but more resilient code. Use Medium (M) for most cases.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "Can I use the QR code commercially?",
+        answer:
+          "Yes. The generated QR code image is yours to use however you need, including in commercial print materials, websites, or products.",
+      },
+      {
+        question: "What file format does the download use?",
+        answer:
+          "The QR code downloads as a PNG image at 512×512 pixels, which is suitable for most print and digital uses.",
+      },
+      {
+        question: "How much text can a QR code hold?",
+        answer:
+          "It depends on the error correction level and content type. URLs and short text work best. Very long inputs may result in a dense QR code that is harder to scan.",
+      },
+    ],
+    relatedToolSlugs: [
+      "url-encoder-decoder",
+      "base64-encoder-decoder",
+      "random-string-generator",
+      "uuid-generator",
+    ],
+  },
+  {
     slug: "lorem-ipsum-generator",
     name: "Lorem Ipsum Generator",
     type: "generator",
