@@ -974,6 +974,71 @@ export const tools = [
     ],
   },
   {
+    slug: "csv-to-json",
+    name: "CSV to JSON",
+    type: "transformer",
+    description: "Convert CSV data to JSON instantly with support for headers, custom delimiters, and pretty print.",
+    metaTitle: "CSV to JSON Converter - Free Online Tool",
+    metaDescription:
+      "Convert CSV to JSON online instantly. Supports comma, semicolon, and tab delimiters with auto-detection, header row toggle, and pretty print.",
+    examples: [
+      {
+        input: "name,age,city\nAlice,30,New York\nBob,25,London",
+        output: '[{"name":"Alice","age":"30","city":"New York"},{"name":"Bob","age":"25","city":"London"}]',
+      },
+      {
+        input: "id;product;price\n1;Widget;9.99\n2;Gadget;24.99",
+        output: '[{"id":"1","product":"Widget","price":"9.99"},{"id":"2","product":"Gadget","price":"24.99"}]',
+      },
+    ],
+    aboutText:
+      "Use this CSV to JSON converter to transform spreadsheet or export data into JSON format directly in your browser. It supports comma, semicolon, and tab-delimited files with automatic delimiter detection, an optional header row, and pretty-printed or compact output.",
+    howToSteps: [
+      "Paste your CSV data into the input panel.",
+      "The delimiter is detected automatically, or you can select one manually.",
+      "Toggle whether the first row is a header and whether to pretty-print the output.",
+      "Copy the JSON result from the output panel.",
+    ],
+    seoSections: [
+      {
+        title: "When to convert CSV to JSON",
+        paragraphs: [
+          "CSV is a common export format from spreadsheets, databases, and analytics tools. JSON is the standard format for APIs, web apps, and developer workflows. Converting between them is a frequent task when working with data exports or preparing data for code.",
+          "This tool handles the conversion in your browser without uploading your data anywhere, which is useful when working with sensitive or proprietary data.",
+        ],
+      },
+      {
+        title: "Headers, delimiters, and output format",
+        paragraphs: [
+          "If your CSV has a header row, each JSON object will use those headers as keys. Without headers, the output is an array of arrays. The tool auto-detects whether the delimiter is a comma, semicolon, or tab, but you can also set it manually.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "Does this handle quoted fields with commas inside?",
+        answer:
+          "Yes. The parser follows standard CSV quoting rules, so fields enclosed in double quotes can contain commas, newlines, and escaped quotes.",
+      },
+      {
+        question: "What if my CSV uses semicolons instead of commas?",
+        answer:
+          "Select Semicolon as the delimiter, or leave it on Auto and the tool will detect it from the first row.",
+      },
+      {
+        question: "Can I convert CSV without a header row?",
+        answer:
+          "Yes. Toggle off the first-row-as-header option and each row will be output as a JSON array instead of a named object.",
+      },
+    ],
+    relatedToolSlugs: [
+      "json-formatter",
+      "duplicate-line-remover",
+      "line-sorter",
+      "base64-encoder-decoder",
+    ],
+  },
+  {
     slug: "qr-code-generator",
     name: "QR Code Generator",
     type: "generator",
