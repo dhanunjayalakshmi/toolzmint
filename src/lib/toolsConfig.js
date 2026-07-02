@@ -652,14 +652,63 @@ export const tools = [
     description: "Decode JWT header and payload instantly.",
     metaTitle: "JWT Decoder - Decode JWT Tokens Online",
     metaDescription:
-      "Free online JWT decoder tool. Decode JWT header and payload instantly in your browser.",
+      "Free online JWT decoder tool. Decode JWT header, payload, and timing claims instantly in your browser.",
     examples: [
       {
-        input:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+        input: "JWT token with HS256 header and JSON payload claims",
         output:
           'Header: {"alg":"HS256","typ":"JWT"} | Payload: {"sub":"1234567890","name":"Toolzmint","admin":true}',
       },
+      {
+        input: "JWT token with exp, iat, and nbf claims",
+        output:
+          "Shows decoded header, payload, signature, and readable timing values such as Expires At and Issued At.",
+      },
+    ],
+    aboutText:
+      "Use this JWT decoder to inspect the header and payload of a JSON Web Token directly in your browser. It is useful for debugging authentication flows, checking claims, reading expiry times, and understanding token contents quickly.",
+    howToSteps: [
+      "Paste the JWT token into the input field.",
+      "Review the decoded header, payload, and signature instantly.",
+      "Check timing claims like expiry or issue time if they exist.",
+    ],
+    seoSections: [
+      {
+        title: "What a JWT decoder helps with",
+        paragraphs: [
+          "A JWT decoder helps you inspect the header and payload of a JSON Web Token without manually base64-decoding each section. This is useful when debugging authentication flows, checking custom claims, or confirming token metadata.",
+          "This online JWT decoder also surfaces common timing claims such as expiry, issued-at, and not-before values in a more readable form.",
+        ],
+      },
+      {
+        title: "Decode versus verify",
+        paragraphs: [
+          "Decoding a JWT lets you read its contents. It does not prove that the token is valid or trusted. This tool is for inspection and debugging, not signature verification.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "Does this JWT decoder verify the token signature?",
+        answer:
+          "No. It decodes the token contents only. Signature verification requires the correct secret or public key and is outside the scope of this tool.",
+      },
+      {
+        question: "Can I see JWT expiry time here?",
+        answer:
+          "Yes. If the token includes common timing claims such as exp, iat, or nbf, the tool shows readable values for them.",
+      },
+      {
+        question: "Is the token decoded locally?",
+        answer:
+          "Yes. The decoding happens in your browser so you can inspect a token without sending it elsewhere just to read the header and payload.",
+      },
+    ],
+    relatedToolSlugs: [
+      "base64-encoder-decoder",
+      "json-formatter",
+      "unix-timestamp-converter",
+      "uuid-generator",
     ],
   },
   {
@@ -922,6 +971,264 @@ export const tools = [
         input: "Hello (3 times)",
         output: "Hello Hello Hello",
       },
+    ],
+  },
+  {
+    slug: "lorem-ipsum-generator",
+    name: "Lorem Ipsum Generator",
+    type: "generator",
+    description: "Generate lorem ipsum placeholder text by paragraphs, sentences, or words.",
+    metaTitle: "Lorem Ipsum Generator - Free Placeholder Text Online",
+    metaDescription:
+      "Generate lorem ipsum placeholder text instantly. Choose paragraphs, sentences, or words and copy the result for mockups, designs, and drafts.",
+    examples: [
+      {
+        input: "3 paragraphs",
+        output:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit... (full paragraphs of standard placeholder text)",
+      },
+      {
+        input: "10 words",
+        output: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do",
+      },
+    ],
+    aboutText:
+      "Use this lorem ipsum generator to create standard placeholder text for designs, mockups, wireframes, and draft layouts. Choose how many paragraphs, sentences, or words you need and copy the result instantly.",
+    howToSteps: [
+      "Select the output type: paragraphs, sentences, or words.",
+      "Adjust the count using the + and − buttons.",
+      "Copy the generated placeholder text for your project.",
+    ],
+    seoSections: [
+      {
+        title: "What lorem ipsum is used for",
+        paragraphs: [
+          "Lorem ipsum is standard placeholder text used in design, publishing, and development to fill space before real content is ready. It lets you focus on layout and typography without distraction from actual words.",
+          "This generator lets you choose whether you need full paragraphs for a realistic content block, individual sentences for shorter areas, or a specific word count for tight-fit layouts.",
+        ],
+      },
+      {
+        title: "Paragraphs, sentences, or words",
+        paragraphs: [
+          "Use paragraphs when you need realistic multi-line content blocks for page layouts or document templates. Use sentences when you need a short block of text. Use word count when you need to fill a specific character or space constraint.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "What is lorem ipsum?",
+        answer:
+          "Lorem ipsum is scrambled Latin text derived from Cicero's writings. It has been used as placeholder text in typesetting and design since the 1500s.",
+      },
+      {
+        question: "Can I use lorem ipsum in a real project?",
+        answer:
+          "Yes. It is commonly used in mockups, wireframes, design prototypes, and any context where placeholder text is needed before real content is written.",
+      },
+      {
+        question: "How many paragraphs can I generate?",
+        answer:
+          "You can generate up to 10 paragraphs, 20 sentences, or 200 words in one go. The output updates instantly as you adjust the count.",
+      },
+    ],
+    relatedToolSlugs: [
+      "word-counter",
+      "text-repeater",
+      "random-string-generator",
+      "character-counter",
+    ],
+  },
+  {
+    slug: "hash-generator",
+    name: "Hash Generator",
+    type: "modifier",
+    description: "Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from any text.",
+    metaTitle: "Hash Generator - MD5, SHA-256, SHA-512 Online",
+    metaDescription:
+      "Free online hash generator. Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from any text instantly in your browser.",
+    examples: [
+      {
+        input: "hello world",
+        output:
+          "MD5: 5eb63bbbe01eeed093cb22bb8f5acdc3 · SHA-256: b94d27b9934d3e08a52e52d7da7dabfac484efe04294e576...",
+      },
+      {
+        input: "Toolzmint",
+        output: "All four hash outputs generated instantly for the same input",
+      },
+    ],
+    aboutText:
+      "Use this hash generator to compute MD5, SHA-1, SHA-256, and SHA-512 hashes from any text input. It is useful for checksums, verifying data integrity, comparing values, and understanding hash outputs for different algorithms.",
+    howToSteps: [
+      "Type or paste the text you want to hash.",
+      "All four hash values update instantly as you type.",
+      "Copy the hash you need using the copy button on each row.",
+    ],
+    seoSections: [
+      {
+        title: "What a hash generator is used for",
+        paragraphs: [
+          "A hash generator takes any text input and produces a fixed-length output for a given algorithm. Hash values are useful for verifying data integrity, comparing strings without exposing content, and understanding how different algorithms produce different outputs for the same input.",
+          "This tool generates MD5, SHA-1, SHA-256, and SHA-512 hashes in one step so you can compare results across algorithms without running separate tools.",
+        ],
+      },
+      {
+        title: "Which hash algorithm should I use",
+        paragraphs: [
+          "SHA-256 and SHA-512 are the most widely recommended for security-related use cases. MD5 and SHA-1 are considered cryptographically broken for security purposes but are still used for checksums and non-security identifiers where collision resistance is not required.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "Is this hash generator secure to use?",
+        answer:
+          "All hashing happens in your browser. Nothing is sent to a server. SHA-256 and SHA-512 use the browser's built-in Web Crypto API.",
+      },
+      {
+        question: "Can I reverse a hash back to the original text?",
+        answer:
+          "No. Hashing is a one-way function. You cannot reverse a hash to recover the original input.",
+      },
+      {
+        question: "Why do MD5 and SHA-1 still appear here?",
+        answer:
+          "MD5 and SHA-1 are still used for non-security purposes like file checksums, legacy API signatures, and quick content identifiers. They are included here for compatibility and comparison, not for security use.",
+      },
+    ],
+    relatedToolSlugs: [
+      "base64-encoder-decoder",
+      "url-encoder-decoder",
+      "jwt-decoder",
+      "password-generator",
+    ],
+  },
+  {
+    slug: "color-converter",
+    name: "Color Converter",
+    type: "transformer",
+    description: "Convert colors between HEX, RGB, and HSL formats instantly.",
+    metaTitle: "Color Converter - HEX to RGB to HSL Online",
+    metaDescription:
+      "Free online color converter. Convert colors between HEX, RGB, and HSL formats instantly with a live color preview.",
+    examples: [
+      {
+        input: "#ff5733",
+        output: "HEX: #FF5733 · RGB: rgb(255, 87, 51) · HSL: hsl(11, 100%, 60%)",
+      },
+      {
+        input: "rgb(100, 149, 237)",
+        output: "HEX: #6495ED · RGB: rgb(100, 149, 237) · HSL: hsl(219, 79%, 66%)",
+      },
+    ],
+    aboutText:
+      "Use this color converter to switch between HEX, RGB, and HSL color formats instantly. It is useful for front-end development, design work, CSS authoring, and any workflow where you need the same color expressed in a different format.",
+    howToSteps: [
+      "Enter a color in any format: HEX (#ff5733), RGB (255, 87, 51), or HSL (11, 100%, 60%).",
+      "The tool auto-detects the format and shows a live color preview.",
+      "Copy the HEX, RGB, or HSL value you need.",
+    ],
+    seoSections: [
+      {
+        title: "When to convert between color formats",
+        paragraphs: [
+          "Different tools, design systems, and codebases use different color formats. CSS often uses HEX or RGB, while HSL is useful for making programmatic adjustments to lightness and saturation. A color converter lets you move between them without manual calculation.",
+          "This tool accepts HEX, RGB, and HSL input and outputs all three formats so you can pick whichever you need.",
+        ],
+      },
+      {
+        title: "HEX vs RGB vs HSL",
+        paragraphs: [
+          "HEX is the most common format for web colors and is compact. RGB makes each color channel explicit and is easy to use in CSS. HSL is the most intuitive for humans because it separates hue, saturation, and lightness into distinct values that are easy to reason about when adjusting a color.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "What color formats does this tool accept?",
+        answer:
+          "It accepts HEX (#RRGGBB or #RGB), RGB (as rgb(R,G,B) or plain R,G,B numbers), and HSL (as hsl(H,S%,L%) or plain H S% L% values).",
+      },
+      {
+        question: "Does it show a color preview?",
+        answer:
+          "Yes. A color swatch appears once a valid color is detected so you can visually confirm the result.",
+      },
+      {
+        question: "Can I copy just the format I need?",
+        answer:
+          "Yes. Each output row has its own copy button so you can copy HEX, RGB, or HSL independently.",
+      },
+    ],
+    relatedToolSlugs: [
+      "html-entities-encoder-decoder",
+      "base64-encoder-decoder",
+      "url-encoder-decoder",
+      "random-string-generator",
+    ],
+  },
+  {
+    slug: "html-entities-encoder-decoder",
+    name: "HTML Entities Encoder / Decoder",
+    type: "modifier",
+    description: "Encode text to HTML entities or decode HTML entities back to plain text.",
+    metaTitle: "HTML Entities Encoder Decoder - Convert HTML Online",
+    metaDescription:
+      "Free online HTML entities encoder and decoder. Convert characters to HTML entities or decode entities back to plain text instantly.",
+    examples: [
+      {
+        input: '<a href="https://example.com">Link & more</a>',
+        output: "&lt;a href=&quot;https://example.com&quot;&gt;Link &amp; more&lt;/a&gt;",
+      },
+      {
+        input: "&lt;h1&gt;Hello &amp; World&lt;/h1&gt;",
+        output: "<h1>Hello & World</h1>",
+      },
+    ],
+    aboutText:
+      "Use this HTML entities tool to encode special characters into their HTML entity equivalents, or decode HTML entities back into readable text. It is useful for safely embedding HTML in code, escaping user input for display, and reading encoded HTML.",
+    howToSteps: [
+      "Choose encode or decode mode.",
+      "Paste or type your text in the input panel.",
+      "Copy the converted output from the result panel.",
+    ],
+    seoSections: [
+      {
+        title: "What HTML entities are",
+        paragraphs: [
+          "HTML entities are special sequences used to represent characters that have meaning in HTML markup, such as < (less than), > (greater than), & (ampersand), and \" (double quote). Using entities prevents browsers from misinterpreting these characters as HTML tags or attributes.",
+          "Encoding text to HTML entities is important when displaying user-generated content, embedding code snippets in pages, or writing HTML that should appear as text rather than rendered markup.",
+        ],
+      },
+      {
+        title: "Encoding versus decoding",
+        paragraphs: [
+          "Encoding converts plain text with special characters into safe HTML entity sequences. Decoding reverses this, turning entity sequences back into the original characters. Both directions are useful depending on whether you are preparing content for HTML output or reading encoded content.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "What characters get encoded?",
+        answer:
+          "The encoder converts &, <, >, \", and ' into their HTML entity equivalents (&amp;, &lt;, &gt;, &quot;, &#39;).",
+      },
+      {
+        question: "What entities can be decoded?",
+        answer:
+          "The decoder handles named entities like &amp;, &lt;, &copy;, &euro;, numeric entities like &#169;, and hex entities like &#xA9;.",
+      },
+      {
+        question: "Is this the same as URL encoding?",
+        answer:
+          "No. HTML entity encoding is for safe HTML display, while URL encoding is for encoding characters in URLs. They use different formats and serve different purposes.",
+      },
+    ],
+    relatedToolSlugs: [
+      "color-converter",
+      "base64-encoder-decoder",
+      "url-encoder-decoder",
+      "json-formatter",
     ],
   },
   {

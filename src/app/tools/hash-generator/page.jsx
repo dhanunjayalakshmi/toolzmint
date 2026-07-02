@@ -1,9 +1,9 @@
 import ToolLayout from "@/app/components/ToolLayout";
 import { getToolMetadata } from "@/lib/metadata";
 import { tools } from "@/lib/toolsConfig";
-import JwtDecoderTool from "./JwtDecoderTool";
+import HashGeneratorTool from "./HashGeneratorTool";
 
-const tool = tools?.find((tool) => tool.slug === "jwt-decoder");
+const tool = tools?.find((t) => t.slug === "hash-generator");
 
 export const metadata = getToolMetadata(tool);
 
@@ -20,7 +20,7 @@ const Page = () => {
       faqItems={tool?.faqItems}
       relatedToolSlugs={tool?.relatedToolSlugs}
     >
-      <JwtDecoderTool />
+      <HashGeneratorTool />
     </ToolLayout>
   );
 };

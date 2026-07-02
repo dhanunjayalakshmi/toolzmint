@@ -1,9 +1,9 @@
 import ToolLayout from "@/app/components/ToolLayout";
 import { getToolMetadata } from "@/lib/metadata";
 import { tools } from "@/lib/toolsConfig";
-import JwtDecoderTool from "./JwtDecoderTool";
+import ColorConverterTool from "./ColorConverterTool";
 
-const tool = tools?.find((tool) => tool.slug === "jwt-decoder");
+const tool = tools?.find((t) => t.slug === "color-converter");
 
 export const metadata = getToolMetadata(tool);
 
@@ -20,7 +20,7 @@ const Page = () => {
       faqItems={tool?.faqItems}
       relatedToolSlugs={tool?.relatedToolSlugs}
     >
-      <JwtDecoderTool />
+      <ColorConverterTool />
     </ToolLayout>
   );
 };
