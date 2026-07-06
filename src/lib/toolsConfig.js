@@ -2,7 +2,7 @@ export const tools = [
   {
     slug: "json-to-csv",
     name: "JSON to CSV Converter",
-    type: "converter",
+    type: "transformer",
     description: "Convert JSON arrays and objects to CSV format instantly.",
     metaTitle: "JSON to CSV Converter - Convert JSON to CSV Online Free",
     metaDescription:
