@@ -974,6 +974,70 @@ export const tools = [
     ],
   },
   {
+    slug: "number-base-converter",
+    name: "Number Base Converter",
+    type: "transformer",
+    description: "Convert numbers between binary, octal, decimal, and hexadecimal instantly.",
+    metaTitle: "Number Base Converter - Binary, Octal, Decimal, Hex",
+    metaDescription:
+      "Free online number base converter. Convert between binary, octal, decimal, and hexadecimal instantly. Type in any field and all others update live.",
+    examples: [
+      {
+        input: "42 (decimal)",
+        output: "BIN: 101010 · OCT: 52 · DEC: 42 · HEX: 2A",
+      },
+      {
+        input: "FF (hexadecimal)",
+        output: "BIN: 11111111 · OCT: 377 · DEC: 255 · HEX: FF",
+      },
+    ],
+    aboutText:
+      "Use this number base converter to switch between binary, octal, decimal, and hexadecimal. Type a number into any field and the other three update instantly. It is useful for programming, digital electronics, debugging low-level code, and understanding how numbers are represented in different bases.",
+    howToSteps: [
+      "Type a number into any of the four fields: binary, octal, decimal, or hex.",
+      "All other fields update instantly with the converted values.",
+      "Copy the value you need using the copy button on that row.",
+    ],
+    seoSections: [
+      {
+        title: "When to convert between number bases",
+        paragraphs: [
+          "Different programming contexts use different number bases. Decimal is everyday arithmetic. Binary is how computers store and process data at the hardware level. Hexadecimal is used in memory addresses, color codes, bytecode, and debugging output. Octal appears in Unix file permissions and some legacy systems.",
+          "This converter lets you type into any base and see all four representations at once, which is faster than converting one step at a time.",
+        ],
+      },
+      {
+        title: "Binary, octal, decimal, and hex explained",
+        paragraphs: [
+          "Binary (base 2) uses only 0 and 1. Octal (base 8) uses digits 0 through 7. Decimal (base 10) is the standard number system. Hexadecimal (base 16) uses digits 0 through 9 and letters A through F. All four represent the same underlying value in different notations.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "Can I type in any of the four fields?",
+        answer:
+          "Yes. Type into whichever base you already have, and the other three fields update instantly.",
+      },
+      {
+        question: "Does this handle large numbers?",
+        answer:
+          "Yes. The converter uses BigInt internally, so it handles arbitrarily large integers without precision loss.",
+      },
+      {
+        question: "Is hex input case sensitive?",
+        answer:
+          "No. You can type hex digits in upper or lowercase. The output is always shown in uppercase.",
+      },
+    ],
+    relatedToolSlugs: [
+      "hash-generator",
+      "base64-encoder-decoder",
+      "url-encoder-decoder",
+      "random-string-generator",
+    ],
+  },
+  {
     slug: "diff-checker",
     name: "Diff Checker",
     type: "analyzer",
