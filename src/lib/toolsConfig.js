@@ -519,10 +519,10 @@ export const tools = [
     slug: "uuid-generator",
     name: "UUID Generator",
     type: "generator",
-    description: "Generate secure UUID v4 values instantly.",
-    metaTitle: "UUID Generator - Generate UUID v4 Online",
+    description: "Generate secure UUID v4 / GUID values instantly.",
+    metaTitle: "UUID / GUID Generator - Generate UUID v4 Online Free",
     metaDescription:
-      "Free online UUID generator. Generate secure UUID v4 values instantly with standard or hyphenless format.",
+      "Free online UUID and GUID generator. Generate secure UUID v4 values instantly in standard or hyphenless format. No install needed.",
     examples: [
       {
         input: "Generate 1 UUID",
@@ -535,7 +535,7 @@ export const tools = [
       },
     ],
     aboutText:
-      "Use this UUID generator to create UUID v4 values directly in your browser. It is useful for database records, API payloads, testing, identifiers, and any workflow that needs unique random IDs.",
+      "Use this UUID generator to create UUID v4 values directly in your browser. It is useful for database records, API payloads, testing, identifiers, and any workflow that needs unique random IDs. UUID and GUID refer to the same format — this tool works for both.",
     howToSteps: [
       "Choose how many UUIDs you want to generate.",
       "Decide whether you want the standard hyphenated format.",
@@ -547,6 +547,13 @@ export const tools = [
         paragraphs: [
           "A UUID generator creates unique identifiers that are commonly used in databases, APIs, distributed systems, test data, and application records. UUID v4 values are random and help reduce the chance of collisions.",
           "This online UUID generator is useful when you need one ID quickly or a short batch of UUIDs without opening a terminal or writing custom code.",
+        ],
+      },
+      {
+        title: "UUID and GUID — the same thing",
+        paragraphs: [
+          "UUID stands for Universally Unique Identifier. GUID stands for Globally Unique Identifier. They refer to the same 128-bit format and are interchangeable in practice. Microsoft popularised the term GUID, while the broader software industry uses UUID.",
+          "If you are looking for a GUID generator, this tool produces the same output. A generated value like 550e8400-e29b-41d4-a716-446655440000 is both a valid UUID and a valid GUID.",
         ],
       },
       {
@@ -571,6 +578,21 @@ export const tools = [
         question: "Can I generate UUIDs without hyphens?",
         answer:
           "Yes. You can switch to a hyphenless format if your workflow expects a continuous 32-character value.",
+      },
+      {
+        question: "Is this also a GUID generator?",
+        answer:
+          "Yes. UUID and GUID are the same 128-bit format. GUID is the term used by Microsoft and Windows, while UUID is the broader industry standard. The values this tool generates are valid as both UUIDs and GUIDs.",
+      },
+      {
+        question: "What is the difference between UUID and GUID?",
+        answer:
+          "There is no practical difference. GUID is Microsoft's name for the same format defined by the UUID standard. Both are 32 hexadecimal characters displayed in five groups separated by hyphens.",
+      },
+      {
+        question: "Can I generate multiple UUIDs at once?",
+        answer:
+          "Yes. You can generate up to 50 UUIDs in one go. Each value is independently random and unique.",
       },
     ],
     relatedToolSlugs: [
