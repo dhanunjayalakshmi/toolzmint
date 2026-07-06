@@ -974,6 +974,70 @@ export const tools = [
     ],
   },
   {
+    slug: "percentage-calculator",
+    name: "Percentage Calculator",
+    type: "analyzer",
+    description: "Calculate percentages, percentage change, and percentage of a number instantly.",
+    metaTitle: "Percentage Calculator - Free Online Percent Calculator",
+    metaDescription:
+      "Free online percentage calculator. Find what percent of a number is, calculate percentage change, or increase and decrease a value by a percentage.",
+    examples: [
+      {
+        input: "What is 15% of 200?",
+        output: "30",
+      },
+      {
+        input: "Percentage change from 80 to 100?",
+        output: "+25%",
+      },
+    ],
+    aboutText:
+      "Use this percentage calculator to solve the most common percentage problems instantly. Choose from four calculation modes: finding a percentage of a number, finding what percent one number is of another, calculating percentage change, or adjusting a number up or down by a percentage.",
+    howToSteps: [
+      "Select the type of percentage calculation you need.",
+      "Enter the numbers in the fields provided.",
+      "Read the result instantly and copy it if needed.",
+    ],
+    seoSections: [
+      {
+        title: "Common percentage calculations",
+        paragraphs: [
+          "Percentage calculators are used in everyday situations such as working out discounts, tips, tax amounts, grade scores, salary changes, and statistical comparisons. Instead of doing mental math or reaching for a formula, this tool gives the answer as you type.",
+          "The four modes cover the most common percentage questions: finding a percentage of a value, finding what percentage one number represents of another, calculating how much something increased or decreased, and applying a percentage change to a starting value.",
+        ],
+      },
+      {
+        title: "Percentage change explained",
+        paragraphs: [
+          "Percentage change measures how much a value grew or shrank relative to the original. A positive result means an increase and a negative result means a decrease. It is commonly used for price changes, growth rates, and performance comparisons.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "What is the formula for percentage of a number?",
+        answer:
+          "Multiply the number by the percentage and divide by 100. For example, 15% of 200 is (15 / 100) × 200 = 30.",
+      },
+      {
+        question: "How do I calculate percentage change?",
+        answer:
+          "Subtract the original value from the new value, divide by the original value, and multiply by 100. A positive result is an increase and a negative result is a decrease.",
+      },
+      {
+        question: "Can I calculate a discount with this tool?",
+        answer:
+          "Yes. Use the Increase / Decrease mode, enter the original price, select Decrease, and enter the discount percentage to get the final price.",
+      },
+    ],
+    relatedToolSlugs: [
+      "word-counter",
+      "character-counter",
+      "unix-timestamp-converter",
+      "number-base-converter",
+    ],
+  },
+  {
     slug: "number-base-converter",
     name: "Number Base Converter",
     type: "transformer",
