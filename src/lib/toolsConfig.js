@@ -974,6 +974,71 @@ export const tools = [
     ],
   },
   {
+    slug: "image-resizer",
+    name: "Image Resizer",
+    type: "transformer",
+    description: "Resize images to any dimension and download as PNG, JPEG, or WebP — all in your browser.",
+    metaTitle: "Image Resizer - Resize Images Online Free",
+    metaDescription:
+      "Free online image resizer. Upload an image, set the dimensions, choose PNG, JPEG, or WebP, and download instantly. No upload to a server.",
+    examples: [
+      {
+        input: "1920×1080 JPEG photo, resize to 800×450",
+        output: "Resized JPEG at 800×450 px, ready to download",
+      },
+      {
+        input: "PNG logo at 500×500, convert to WebP at 200×200",
+        output: "WebP image at 200×200 px with quality control",
+      },
+    ],
+    aboutText:
+      "Use this image resizer to scale images to any dimensions directly in your browser. Upload a PNG, JPEG, or WebP image, set the target width and height, optionally lock the aspect ratio, choose an output format, and download the result. No image is uploaded to a server.",
+    howToSteps: [
+      "Drop an image onto the upload area or click to choose a file.",
+      "Enter the target width or height. Enable Lock ratio to scale proportionally.",
+      "Choose an output format (PNG, JPEG, or WebP) and adjust quality if needed.",
+      "Click Download image to save the resized file.",
+    ],
+    seoSections: [
+      {
+        title: "Resize images without uploading them",
+        paragraphs: [
+          "This image resizer runs entirely in your browser using the Canvas API. Your image never leaves your device, which is useful when working with private or sensitive photos, design files, or company assets.",
+          "You can resize to any custom pixel dimension and choose between PNG for lossless output, JPEG for smaller file sizes, or WebP for modern, efficient compression.",
+        ],
+      },
+      {
+        title: "Aspect ratio and quality",
+        paragraphs: [
+          "Locking the aspect ratio ensures the image does not get distorted when you change one dimension. The quality slider (available for JPEG and WebP) lets you balance file size against image sharpness.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "Is my image uploaded to a server?",
+        answer:
+          "No. Resizing happens entirely in your browser using the HTML Canvas API. Your image is never sent anywhere.",
+      },
+      {
+        question: "What image formats are supported?",
+        answer:
+          "You can upload PNG, JPEG, and WebP images. The output can be saved as PNG, JPEG, or WebP regardless of the input format.",
+      },
+      {
+        question: "Will resizing reduce image quality?",
+        answer:
+          "Scaling down is generally lossless in appearance. For JPEG and WebP output, you can control compression quality with the quality slider. PNG output is always lossless.",
+      },
+    ],
+    relatedToolSlugs: [
+      "base64-encoder-decoder",
+      "color-converter",
+      "qr-code-generator",
+      "hash-generator",
+    ],
+  },
+  {
     slug: "age-calculator",
     name: "Age Calculator",
     type: "analyzer",
