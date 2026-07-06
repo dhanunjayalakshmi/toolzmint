@@ -974,6 +974,70 @@ export const tools = [
     ],
   },
   {
+    slug: "age-calculator",
+    name: "Age Calculator",
+    type: "analyzer",
+    description: "Calculate your exact age or the difference between two dates in years, months, and days.",
+    metaTitle: "Age Calculator - Calculate Your Age Online",
+    metaDescription:
+      "Free online age calculator. Enter your date of birth to find your exact age in years, months, and days. Also calculates the difference between any two dates.",
+    examples: [
+      {
+        input: "Date of birth: 1990-06-15",
+        output: "36 years, 0 months, 17 days · Born on a Friday · 245 days until next birthday",
+      },
+      {
+        input: "Date difference: 2024-01-01 to 2026-07-02",
+        output: "2 years, 6 months, 1 day · 912 total days · 130 weeks",
+      },
+    ],
+    aboutText:
+      "Use this age calculator to find your exact age from your date of birth, or to calculate the difference between any two dates. Results show the breakdown in years, months, and days, plus total days and weeks.",
+    howToSteps: [
+      "Select Age Calculator to find your age, or Date Difference to compare two dates.",
+      "Enter the date of birth or the two dates you want to compare.",
+      "Read the result in years, months, days, and total days instantly.",
+    ],
+    seoSections: [
+      {
+        title: "What this calculator gives you",
+        paragraphs: [
+          "The age calculator takes a date of birth and tells you your exact age in years, months, and days as of today. It also shows the total number of days and weeks you have lived, which day of the week you were born on, and how many days remain until your next birthday.",
+          "The date difference mode calculates the span between any two dates, which is useful for project timelines, anniversaries, deadlines, or any situation where you need to know how far apart two dates are.",
+        ],
+      },
+      {
+        title: "Accurate age calculation",
+        paragraphs: [
+          "Age is calculated precisely by accounting for varying month lengths and leap years, so the result in years, months, and days is always exact relative to today's date.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "How is my exact age calculated?",
+        answer:
+          "The calculator subtracts your birth date from today's date, accounting for different month lengths and leap years to give the precise number of years, months, and days.",
+      },
+      {
+        question: "Can I calculate the difference between any two dates?",
+        answer:
+          "Yes. Switch to Date Difference mode and enter a start and end date. The order does not matter.",
+      },
+      {
+        question: "Does the calculator account for leap years?",
+        answer:
+          "Yes. Leap years are handled automatically, so totals in days and weeks are always accurate.",
+      },
+    ],
+    relatedToolSlugs: [
+      "percentage-calculator",
+      "unix-timestamp-converter",
+      "word-counter",
+      "number-base-converter",
+    ],
+  },
+  {
     slug: "percentage-calculator",
     name: "Percentage Calculator",
     type: "analyzer",
