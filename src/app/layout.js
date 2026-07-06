@@ -24,12 +24,23 @@ export const metadata = {
     type: "website",
     url: "https://toolzmint.com",
     siteName: "Toolzmint",
+    images: [
+      {
+        url: "https://toolzmint.com/api/og?title=Toolzmint&description=Free%20browser-based%20tools%20for%20developers.%20No%20install%20needed.",
+        width: 1200,
+        height: 630,
+        alt: "Toolzmint – Free Online Tools for Developers",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Toolzmint – Free Online Tools for Developers",
     description:
       "Free browser-based tools for developers and everyday tasks. Line break remover, UUID generator, Base64 encoder, JSON formatter, word counter, and 25+ more utilities — no install needed.",
+    images: [
+      "https://toolzmint.com/api/og?title=Toolzmint&description=Free%20browser-based%20tools%20for%20developers.%20No%20install%20needed.",
+    ],
   },
   verification: {
     google: "K8qKF7eQiUAamegngDg817buqx7ekNezCI2XFD3igVU",
