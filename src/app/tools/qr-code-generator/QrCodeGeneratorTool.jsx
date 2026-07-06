@@ -9,6 +9,7 @@ const QrCodeGeneratorTool = () => {
   const [errorLevel, setErrorLevel] = useState("M");
   const [dataUrl, setDataUrl] = useState(null);
   const [error, setError] = useState(null);
+  const [copied, setCopied] = useState(false);
   const debounceRef = useRef(null);
 
   useEffect(() => {
@@ -41,10 +42,18 @@ const QrCodeGeneratorTool = () => {
     a.click();
   };
 
+  const handleCopyText = async () => {
+    if (!text.trim()) return;
+    await navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+
   const handleClear = () => {
     setText("");
     setDataUrl(null);
     setError(null);
+    setCopied(false);
   };
 
   return (
@@ -115,6 +124,15 @@ const QrCodeGeneratorTool = () => {
             className="rounded-full border-0 bg-muted shadow-sm cursor-pointer transition-all hover:bg-muted/80 hover:shadow-md active:scale-95"
           >
             Clear
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handleCopyText}
+            disabled={!text.trim()}
+            className="rounded-full border-0 bg-muted shadow-sm cursor-pointer transition-all hover:bg-muted/80 hover:shadow-md active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {copied ? "Copied!" : "Copy text"}
           </Button>
           <Button
             size="sm"

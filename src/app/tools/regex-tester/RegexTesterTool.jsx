@@ -7,6 +7,7 @@ const RegexTesterTool = () => {
   const [pattern, setPattern] = useState("");
   const [flags, setFlags] = useState("g");
   const [testString, setTestString] = useState("");
+  const [copied, setCopied] = useState(false);
 
   const toggleFlag = (flag) => {
     setFlags((prev) =>
@@ -21,6 +22,31 @@ const RegexTesterTool = () => {
 
   const hasNamedGroups =
     matches.length > 0 && Object.keys(matches[0]?.groups ?? {}).length > 0;
+
+  const handleCopy = async () => {
+    if (!matches.length) return;
+    const text = matches
+      .map((m, i) => {
+        const groups = m.slice(1);
+        const groupStr =
+          groups.length > 0
+            ? "\n  " +
+              groups
+                .map((g, gi) => {
+                  const name = hasNamedGroups
+                    ? Object.keys(m.groups)[gi]
+                    : `$${gi + 1}`;
+                  return `${name}: ${g ?? "undefined"}`;
+                })
+                .join("\n  ")
+            : "";
+        return `#${i + 1}: "${m[0]}" at index ${m.index}${groupStr}`;
+      })
+      .join("\n");
+    await navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
 
   return (
     <div className="w-full space-y-4">
@@ -113,7 +139,16 @@ const RegexTesterTool = () => {
       {/* Match list */}
       {matches.length > 0 && (
         <div className="space-y-1.5">
-          <p className="text-xs font-medium text-muted-foreground px-1">Matches</p>
+          <div className="flex items-center justify-between px-1">
+            <p className="text-xs font-medium text-muted-foreground">Matches</p>
+            <button
+              type="button"
+              onClick={handleCopy}
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+            >
+              {copied ? "Copied!" : "Copy matches"}
+            </button>
+          </div>
           <div className="space-y-2 max-h-72 overflow-y-auto pr-1">
             {matches.map((match, i) => (
               <div

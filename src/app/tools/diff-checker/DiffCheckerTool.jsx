@@ -47,9 +47,25 @@ const DiffCheckerTool = () => {
     [debouncedOriginal, debouncedModified]
   );
 
+  const [copied, setCopied] = useState(false);
+
   const handleClear = () => {
     setOriginal("");
     setModified("");
+    setCopied(false);
+  };
+
+  const handleCopy = async () => {
+    if (!lines.length) return;
+    const text = lines
+      .map((l) => {
+        const prefix = l.type === "added" ? "+" : l.type === "removed" ? "-" : " ";
+        return `${prefix} ${l.text}`;
+      })
+      .join("\n");
+    await navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
   };
 
   const hasChanges = stats && (stats.added > 0 || stats.removed > 0);
@@ -135,7 +151,7 @@ const DiffCheckerTool = () => {
         </>
       )}
 
-      <div className="flex justify-end">
+      <div className="flex justify-end gap-2">
         <Button
           variant="outline"
           size="sm"
@@ -144,6 +160,15 @@ const DiffCheckerTool = () => {
           className="rounded-full border-0 bg-muted shadow-sm cursor-pointer transition-all hover:bg-muted/80 hover:shadow-md active:scale-95 disabled:opacity-50"
         >
           Clear
+        </Button>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={handleCopy}
+          disabled={!lines.length}
+          className="rounded-full border-0 bg-muted shadow-sm cursor-pointer transition-all hover:bg-muted/80 hover:shadow-md active:scale-95 disabled:opacity-50"
+        >
+          {copied ? "Copied!" : "Copy diff"}
         </Button>
       </div>
     </div>

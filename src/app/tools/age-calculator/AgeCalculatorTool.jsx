@@ -32,6 +32,7 @@ const AgeCalculatorTool = () => {
   const [birthDate, setBirthDate] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState(today);
+  const [copied, setCopied] = useState(false);
 
   const ageResult = useMemo(
     () => (mode === "age" && birthDate ? calculateAge(birthDate) : null),
@@ -47,6 +48,32 @@ const AgeCalculatorTool = () => {
     setBirthDate("");
     setStartDate("");
     setEndDate(today);
+    setCopied(false);
+  };
+
+  const handleCopy = async () => {
+    let text = "";
+    if (ageResult) {
+      text = [
+        `Age: ${ageResult.years} years, ${ageResult.months} months, ${ageResult.days} days`,
+        `Total days lived: ${ageResult.totalDays.toLocaleString()}`,
+        `Total weeks: ${ageResult.totalWeeks.toLocaleString()}`,
+        ageResult.isTodayBirthday
+          ? "Days until birthday: Today!"
+          : `Days until birthday: ${ageResult.daysUntilBirthday}`,
+        `Born on a: ${ageResult.dayOfWeek}`,
+      ].join("\n");
+    } else if (diffResult) {
+      text = [
+        `Date difference: ${diffResult.years} years, ${diffResult.months} months, ${diffResult.days} days`,
+        `Total days: ${Math.abs(diffResult.totalDays).toLocaleString()}`,
+        `Total weeks: ${diffResult.totalWeeks.toLocaleString()}`,
+      ].join("\n");
+    }
+    if (!text) return;
+    await navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
   };
 
   return (
@@ -152,7 +179,7 @@ const AgeCalculatorTool = () => {
         <p className="text-sm text-muted-foreground px-1">Enter both dates to calculate the difference.</p>
       )}
 
-      <div className="flex justify-end">
+      <div className="flex justify-end gap-2">
         <Button
           variant="outline"
           size="sm"
@@ -161,6 +188,15 @@ const AgeCalculatorTool = () => {
           className="rounded-full border-0 bg-muted shadow-sm cursor-pointer transition-all hover:bg-muted/80 hover:shadow-md active:scale-95 disabled:opacity-50"
         >
           Clear
+        </Button>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={handleCopy}
+          disabled={!ageResult && !diffResult}
+          className="rounded-full border-0 bg-muted shadow-sm cursor-pointer transition-all hover:bg-muted/80 hover:shadow-md active:scale-95 disabled:opacity-50"
+        >
+          {copied ? "Copied!" : "Copy results"}
         </Button>
       </div>
     </div>
