@@ -1,5 +1,87 @@
 export const tools = [
   {
+    slug: "word-frequency-counter",
+    name: "Word Frequency Counter",
+    type: "analyzer",
+    description: "Count how often each word appears in your text and rank them by frequency.",
+    metaTitle: "Word Frequency Counter - Analyze Word Frequency Online",
+    metaDescription:
+      "Free online word frequency counter. Paste any text and instantly see how often each word appears, ranked by frequency. Filter stop words, set minimum length, and download results as CSV.",
+    examples: [
+      {
+        input: "the quick brown fox jumps over the lazy dog the fox",
+        output: "the: 3, fox: 2, quick: 1, brown: 1, jumps: 1…",
+      },
+      {
+        input: "Same text with 'Ignore stop words' on",
+        output: "quick: 1, brown: 1, fox: 2, jumps: 1, lazy: 1, dog: 1",
+      },
+    ],
+    aboutText:
+      "Use this word frequency counter to analyse how often each word appears in any text. Paste an article, essay, speech, or document and get a ranked table of every word with its count and percentage. You can filter out common stop words, set a minimum word length, sort alphabetically or by frequency, and download the full results as a CSV file.",
+    howToSteps: [
+      "Paste or type your text into the input area.",
+      "Choose a sort order — most frequent, least frequent, or alphabetical.",
+      "Toggle 'Ignore stop words' to remove common words like 'the' and 'a'.",
+      "Set a minimum word length to filter out very short words.",
+      "Download the full frequency table as a CSV file if needed.",
+    ],
+    seoSections: [
+      {
+        title: "What word frequency analysis is used for",
+        paragraphs: [
+          "Word frequency analysis shows you which words appear most often in a piece of text. This is useful for content analysis, SEO keyword research, studying writing patterns, comparing documents, and identifying overused words in drafts.",
+          "Paste any article, essay, book chapter, speech, or document and the tool instantly ranks every word by how many times it appears. You can see both the raw count and the percentage of total words.",
+        ],
+      },
+      {
+        title: "Stop words and filtering options",
+        paragraphs: [
+          "Common English words like 'the', 'a', 'and', and 'is' appear frequently in almost every text but carry little meaning on their own. Enabling the stop words filter removes these so you can focus on the words that are actually significant.",
+          "The minimum word length filter lets you ignore very short words. Setting it to 3 or 4 removes most articles and prepositions and surfaces the more meaningful vocabulary of your text.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "What does a word frequency counter do?",
+        answer:
+          "It counts how many times each word appears in your text and shows the results ranked by frequency, along with the percentage each word represents of the total.",
+      },
+      {
+        question: "What are stop words?",
+        answer:
+          "Stop words are common English words like 'the', 'a', 'and', 'is', and 'in' that appear frequently but carry little meaning. Filtering them out helps you focus on the more significant words in your text.",
+      },
+      {
+        question: "Can I download the word frequency results?",
+        answer:
+          "Yes. Click the Download CSV button to save the full word frequency table as a CSV file you can open in Excel or Google Sheets.",
+      },
+      {
+        question: "Is the analysis case sensitive?",
+        answer:
+          "By default it is case insensitive, so 'The' and 'the' are counted as the same word. Enable the case sensitive toggle if you need them treated separately.",
+      },
+      {
+        question: "How many words can this tool handle?",
+        answer:
+          "The tool processes all the text you paste but displays a maximum of 200 rows in the table for performance. The full list is available in the downloaded CSV.",
+      },
+      {
+        question: "Is this tool free?",
+        answer:
+          "Yes. The word frequency counter is completely free and runs in your browser. Your text is never sent to a server.",
+      },
+    ],
+    relatedToolSlugs: [
+      "word-counter",
+      "character-counter",
+      "diff-checker",
+      "line-sorter",
+    ],
+  },
+  {
     slug: "json-to-csv",
     name: "JSON to CSV Converter",
     type: "transformer",
