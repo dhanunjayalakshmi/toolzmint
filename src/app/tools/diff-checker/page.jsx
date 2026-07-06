@@ -10,6 +10,7 @@ export const metadata = getToolMetadata(tool);
 const Page = () => {
   return (
     <ToolLayout
+      slug={tool?.slug}
       title={tool?.name}
       description={tool?.description}
       type={tool?.type}

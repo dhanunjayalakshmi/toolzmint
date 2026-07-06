@@ -3,6 +3,8 @@ import { getRelatedTools } from "@/lib/toolDiscovery";
 import { tools } from "@/lib/toolsConfig";
 import { Card, CardContent } from "@/components/ui/card";
 
+const BASE_URL = "https://toolzmint.com";
+
 const DEFAULT_STEPS = [
   "Enter your input.",
   "View the result instantly.",
@@ -10,6 +12,7 @@ const DEFAULT_STEPS = [
 ];
 
 const ToolLayout = ({
+  slug,
   title,
   type,
   description,
@@ -29,8 +32,62 @@ const ToolLayout = ({
     limit: 6,
   });
 
+  const toolUrl = slug ? `${BASE_URL}/tools/${slug}` : null;
+
+  const breadcrumbSchema = toolUrl
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Tools", item: `${BASE_URL}/tools` },
+          { "@type": "ListItem", position: 2, name: title, item: toolUrl },
+        ],
+      }
+    : null;
+
+  const webAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: title,
+    description,
+    applicationCategory: "UtilityApplication",
+    operatingSystem: "Web",
+    ...(toolUrl ? { url: toolUrl } : {}),
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  };
+
+  const faqSchema =
+    faqItems.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: { "@type": "Answer", text: item.answer },
+          })),
+        }
+      : null;
+
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-12 space-y-14">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
+      />
+      {breadcrumbSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+      )}
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+
       <div className="space-y-4">
         <h1 className="text-4xl font-semibold tracking-tight">{title}</h1>
 
