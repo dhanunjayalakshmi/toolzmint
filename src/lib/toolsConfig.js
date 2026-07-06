@@ -974,6 +974,70 @@ export const tools = [
     ],
   },
   {
+    slug: "diff-checker",
+    name: "Diff Checker",
+    type: "analyzer",
+    description: "Compare two texts and highlight the differences line by line.",
+    metaTitle: "Diff Checker - Compare Text and Find Differences Online",
+    metaDescription:
+      "Free online diff checker. Paste two texts to compare them line by line and see exactly what changed, was added, or removed.",
+    examples: [
+      {
+        input: "Original: 'Hello world'\nModified: 'Hello Toolzmint'",
+        output: "− Hello world\n+ Hello Toolzmint",
+      },
+      {
+        input: "Two versions of a config file or code snippet",
+        output: "Added lines highlighted in green, removed lines in red, unchanged lines shown normally",
+      },
+    ],
+    aboutText:
+      "Use this diff checker to compare two pieces of text and see exactly what changed between them. It highlights added lines in green and removed lines in red, making it easy to spot edits in code, documents, configs, or any text.",
+    howToSteps: [
+      "Paste the original text in the left panel.",
+      "Paste the modified text in the right panel.",
+      "Review the highlighted diff below showing what was added, removed, or unchanged.",
+    ],
+    seoSections: [
+      {
+        title: "What a diff checker is used for",
+        paragraphs: [
+          "A diff checker compares two texts and shows exactly what changed between them. It is useful for reviewing edits in documents, comparing config files, spotting changes in code, or verifying that two versions of content match expectations.",
+          "Instead of reading through both texts manually, a diff tool highlights the differences so you can focus only on what changed.",
+        ],
+      },
+      {
+        title: "Line-by-line comparison",
+        paragraphs: [
+          "This tool compares text line by line. Added lines in the modified version are shown in green and removed lines from the original are shown in red. Unchanged lines appear without highlighting so the overall structure stays readable.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "Does this work for code?",
+        answer:
+          "Yes. You can paste any text including code, configuration files, JSON, markdown, or plain prose.",
+      },
+      {
+        question: "How are differences calculated?",
+        answer:
+          "The tool uses a line-level diff algorithm to identify which lines were added, removed, or left unchanged between the two inputs.",
+      },
+      {
+        question: "Is there a size limit?",
+        answer:
+          "There is no hard limit, but very large texts may take a moment to process since everything runs in your browser.",
+      },
+    ],
+    relatedToolSlugs: [
+      "json-formatter",
+      "duplicate-line-remover",
+      "line-sorter",
+      "csv-to-json",
+    ],
+  },
+  {
     slug: "csv-to-json",
     name: "CSV to JSON",
     type: "transformer",
