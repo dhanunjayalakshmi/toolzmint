@@ -10,9 +10,27 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Toolzmint",
-  description: "Free online tools for everyday use",
+  title: "Toolzmint – Free Online Tools for Developers",
+  description:
+    "Free browser-based tools for developers and everyday tasks. Line break remover, UUID generator, Base64 encoder, JSON formatter, word counter, and 25+ more utilities — no install needed.",
   metadataBase: new URL("https://toolzmint.com"),
+  alternates: {
+    canonical: "https://toolzmint.com",
+  },
+  openGraph: {
+    title: "Toolzmint – Free Online Tools for Developers",
+    description:
+      "Free browser-based tools for developers and everyday tasks. Line break remover, UUID generator, Base64 encoder, JSON formatter, word counter, and 25+ more utilities — no install needed.",
+    type: "website",
+    url: "https://toolzmint.com",
+    siteName: "Toolzmint",
+  },
+  twitter: {
+    card: "summary",
+    title: "Toolzmint – Free Online Tools for Developers",
+    description:
+      "Free browser-based tools for developers and everyday tasks. Line break remover, UUID generator, Base64 encoder, JSON formatter, word counter, and 25+ more utilities — no install needed.",
+  },
   verification: {
     google: "K8qKF7eQiUAamegngDg817buqx7ekNezCI2XFD3igVU",
   },
