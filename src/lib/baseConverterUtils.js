@@ -41,6 +41,7 @@ export function convertAll(bigintValue) {
 }
 
 export function getUpdatedValues(prev, changedBase, sanitized) {
+  if (!sanitized) return { 2: "", 8: "", 10: "", 16: "" };
   const parsed = parseBase(sanitized, changedBase);
   if (parsed === null) return { ...prev, [changedBase]: sanitized };
   return { ...convertAll(parsed), [changedBase]: sanitized };
