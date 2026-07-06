@@ -1,5 +1,86 @@
 export const tools = [
   {
+    slug: "json-to-csv",
+    name: "JSON to CSV Converter",
+    type: "converter",
+    description: "Convert JSON arrays and objects to CSV format instantly.",
+    metaTitle: "JSON to CSV Converter - Convert JSON to CSV Online Free",
+    metaDescription:
+      "Free online JSON to CSV converter. Paste any JSON array or object and download a clean CSV file instantly. Supports comma, semicolon, and tab delimiters.",
+    examples: [
+      {
+        input: '[{"name":"Alice","age":30},{"name":"Bob","age":25}]',
+        output: "name,age\nAlice,30\nBob,25",
+      },
+      {
+        input: '{"product":"Widget","price":9.99,"stock":100}',
+        output: "product,price,stock\nWidget,9.99,100",
+      },
+    ],
+    aboutText:
+      "Use this JSON to CSV converter to turn JSON arrays and objects into clean CSV files directly in your browser. It handles arrays of objects, single objects, missing keys, nested values, and special characters. You can choose your delimiter and download the result as a .csv file.",
+    howToSteps: [
+      "Paste your JSON array or object into the input area.",
+      "Choose a delimiter — comma, semicolon, or tab.",
+      "Toggle headers on or off depending on your needs.",
+      "Copy the CSV output or download it as a .csv file.",
+    ],
+    seoSections: [
+      {
+        title: "When to convert JSON to CSV",
+        paragraphs: [
+          "JSON is the standard format for APIs and web services, but spreadsheet tools like Excel and Google Sheets work better with CSV. Converting JSON to CSV lets you open API data directly in a spreadsheet without writing code.",
+          "This tool is useful when you receive JSON from an API response, a database export, or a configuration file and need to import it into a spreadsheet, BI tool, or data pipeline that expects CSV.",
+        ],
+      },
+      {
+        title: "Handling arrays, objects, and nested data",
+        paragraphs: [
+          "This converter handles both arrays of objects (the most common case) and single objects. If some rows are missing keys that others have, the missing cells are left empty rather than shifting columns.",
+          "Nested objects and arrays within your JSON are serialised as JSON strings inside the CSV cell rather than being silently dropped. This keeps your data intact and makes it easy to identify fields that may need further processing.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "Can I convert a JSON array to CSV?",
+        answer:
+          "Yes. Paste a JSON array of objects and the converter extracts the keys as column headers and maps each object to a row.",
+      },
+      {
+        question: "What if my JSON objects have different keys?",
+        answer:
+          "The converter collects all unique keys across every object and uses them as columns. Missing values are left as empty cells.",
+      },
+      {
+        question: "Can I download the result as a .csv file?",
+        answer:
+          "Yes. Click the Download button to save the output as a .csv file you can open in Excel, Google Sheets, or any CSV-compatible tool.",
+      },
+      {
+        question: "Which delimiters are supported?",
+        answer:
+          "Comma, semicolon, and tab. Semicolon is common in European locales and tab is useful when values contain commas.",
+      },
+      {
+        question: "How are nested objects handled?",
+        answer:
+          "Nested objects and arrays are serialised as JSON strings inside the cell. This preserves the data without silently dropping fields.",
+      },
+      {
+        question: "Is this tool free?",
+        answer:
+          "Yes. The JSON to CSV converter is completely free, runs in your browser, and does not send your data anywhere.",
+      },
+    ],
+    relatedToolSlugs: [
+      "csv-to-json",
+      "json-formatter",
+      "diff-checker",
+      "url-encoder-decoder",
+    ],
+  },
+  {
     slug: "regex-tester",
     name: "Regex Tester",
     type: "analyzer",
