@@ -16,11 +16,19 @@ const WordFrequencyCounterTool = () => {
   const [ignoreStopWords, setIgnoreStopWords] = useState(false);
   const [caseSensitive, setCaseSensitive] = useState(false);
   const [minLength, setMinLength] = useState(1);
+  const [copied, setCopied] = useState(false);
 
   const { words, totalWords, uniqueWords } = useMemo(
     () => countWordFrequency(text, { caseSensitive, ignoreStopWords, minLength, sortBy }),
     [text, caseSensitive, ignoreStopWords, minLength, sortBy]
   );
+
+  const handleCopy = async () => {
+    if (!words.length) return;
+    await navigator.clipboard.writeText(wordsToCSV(words));
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
 
   const handleDownload = () => {
     if (!words.length) return;
@@ -160,7 +168,15 @@ const WordFrequencyCounterTool = () => {
             </p>
           )}
 
-          <div className="flex justify-end">
+          <div className="flex justify-end gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleCopy}
+              className="rounded-full border-0 bg-muted shadow-sm cursor-pointer transition-all hover:bg-muted/80 hover:shadow-md active:scale-95"
+            >
+              {copied ? "Copied!" : "Copy CSV"}
+            </Button>
             <Button
               size="sm"
               onClick={handleDownload}
