@@ -145,6 +145,11 @@ const ImageResizerTool = () => {
     setImages((prev) => prev.filter((img) => img.id !== id));
   };
 
+  const handleClearAll = () => {
+    setImages([]);
+    if (fileRef.current) fileRef.current.value = "";
+  };
+
   // ── Resize ───────────────────────────────────────────────────────────────
 
   const handleResizeAll = async () => {
@@ -407,7 +412,17 @@ const ImageResizerTool = () => {
 
       {/* Actions */}
       {images.length > 0 && (
-        <div className="flex flex-wrap items-center justify-end gap-2">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handleClearAll}
+            className="rounded-full border-0 bg-muted shadow-sm cursor-pointer transition-all hover:bg-muted/80 hover:shadow-md active:scale-95"
+          >
+            Clear all
+          </Button>
+
+          <div className="flex flex-wrap gap-2">
           {hasResults && images.length > 1 && (
             <Button
               variant="outline"
@@ -427,6 +442,7 @@ const ImageResizerTool = () => {
           >
             Resize {images.length > 1 ? `all ${images.length}` : "image"}
           </Button>
+          </div>
         </div>
       )}
     </div>
