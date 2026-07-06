@@ -1,5 +1,93 @@
 export const tools = [
   {
+    slug: "regex-tester",
+    name: "Regex Tester",
+    type: "analyzer",
+    description: "Test regular expressions against any text and see live highlighted matches.",
+    metaTitle: "Regex Tester - Test Regular Expressions Online",
+    metaDescription:
+      "Free online regex tester. Test regular expressions against any text, see highlighted matches, capture groups, and match indexes instantly. Supports g, i, m, s flags.",
+    examples: [
+      {
+        input: "Pattern: \\d+  |  Test: Order 123 and item 456",
+        output: "2 matches: 123 (index 6), 456 (index 20)",
+      },
+      {
+        input: "Pattern: (\\w+)@(\\w+\\.\\w+)  |  Test: hello@example.com",
+        output: "Match: hello@example.com  |  $1: hello  |  $2: example.com",
+      },
+    ],
+    aboutText:
+      "Use this regex tester to write and test regular expressions directly in your browser. It highlights all matches in your test string in real time, shows match indexes, and displays captured groups. It supports the g (global), i (case insensitive), m (multiline), and s (dot-all) flags.",
+    howToSteps: [
+      "Enter your regular expression pattern in the pattern field.",
+      "Toggle flags (g, i, m, s) as needed for your use case.",
+      "Paste or type the text you want to test in the test string area.",
+      "Review the highlighted matches and captured groups below.",
+    ],
+    seoSections: [
+      {
+        title: "What a regex tester helps with",
+        paragraphs: [
+          "A regex tester lets you experiment with regular expressions interactively without writing code. You can see exactly which parts of your text match the pattern, adjust the expression, and verify the result before using it in a project.",
+          "Regular expressions are used in programming, data processing, search tools, and text editors. Testing them visually makes it much faster to get the pattern right.",
+        ],
+      },
+      {
+        title: "Understanding regex flags",
+        paragraphs: [
+          "The g flag (global) finds all matches in the text instead of stopping at the first one. The i flag makes the match case insensitive. The m flag makes ^ and $ match the start and end of each line rather than the whole string. The s flag makes the dot character match newlines as well.",
+          "Combining flags gives you fine-grained control. For example, /hello/gi matches 'Hello', 'HELLO', and 'hello' anywhere in the text.",
+        ],
+      },
+      {
+        title: "Capture groups in regular expressions",
+        paragraphs: [
+          "Capture groups are parts of a regex pattern wrapped in parentheses. When a match is found, each group captures the portion of the text it matched separately. This is useful for extracting specific parts like email usernames, domain names, dates, or version numbers.",
+          "This regex tester shows each capture group alongside the full match so you can verify your groups are working correctly before using them in code.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "What is a regex tester?",
+        answer:
+          "A regex tester is a tool that lets you write a regular expression and test it against sample text to see which parts of the text match the pattern.",
+      },
+      {
+        question: "What regex flags does this tester support?",
+        answer:
+          "It supports g (global), i (case insensitive), m (multiline), and s (dot-all). You can toggle each flag independently.",
+      },
+      {
+        question: "Does this show all matches or just the first one?",
+        answer:
+          "It shows all matches by default. The global flag (g) is enabled by default, but you can toggle it off to see only the first match.",
+      },
+      {
+        question: "Does this support capture groups?",
+        answer:
+          "Yes. Each match shows its captured groups ($1, $2, etc.) and named groups if your pattern uses them.",
+      },
+      {
+        question: "Does this work with JavaScript regex syntax?",
+        answer:
+          "Yes. This tool uses JavaScript's built-in RegExp engine, so any pattern that works in JavaScript will work here.",
+      },
+      {
+        question: "Is this regex tester free?",
+        answer:
+          "Yes. It is completely free, runs in your browser, and does not send your pattern or test string anywhere.",
+      },
+    ],
+    relatedToolSlugs: [
+      "diff-checker",
+      "json-formatter",
+      "url-encoder-decoder",
+      "hash-generator",
+    ],
+  },
+  {
     slug: "password-generator",
     name: "Password Generator",
     type: "generator",
