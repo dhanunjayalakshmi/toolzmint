@@ -33,7 +33,10 @@ const JwtDecoderTool = () => {
     }
   }, [token]);
 
-  const timingClaims = getJwtTimingClaims(decodedToken.payload);
+  const timingClaims = useMemo(
+    () => getJwtTimingClaims(decodedToken.payload),
+    [decodedToken.payload]
+  );
 
   const handleClear = () => {
     setToken("");

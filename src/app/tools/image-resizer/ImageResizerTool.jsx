@@ -107,7 +107,7 @@ const ImageResizerTool = () => {
   const addFiles = useCallback(async (files) => {
     const imageFiles = Array.from(files)
       .filter((f) => f.type.startsWith("image/"))
-      .slice(0, MAX_IMAGES - images.length);
+      .slice(0, MAX_IMAGES);
 
     if (!imageFiles.length) return;
 
@@ -129,7 +129,7 @@ const ImageResizerTool = () => {
     );
 
     setImages((prev) => [...prev, ...loaded].slice(0, MAX_IMAGES));
-  }, [images.length]);
+  }, []);
 
   const handleFileChange = (e) => {
     if (e.target.files?.length) addFiles(e.target.files);

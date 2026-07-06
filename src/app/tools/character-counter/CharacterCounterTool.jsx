@@ -3,17 +3,19 @@
 import ToolActions from "@/app/components/tools/ToolActions";
 import ToolStatsCard from "@/app/components/tools/ToolStatsCard";
 import ToolTextarea from "@/app/components/tools/ToolTextarea";
-import { useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 const CharacterCounterTool = () => {
   const [text, setText] = useState("");
   const [copied, setCopied] = useState(false);
 
-  const characters = text?.length;
-  const charactersNoSpaces = text?.replace(/\s/g, "").length;
-  const lines = text ? text.split("\n").length : 0;
+  const { characters, charactersNoSpaces, lines } = useMemo(() => ({
+    characters: text.length,
+    charactersNoSpaces: text.replace(/\s/g, "").length,
+    lines: text ? text.split("\n").length : 0,
+  }), [text]);
 
-  const handleClear = () => setText("");
+  const handleClear = useCallback(() => setText(""), []);
 
   const handleCopy = async () => {
     if (!text) return;

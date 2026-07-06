@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   BASES,
@@ -33,7 +33,7 @@ const NumberBaseConverterTool = () => {
     setCopied(null);
   };
 
-  const hasAnyValue = Object.values(values).some(Boolean);
+  const hasAnyValue = useMemo(() => Object.values(values).some(Boolean), [values]);
 
   return (
     <div className="w-full space-y-3">

@@ -16,7 +16,10 @@ const HashGeneratorTool = () => {
       setHashes({});
       return;
     }
-    generateAllHashes(text).then(setHashes);
+    const t = setTimeout(() => {
+      generateAllHashes(text).then(setHashes);
+    }, 300);
+    return () => clearTimeout(t);
   }, [text]);
 
   const handleCopy = async (alg) => {

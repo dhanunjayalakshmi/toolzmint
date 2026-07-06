@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import ToolTextarea from "@/app/components/tools/ToolTextarea";
 import ToolActions from "@/app/components/tools/ToolActions";
 import ToolStatsCard from "@/app/components/tools/ToolStatsCard";
@@ -9,19 +9,23 @@ const WordCounterTool = () => {
   const [text, setText] = useState("");
   const [copied, setCopied] = useState(false);
 
-  const words = text.trim() ? text.trim().split(/\s+/).length : 0;
-  const characters = text.length;
-  const charactersNoSpaces = text.replace(/\s/g, "").length;
-  const sentences = text.trim()
-    ? text.split(/[.!?]+/).filter(Boolean).length
-    : 0;
-  const paragraphs = text.trim()
-    ? text.split(/\n\s*\n/).filter((paragraph) => paragraph.trim()).length
-    : 0;
-  const readingTimeMinutes =
-    words === 0 ? "0 min" : words < 200 ? "< 1 min" : `${Math.ceil(words / 200)} min`;
+  const { words, characters, charactersNoSpaces, sentences, paragraphs, readingTimeMinutes } =
+    useMemo(() => {
+      const w = text.trim() ? text.trim().split(/\s+/).length : 0;
+      return {
+        words: w,
+        characters: text.length,
+        charactersNoSpaces: text.replace(/\s/g, "").length,
+        sentences: text.trim() ? text.split(/[.!?]+/).filter(Boolean).length : 0,
+        paragraphs: text.trim()
+          ? text.split(/\n\s*\n/).filter((p) => p.trim()).length
+          : 0,
+        readingTimeMinutes:
+          w === 0 ? "0 min" : w < 200 ? "< 1 min" : `${Math.ceil(w / 200)} min`,
+      };
+    }, [text]);
 
-  const handleClear = () => setText("");
+  const handleClear = useCallback(() => setText(""), []);
 
   const handleCopy = async () => {
     if (!text) return;

@@ -55,6 +55,21 @@ export const tools = [
         answer:
           "Use a password when you want dense randomness and a passphrase when you want something easier to remember. The better choice depends on the site requirements and your workflow.",
       },
+      {
+        question: "How long should a strong password be?",
+        answer:
+          "Security experts generally recommend at least 12 to 16 characters. Longer passwords are harder to brute-force, especially when they include symbols and numbers.",
+      },
+      {
+        question: "Can I generate a random password with symbols?",
+        answer:
+          "Yes. You can include symbols, numbers, uppercase letters, and lowercase letters to create a complex random password that meets most site requirements.",
+      },
+      {
+        question: "Is this a free random password generator?",
+        answer:
+          "Yes. The password generator is completely free, requires no account, and generates all passwords locally in your browser.",
+      },
     ],
     relatedToolSlugs: [
       "random-string-generator",
@@ -68,9 +83,9 @@ export const tools = [
     name: "Word Counter",
     type: "analyzer",
     description: "Count words, characters, and sentences instantly.",
-    metaTitle: "Word Counter - Count Words, Characters & Sentences Online",
+    metaTitle: "Word Counter - Count Words, Characters & Reading Time Online",
     metaDescription:
-      "Free online word counter tool. Count words, characters, and sentences instantly.",
+      "Free online word counter. Count words, characters, sentences, paragraphs, and estimated reading time instantly. Great for essays, blogs, and social posts.",
     examples: [
       {
         input: "Hello world. This is Toolzmint!",
@@ -119,6 +134,21 @@ export const tools = [
         answer:
           "Yes. The counts update as you type or paste text, so you can adjust your writing immediately.",
       },
+      {
+        question: "Does this tool show reading time?",
+        answer:
+          "Yes. It estimates reading time based on an average reading speed of 200 words per minute, which is useful for blog posts and articles.",
+      },
+      {
+        question: "Can I check paragraph count?",
+        answer:
+          "Yes. The paragraph count shows how many distinct paragraphs your text contains, which is helpful when structuring essays or long-form content.",
+      },
+      {
+        question: "Is this useful for checking essay word limits?",
+        answer:
+          "Yes. Paste your essay into the tool and the word count updates instantly, making it easy to stay within your required word limit.",
+      },
     ],
     relatedToolSlugs: [
       "character-counter",
@@ -132,9 +162,9 @@ export const tools = [
     name: "Character Counter",
     type: "analyzer",
     description: "Count characters instantly with or without spaces.",
-    metaTitle: "Character Counter - Count Characters Online",
+    metaTitle: "Character Counter - Count Characters Online Free",
     metaDescription:
-      "Free online character counter tool. Count characters instantly.",
+      "Free online character counter. Count characters with and without spaces instantly. Ideal for meta descriptions, Twitter posts, SMS, and any content with character limits.",
     examples: [
       {
         input: "Hello Toolzmint",
@@ -183,6 +213,21 @@ export const tools = [
         question: "Does it count lines as well?",
         answer:
           "Yes. It also shows the total number of lines in the current text.",
+      },
+      {
+        question: "What is the Twitter character limit?",
+        answer:
+          "Twitter allows up to 280 characters per post. Paste your tweet into this character counter to check the length before posting.",
+      },
+      {
+        question: "What is the character limit for a meta description?",
+        answer:
+          "Google typically displays around 155 to 160 characters for meta descriptions. Use this counter to keep your description within that range.",
+      },
+      {
+        question: "What is the character limit for an SMS?",
+        answer:
+          "A standard SMS message is 160 characters. Messages longer than that are split into multiple parts by most carriers.",
       },
     ],
     relatedToolSlugs: [
@@ -362,6 +407,13 @@ export const tools = [
           "This online case converter keeps the original input visible while showing the converted output, which makes it easier to compare formats before copying.",
         ],
       },
+      {
+        title: "Uppercase, lowercase, title case, and sentence case",
+        paragraphs: [
+          "Different contexts call for different cases. Title case is standard for article headings and book titles. Uppercase works for acronyms and emphasis. Lowercase is common in slugs, code variables, and informal writing. Sentence case capitalizes only the first word, which is typical for body text.",
+          "If you work with code and need camelCase or snake_case, those formats are best applied with a dedicated code formatter — this tool focuses on human-readable case conversions for writing and content.",
+        ],
+      },
     ],
     faqItems: [
       {
@@ -378,6 +430,21 @@ export const tools = [
         question: "Does the tool change my original text?",
         answer:
           "No. Your original input stays visible while the converted version appears separately.",
+      },
+      {
+        question: "What is sentence case?",
+        answer:
+          "Sentence case capitalizes only the first letter of the first word in a sentence, which is the standard format for body text and general writing.",
+      },
+      {
+        question: "Can I convert a title from uppercase to title case?",
+        answer:
+          "Yes. Paste the uppercase title and switch to title case output. Each word will be properly capitalized without changing the rest.",
+      },
+      {
+        question: "Is this tool free?",
+        answer:
+          "Yes. The case converter is completely free and runs in your browser with no account required.",
       },
     ],
     relatedToolSlugs: [
@@ -738,15 +805,71 @@ export const tools = [
     name: "Unix Timestamp Converter",
     type: "modifier",
     description: "Convert Unix timestamps to readable dates and back.",
-    metaTitle: "Unix Timestamp Converter - Convert Time Online",
+    metaTitle: "Unix Timestamp Converter - Epoch Time to Date Online",
     metaDescription:
-      "Free online Unix timestamp converter. Convert timestamps to readable local and UTC dates instantly.",
+      "Free online Unix timestamp converter. Convert epoch timestamps to readable local and UTC dates, or convert a date back to a Unix timestamp instantly.",
     examples: [
       {
         input: "1712126400",
         output:
           "Local Time: readable date | UTC Time: Wed, 03 Apr 2024 10:00:00 GMT",
       },
+    ],
+    aboutText:
+      "Use this Unix timestamp converter to convert epoch timestamps to human-readable dates, or convert a date and time back to a Unix timestamp. It is useful for debugging APIs, reading log files, working with databases, and any workflow that involves Unix time or epoch values.",
+    howToSteps: [
+      "Enter a Unix timestamp (epoch) to convert it to a local and UTC date.",
+      "Or enter a date and time to get the equivalent Unix timestamp.",
+      "Copy the result for your API call, database query, or debugging session.",
+    ],
+    seoSections: [
+      {
+        title: "What is a Unix timestamp",
+        paragraphs: [
+          "A Unix timestamp is a number that represents the total seconds elapsed since January 1, 1970 at midnight UTC, also called the Unix epoch. It is a common way for software systems to store and transmit time without worrying about time zones.",
+          "Unix timestamps are used in APIs, databases, logs, authentication tokens, and many backend systems. Converting a timestamp to a readable date is one of the most frequent tasks in debugging and development work.",
+        ],
+      },
+      {
+        title: "Convert epoch time to a readable date",
+        paragraphs: [
+          "When you receive a raw timestamp like 1712126400 from an API or log file, it is not immediately readable. This tool converts it to a local time and UTC time so you can understand what moment it represents without writing code.",
+          "You can also convert in the opposite direction — enter a human-readable date and get the Unix timestamp back. This is useful when you need to pass a specific time to an API or construct a database query.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "What is a Unix timestamp?",
+        answer:
+          "A Unix timestamp is the number of seconds that have passed since January 1, 1970 at 00:00:00 UTC. It is a widely used format for storing and transmitting time in software systems.",
+      },
+      {
+        question: "What is epoch time?",
+        answer:
+          "Epoch time is another name for Unix time. The epoch refers to the starting point — January 1, 1970 — and the timestamp counts seconds from that moment.",
+      },
+      {
+        question: "Can I convert a date back to a Unix timestamp?",
+        answer:
+          "Yes. Enter a date and time and this tool returns the corresponding Unix timestamp, which is useful for API calls, database queries, and time-based filtering.",
+      },
+      {
+        question: "Does this tool show local time or UTC?",
+        answer:
+          "It shows both. Local time reflects your browser's time zone and UTC shows the universal coordinated time so you can use whichever format your workflow needs.",
+      },
+      {
+        question: "What is the difference between seconds and milliseconds timestamps?",
+        answer:
+          "Unix timestamps are typically in seconds, but JavaScript and some APIs use milliseconds. A millisecond timestamp is 1000 times larger than a second-based one. If your value looks unusually large, it is likely in milliseconds.",
+      },
+    ],
+    relatedToolSlugs: [
+      "jwt-decoder",
+      "base64-encoder-decoder",
+      "json-formatter",
+      "url-encoder-decoder",
     ],
   },
   {
@@ -817,15 +940,74 @@ export const tools = [
     slug: "text-reverser",
     name: "Text Reverser",
     type: "transformer",
-    description: "Reverse text instantly online.",
-    metaTitle: "Text Reverser - Reverse Text Online",
+    description: "Reverse any text, word, or sentence instantly.",
+    metaTitle: "Text Reverser - Reverse Text Online Free",
     metaDescription:
-      "Free online text reverser tool. Reverse words, phrases, or full text instantly.",
+      "Free online text reverser. Reverse any word, sentence, or paragraph instantly. Great for mirror text, fun messages, and string testing.",
     examples: [
       {
         input: "Toolzmint",
         output: "tnimzlooT",
       },
+      {
+        input: "Hello World",
+        output: "dlroW olleH",
+      },
+    ],
+    aboutText:
+      "Use this text reverser to flip any text backwards instantly. It reverses the characters in your input, which is useful for mirror text, fun encoded messages, creative writing, and testing string reversal behavior in code.",
+    howToSteps: [
+      "Type or paste the text you want to reverse.",
+      "The reversed output appears instantly.",
+      "Copy the reversed text and use it wherever needed.",
+    ],
+    seoSections: [
+      {
+        title: "What reversed text is used for",
+        paragraphs: [
+          "Reversed text is often used for fun — creating mirror messages, writing things backwards for social media, or encoding simple notes. It is also a common programming exercise used to understand string manipulation and algorithm basics.",
+          "Developers sometimes use a text reverser to quickly test how their code handles reversed strings, or to generate test data for string-processing functions.",
+        ],
+      },
+      {
+        title: "Reverse words or reverse characters",
+        paragraphs: [
+          "This tool reverses the full character sequence of the text you enter. If you type a full sentence, each character is reversed so the last character becomes the first.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "What does a text reverser do?",
+        answer:
+          "It reverses the order of characters in your text so the last character becomes the first. For example, 'hello' becomes 'olleh'.",
+      },
+      {
+        question: "Can I reverse a full sentence?",
+        answer:
+          "Yes. You can reverse any length of text — a single word, a sentence, or multiple lines.",
+      },
+      {
+        question: "Does it reverse words or characters?",
+        answer:
+          "It reverses individual characters across the entire input. The word order is not preserved — each character is flipped.",
+      },
+      {
+        question: "Is this useful for mirror text?",
+        answer:
+          "Yes. Reversed text looks like a mirror reflection when printed, which is a common use for social posts and fun messages.",
+      },
+      {
+        question: "Is this tool free?",
+        answer:
+          "Yes. The text reverser is completely free and runs in your browser with no account needed.",
+      },
+    ],
+    relatedToolSlugs: [
+      "case-converter",
+      "text-to-slug",
+      "word-counter",
+      "remove-extra-spaces",
     ],
   },
   {
@@ -861,6 +1043,13 @@ export const tools = [
           "This tool keeps the first occurrence of each line and removes repeated lines from the output automatically.",
         ],
       },
+      {
+        title: "Deduplicate text lists and exported data",
+        paragraphs: [
+          "When you export data from a spreadsheet, CRM, or database and paste it into a text file, duplicate entries are common. This tool lets you deduplicate text quickly — paste the list, get back only the unique lines, and move on.",
+          "It is also useful for cleaning keyword lists, removing repeated log entries, deduplicating email addresses, and organizing any line-based data where each unique line should appear only once.",
+        ],
+      },
     ],
     faqItems: [
       {
@@ -877,6 +1066,21 @@ export const tools = [
         question: "Does it keep the line order?",
         answer:
           "Yes. It keeps the first appearance of each line and preserves the original order of unique entries.",
+      },
+      {
+        question: "Can I use this to deduplicate email addresses or keywords?",
+        answer:
+          "Yes. Paste one email address or keyword per line and the tool keeps only the unique entries, removing any repeated lines.",
+      },
+      {
+        question: "Is the comparison case-sensitive?",
+        answer:
+          "Yes. Lines are compared exactly as written, so 'Apple' and 'apple' are treated as different lines.",
+      },
+      {
+        question: "Is this tool free?",
+        answer:
+          "Yes. The duplicate line remover is completely free and processes everything in your browser with no data sent to a server.",
       },
     ],
     relatedToolSlugs: [
@@ -954,45 +1158,201 @@ export const tools = [
     slug: "random-string-generator",
     name: "Random String Generator",
     type: "generator",
-    description: "Generate random strings easily.",
-    metaTitle: "Random String Generator - Generate Random Text Online",
+    description: "Generate random alphanumeric strings, tokens, and keys instantly.",
+    metaTitle: "Random String Generator - Generate Random Alphanumeric Strings",
     metaDescription:
-      "Free online random string generator. Create random text strings instantly.",
+      "Free online random string generator. Generate random alphanumeric strings, tokens, API keys, and test data instantly. No install needed.",
     examples: [
       {
-        input: "Length: 10",
+        input: "Length: 10, alphanumeric",
         output: "A1b2C3d4E5",
       },
+      {
+        input: "Length: 32, lowercase hex",
+        output: "3f7a2b1c9e4d6f8a0b5c2e7d1a3f9b4c",
+      },
+    ],
+    aboutText:
+      "Use this random string generator to create alphanumeric strings, tokens, API keys, secret keys, test IDs, and placeholder values instantly in your browser. It is useful for development, testing, security tokens, and any workflow that needs a unique random value.",
+    howToSteps: [
+      "Choose the length and character set for your random string.",
+      "Generate the string and review the result.",
+      "Copy the output and use it in your project, test, or form.",
+    ],
+    seoSections: [
+      {
+        title: "What random strings are used for",
+        paragraphs: [
+          "Random strings are commonly used as API keys, secret tokens, session IDs, temporary passwords, test data, and unique identifiers in software development. A random alphanumeric string is hard to predict and reduces the chance of collisions.",
+          "This random string generator runs entirely in your browser, which means the generated values are not logged or stored anywhere. You can generate as many strings as you need without any account.",
+        ],
+      },
+      {
+        title: "Random strings for testing and development",
+        paragraphs: [
+          "Developers frequently need random test data — placeholder names, IDs, or values to fill forms and database entries during development. A random string generator is a quick way to get clean, unpredictable values without writing code.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "What is a random string generator used for?",
+        answer:
+          "It is used to generate API keys, tokens, secret keys, session IDs, test data, and unique placeholder values for development and security workflows.",
+      },
+      {
+        question: "Can I use this to generate API keys or tokens?",
+        answer:
+          "Yes. You can generate random alphanumeric strings of any length to use as API keys, tokens, or temporary secrets for testing.",
+      },
+      {
+        question: "Are the generated strings truly random?",
+        answer:
+          "Yes. The strings are generated using your browser's secure random number generator, which produces unpredictable values suitable for non-cryptographic tokens and test data.",
+      },
+      {
+        question: "Is this tool free?",
+        answer:
+          "Yes. The random string generator is completely free and runs in your browser with no sign-up required.",
+      },
+      {
+        question: "Can I choose the character set?",
+        answer:
+          "Yes. You can include or exclude uppercase letters, lowercase letters, numbers, and symbols to match the format your workflow requires.",
+      },
+    ],
+    relatedToolSlugs: [
+      "password-generator",
+      "uuid-generator",
+      "hash-generator",
+      "base64-encoder-decoder",
     ],
   },
   {
     slug: "word-duplicator",
     name: "Word Duplicator",
     type: "transformer",
-    description: "Duplicate words or sentences quickly.",
-    metaTitle: "Word Duplicator - Duplicate Words Online",
+    description: "Duplicate every word in your text instantly.",
+    metaTitle: "Word Duplicator - Duplicate Every Word Online Free",
     metaDescription:
-      "Free online word duplicator tool. Duplicate words or short phrases instantly.",
+      "Free online word duplicator tool. Duplicate every word in a sentence or list instantly. Useful for testing, creative writing, and text experiments.",
     examples: [
       {
         input: "hello world",
         output: "hello hello world world",
       },
+      {
+        input: "good morning team",
+        output: "good good morning morning team team",
+      },
+    ],
+    aboutText:
+      "Use this word duplicator to repeat every word in your text side by side instantly. It is useful for creative writing experiments, testing text-rendering behavior, building deliberate repetition patterns, and having a bit of fun with language.",
+    howToSteps: [
+      "Type or paste the text you want to duplicate.",
+      "Each word in the input is duplicated in the output instantly.",
+      "Copy the result and use it where needed.",
+    ],
+    seoSections: [
+      {
+        title: "What a word duplicator does",
+        paragraphs: [
+          "A word duplicator takes each word in your input and repeats it immediately after itself. The sentence 'hello world' becomes 'hello hello world world'. This is different from repeating the whole sentence — each individual word is doubled.",
+          "It is a simple but occasionally useful transformation for testing how UI components handle repeated words, generating stylized text, or creating repetition-based creative content.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "What does a word duplicator do?",
+        answer:
+          "It repeats each word in your text immediately after itself. 'hello world' becomes 'hello hello world world'.",
+      },
+      {
+        question: "Is this the same as repeating the whole sentence?",
+        answer:
+          "No. A word duplicator doubles each individual word, while a text repeater repeats the full sentence or phrase multiple times.",
+      },
+      {
+        question: "Is this tool free?",
+        answer:
+          "Yes. It is completely free and runs in your browser with no account needed.",
+      },
+    ],
+    relatedToolSlugs: [
+      "text-repeater",
+      "word-counter",
+      "text-reverser",
+      "remove-extra-spaces",
     ],
   },
   {
     slug: "text-repeater",
     name: "Text Repeater",
     type: "generator",
-    description: "Repeat text multiple times instantly.",
-    metaTitle: "Text Repeater - Repeat Text Online",
+    description: "Repeat any text a set number of times instantly.",
+    metaTitle: "Text Repeater - Repeat Text Multiple Times Online",
     metaDescription:
-      "Free online text repeater tool. Repeat any text multiple times instantly.",
+      "Free online text repeater. Repeat any word, phrase, or sentence a set number of times instantly. Useful for testing, templates, and placeholder content.",
     examples: [
       {
         input: "Hello (3 times)",
         output: "Hello Hello Hello",
       },
+      {
+        input: "test (5 times, new line)",
+        output: "test\ntest\ntest\ntest\ntest",
+      },
+    ],
+    aboutText:
+      "Use this text repeater to repeat any word, phrase, or sentence a set number of times instantly. It is useful for generating placeholder content, testing text fields, building repetition patterns for templates, and quickly creating repeated values without manual copy-pasting.",
+    howToSteps: [
+      "Enter the text you want to repeat.",
+      "Set how many times you want it repeated.",
+      "Copy the output and use it in your project or document.",
+    ],
+    seoSections: [
+      {
+        title: "What a text repeater is useful for",
+        paragraphs: [
+          "A text repeater lets you generate repeated text without manual effort. Instead of copying and pasting the same phrase dozens of times, you set a count and get the output instantly.",
+          "It is commonly used for testing UI layouts with realistic-length content, generating placeholder text, building dummy data for forms, and creating repetition-based patterns in documents or templates.",
+        ],
+      },
+      {
+        title: "Repeating text for testing and development",
+        paragraphs: [
+          "Frontend developers often need to fill a component with repeated text to see how it handles long content or overflow. A text repeater speeds this up significantly compared to typing or pasting manually.",
+        ],
+      },
+    ],
+    faqItems: [
+      {
+        question: "What does a text repeater do?",
+        answer:
+          "It repeats any text you enter a set number of times, either on the same line or on separate lines depending on your setting.",
+      },
+      {
+        question: "Can I repeat text on separate lines?",
+        answer:
+          "Yes. You can choose whether repeated text appears on the same line separated by spaces, or on separate lines.",
+      },
+      {
+        question: "Is this different from a word duplicator?",
+        answer:
+          "Yes. A text repeater repeats your entire input multiple times. A word duplicator repeats each individual word side by side within the sentence.",
+      },
+      {
+        question: "Is this tool free?",
+        answer:
+          "Yes. The text repeater is completely free and runs in your browser with no sign-up required.",
+      },
+    ],
+    relatedToolSlugs: [
+      "word-duplicator",
+      "lorem-ipsum-generator",
+      "word-counter",
+      "remove-extra-spaces",
     ],
   },
   {

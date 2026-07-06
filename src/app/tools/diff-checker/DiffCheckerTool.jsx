@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { computeDiff } from "@/lib/diffUtils";
 
@@ -27,12 +27,24 @@ const DiffCheckerTool = () => {
   const [modified, setModified] = useState("");
 
   const hasBothInputs = original !== "" || modified !== "";
+
+  const [debouncedOriginal, setDebouncedOriginal] = useState("");
+  const [debouncedModified, setDebouncedModified] = useState("");
+
+  useEffect(() => {
+    const t = setTimeout(() => {
+      setDebouncedOriginal(original);
+      setDebouncedModified(modified);
+    }, 300);
+    return () => clearTimeout(t);
+  }, [original, modified]);
+
   const { lines, stats } = useMemo(
     () =>
-      hasBothInputs
-        ? computeDiff(original, modified)
+      debouncedOriginal || debouncedModified
+        ? computeDiff(debouncedOriginal, debouncedModified)
         : { lines: [], stats: null },
-    [original, modified, hasBothInputs]
+    [debouncedOriginal, debouncedModified]
   );
 
   const handleClear = () => {
