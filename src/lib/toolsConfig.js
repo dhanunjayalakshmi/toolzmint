@@ -1730,6 +1730,13 @@ export const tools = [
           "If you need to remove line breaks online after copying content from a PDF, email, or website, this tool turns the text into a single line quickly and keeps the workflow simple.",
         ],
       },
+      {
+        title: "Online line removal for copied text",
+        paragraphs: [
+          "Online line removal is a common task when copying text from PDFs, emails, or web pages that preserve their original formatting. Instead of pressing backspace on each line manually, you can paste the text and complete line removal in one step.",
+          "This free line removal tool runs entirely in your browser. No sign-up, no install, and no data is sent to a server. Paste your text, and the cleaned output is ready to use immediately.",
+        ],
+      },
     ],
     faqItems: [
       {
@@ -1746,6 +1753,26 @@ export const tools = [
         question: "How is this different from removing extra spaces?",
         answer:
           "Removing extra spaces cleans repeated spaces, while a line break remover specifically removes new lines and paragraph breaks between lines of text.",
+      },
+      {
+        question: "How do I perform line removal from copied text?",
+        answer:
+          "Paste the text with line breaks into the input area. Line removal happens automatically and the cleaned single-line output appears instantly, ready to copy.",
+      },
+      {
+        question: "Can I remove line breaks from PDF text?",
+        answer:
+          "Yes. Text copied from PDFs often has a line break after each line of the original page layout. Paste it here and all the breaks are removed to produce clean, readable text.",
+      },
+      {
+        question: "Does this work for removing line breaks from emails?",
+        answer:
+          "Yes. Forwarded or copied email text often contains line breaks from the original message formatting. This tool removes them so you can paste the content cleanly into other fields or documents.",
+      },
+      {
+        question: "Is this line break remover free?",
+        answer:
+          "Yes. The tool is completely free with no account required. Everything runs in your browser and nothing is stored.",
       },
     ],
     relatedToolSlugs: [
