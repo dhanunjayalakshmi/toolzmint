@@ -710,9 +710,9 @@ export const tools = [
     name: "URL Encoder & Decoder",
     type: "modifier",
     description: "Encode or decode URLs instantly.",
-    metaTitle: "URL Encoder & Decoder Online - Encode URLs Easily",
+    metaTitle: "URL Encoder and Decoder - Encode or Decode URLs Online Free",
     metaDescription:
-      "Free online URL encoder and decoder tool. Encode or decode URLs instantly.",
+      "Free online URL encoder and decoder. Encode text to URL-safe percent-encoding or decode URL-encoded strings back to readable text instantly. No install needed.",
     examples: [
       {
         input: "https://toolzmint.com/tools?name=hello world",
@@ -838,9 +838,9 @@ export const tools = [
     name: "UUID Generator",
     type: "generator",
     description: "Generate secure UUID v4 / GUID values instantly.",
-    metaTitle: "UUID / GUID Generator - Generate UUID v4 Online Free",
+    metaTitle: "UUID v4 Generator - Free Online UUID and GUID Generator",
     metaDescription:
-      "Free online UUID and GUID generator. Generate secure UUID v4 values instantly in standard or hyphenless format. No install needed.",
+      "Generate UUID v4 and GUID values instantly in your browser. Free online UUID generator — standard hyphenated format or no-hyphens. No install, no sign-up.",
     examples: [
       {
         input: "Generate 1 UUID",
