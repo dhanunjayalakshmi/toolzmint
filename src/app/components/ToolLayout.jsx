@@ -1,4 +1,5 @@
 import ToolDiscoveryCard from "@/app/components/discovery/ToolDiscoveryCard";
+import AdUnit from "@/app/components/AdUnit";
 import { getRelatedTools } from "@/lib/toolDiscovery";
 import { tools } from "@/lib/toolsConfig";
 import { Card, CardContent } from "@/components/ui/card";
@@ -100,6 +101,11 @@ const ToolLayout = ({
         <CardContent className="p-5 sm:p-6">{children}</CardContent>
       </Card>
 
+      <AdUnit
+        slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_BELOW_TOOL}
+        className="w-full"
+      />
+
       {examples?.length > 0 && (
         <section className="max-w-3xl space-y-4">
           <h2 className="text-xl font-semibold tracking-tight">Examples</h2>
@@ -190,6 +196,11 @@ const ToolLayout = ({
           </div>
         </section>
       )}
+
+      <AdUnit
+        slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_BELOW_FAQ}
+        className="w-full"
+      />
 
       <section className="space-y-4">
         <h2 className="text-xl font-semibold tracking-tight">Related Tools</h2>

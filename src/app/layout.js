@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Script from "next/script";
 import "./globals.css";
 import Footer from "./components/Footer";
 import ThemeToggle from "./components/ThemeToggle";
@@ -50,6 +51,14 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en" className={inter?.variable}>
+      {process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID && (
+        <Script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      )}
       <body className="font-sans antialiased bg-background text-foreground">
         <div className="min-h-screen flex flex-col">
           <header className="sticky top-0 z-40 border-b border-border/40 bg-background/85 backdrop-blur-xl">
