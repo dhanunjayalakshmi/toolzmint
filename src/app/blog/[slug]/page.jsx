@@ -6,8 +6,9 @@ import { getMetadata } from "@/lib/metadata";
 export const generateStaticParams = () =>
   blogPosts.map((post) => ({ slug: post.slug }));
 
-export const generateMetadata = ({ params }) => {
-  const post = getBlogPost(params.slug);
+export const generateMetadata = async ({ params }) => {
+  const { slug } = await params;
+  const post = getBlogPost(slug);
   if (!post) return {};
   return getMetadata({
     title: post.metaTitle,
@@ -18,7 +19,11 @@ export const generateMetadata = ({ params }) => {
 
 const formatDate = (dateStr) => {
   const date = new Date(dateStr + "T00:00:00");
-  return date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 };
 
 const renderContent = (content) =>
@@ -32,7 +37,7 @@ const renderContent = (content) =>
         );
       case "h2":
         return (
-          <h2 key={i} className="text-xl font-semibold tracking-tight mt-2">
+          <h2 key={i} className="text-xl font-semibold tracking-tight pt-2">
             {block.text}
           </h2>
         );
@@ -40,7 +45,10 @@ const renderContent = (content) =>
         return (
           <ul key={i} className="space-y-2 pl-1">
             {block.items.map((item, j) => (
-              <li key={j} className="flex items-start gap-3 text-muted-foreground">
+              <li
+                key={j}
+                className="flex items-start gap-3 text-muted-foreground"
+              >
                 <span className="mt-2 inline-block size-1.5 shrink-0 rounded-full bg-primary/60" />
                 <span className="leading-relaxed">{item}</span>
               </li>
@@ -49,7 +57,10 @@ const renderContent = (content) =>
         );
       case "code":
         return (
-          <pre key={i} className="rounded-2xl bg-muted px-5 py-4 text-sm font-mono text-foreground overflow-x-auto">
+          <pre
+            key={i}
+            className="rounded-2xl bg-muted px-5 py-4 text-sm font-mono text-foreground overflow-x-auto"
+          >
             <code>{block.text}</code>
           </pre>
         );
@@ -58,8 +69,9 @@ const renderContent = (content) =>
     }
   });
 
-const BlogPostPage = ({ params }) => {
-  const post = getBlogPost(params.slug);
+const BlogPostPage = async ({ params }) => {
+  const { slug } = await params;
+  const post = getBlogPost(slug);
   if (!post) notFound();
 
   const jsonLd = {
@@ -115,19 +127,19 @@ const BlogPostPage = ({ params }) => {
             </p>
           </header>
 
-          <div className="space-y-5">
-            {renderContent(post.content)}
-          </div>
+          <div className="space-y-5">{renderContent(post.content)}</div>
         </article>
 
-        <div className="mt-12 rounded-3xl bg-muted p-6 space-y-3">
-          <p className="text-sm text-muted-foreground">Try it yourself</p>
+        <div className="mt-12 rounded-3xl bg-primary/8 border border-primary/15 p-7 space-y-3">
+          <p className="text-xs font-medium text-primary uppercase tracking-wider">
+            Try it yourself
+          </p>
           <h2 className="text-lg font-semibold">
             Free online {post.relatedToolName}
           </h2>
-          <p className="text-sm text-muted-foreground">
-            Use Toolzmint&apos;s {post.relatedToolName} right in your browser — no
-            install, no sign-up required.
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Use Toolzmint&apos;s {post.relatedToolName} right in your browser —
+            no install, no sign-up required.
           </p>
           <Link
             href={`/tools/${post.relatedToolSlug}`}

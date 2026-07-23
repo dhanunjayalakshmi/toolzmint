@@ -11,7 +11,11 @@ export const metadata = getMetadata({
 
 const formatDate = (dateStr) => {
   const date = new Date(dateStr + "T00:00:00");
-  return date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 };
 
 const BlogPage = () => {
@@ -25,12 +29,12 @@ const BlogPage = () => {
         </p>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2">
         {blogPosts.map((post) => (
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className="group flex flex-col gap-3 rounded-3xl border border-border/60 bg-card p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md hover:border-border"
+            className="group block cursor-pointer rounded-3xl bg-card p-5 shadow-sm shadow-black/5 transition-all hover:-translate-y-0.5 hover:shadow-md hover:shadow-black/8 space-y-3"
           >
             <div className="flex items-center justify-between gap-2">
               <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
@@ -50,12 +54,12 @@ const BlogPage = () => {
               </p>
             </div>
 
-            <div className="mt-auto pt-2 flex items-center justify-between">
+            <div className="flex items-center justify-between pt-1">
               <span className="text-xs text-muted-foreground">
                 {formatDate(post.publishedAt)}
               </span>
-              <span className="text-xs font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                Read →
+              <span className="text-xs font-medium text-primary transition-transform group-hover:translate-x-0.5">
+                Read article
               </span>
             </div>
           </Link>
