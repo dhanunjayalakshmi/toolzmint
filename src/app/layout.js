@@ -96,6 +96,13 @@ const RootLayout = ({ children }) => {
                     Tools
                   </Link>
 
+                  <Link
+                    href="/blog"
+                    className="app-shell-link rounded-full px-4 py-2 text-sm text-foreground transition-all hover:-translate-y-0.5 hover:bg-card hover:text-primary hover:shadow-sm"
+                  >
+                    Blog
+                  </Link>
+
                   <ThemeToggle />
                 </nav>
               </div>
