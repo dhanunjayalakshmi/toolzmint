@@ -333,10 +333,12 @@ export const tools = [
     slug: "word-counter",
     name: "Word Counter",
     type: "analyzer",
-    description: "Count words, characters, and sentences instantly.",
-    metaTitle: "Word Counter - Count Words, Characters & Reading Time Online",
+    updatedAt: "2026-10-20",
+    description:
+      "Check your word count instantly. Count words, characters, sentences, and paragraphs, set a word limit, and see reading and speaking time.",
+    metaTitle: "Word Count Checker – Free Online Word Counter with Limit",
     metaDescription:
-      "Free online word counter. Count words, characters, sentences, paragraphs, and estimated reading time instantly. Great for essays, blogs, and social posts.",
+      "Check your word count instantly. Set a word limit for essays or posts, and see characters, sentences, reading and speaking time. Free, no sign-up, private.",
     examples: [
       {
         input: "Hello world. This is Toolzmint!",
@@ -346,66 +348,94 @@ export const tools = [
         input: "One short paragraph with two sentences. It reads clearly.",
         output: "Words: 9, Characters: 57, Sentences: 2",
       },
+      {
+        input: "Price rose 3.5% — see toolzmint.com for more. Done!",
+        output:
+          "Words: 8, Sentences: 2 (the dash is not a word, and 3.5 and toolzmint.com do not end a sentence)",
+      },
     ],
     aboutText:
-      "Use this word counter to count words, characters, and sentences instantly while you write or edit. It is useful for essays, blog posts, social captions, assignments, and any writing that needs a quick length check.",
+      "This word count checker counts words, characters, sentences, and paragraphs as you type, and tells you how close you are to a word limit. Use it for essays, college applications, assignments, blog posts, speeches, and social media captions. Everything runs in your browser, and your text is never uploaded.",
     howToSteps: [
-      "Paste or type your text into the input area.",
-      "Review the live word, character, and sentence counts.",
-      "Edit your text until it matches your target length.",
+      "Paste or type your text into the box. Counts update instantly.",
+      "Optionally enter a word limit, such as 500 or 650, to see how many words you have left or how far over you are.",
+      "Use the reading and speaking time to plan blog posts, presentations, or speeches.",
+      "Your draft is saved in this browser, so a refresh will not lose it. Press Clear when you are done.",
     ],
     seoSections: [
       {
-        title: "What a word counter helps with",
+        title: "How this tool counts words",
         paragraphs: [
-          "A word counter helps you measure the length of your writing instantly. It is useful for checking essay limits, article length, social media copy, and writing tasks with minimum or maximum word requirements.",
-          "This online word counter also tracks characters and sentences, which makes it easier to refine text for readability, SEO, or platform-specific limits.",
+          "A word is any group of characters separated by spaces or line breaks that contains at least one letter or number. Hyphenated words like \"well-known\" and contractions like \"don't\" count as one word. Numbers such as 2026 or 3.5 count as words. Standalone symbols, like a dash between spaces or an ampersand, do not.",
+          "A sentence ends with a period, question mark, or exclamation mark followed by a space or the end of the text. That means decimals (3.5), website names (toolzmint.com), and file names (report.pdf) do not split a sentence. Paragraphs are blocks of text separated by an empty line.",
+          "Different editors use slightly different rules for symbols, URLs, and abbreviations, so Microsoft Word or Google Docs may show a count that differs by a few words on the same text. For limits that are strictly enforced, leave yourself a small margin.",
         ],
       },
       {
-        title: "When to use a character and sentence count",
+        title: "Common word and character limits",
         paragraphs: [
-          "Character counts are useful for titles, meta descriptions, and short-form writing. Sentence counts help when you want to keep writing concise or compare drafts more clearly.",
+          "Common App personal essay: up to 650 words. UCAS personal statement: up to 4,000 characters. Research paper abstracts are usually 150 to 300 words, depending on the journal.",
+          "Social media: a post on X (Twitter) allows 280 characters on a standard account, an Instagram caption allows 2,200 characters, and a LinkedIn post allows 3,000 characters. For search results, a page's meta description is usually cut off after about 155 to 160 characters.",
+          "When a limit is in characters rather than words, check the Characters count instead of Words. Most platforms count spaces as characters.",
+        ],
+      },
+      {
+        title: "How many pages is my word count?",
+        paragraphs: [
+          "With a 12-point font and standard margins, one single-spaced page holds about 500 words and one double-spaced page holds about 250 words. So 1,000 words is about 2 pages single-spaced or 4 pages double-spaced, and a 1,500-word essay is about 6 double-spaced pages.",
+          "These are estimates. Font, margins, headings, and short paragraphs can change the page count noticeably.",
+        ],
+      },
+      {
+        title: "How reading and speaking time are estimated",
+        paragraphs: [
+          "Reading time assumes an average silent reading speed of 200 words per minute. Speaking time assumes a comfortable presentation pace of 130 words per minute. A 5-minute speech is about 650 words, and a 10-minute talk is about 1,300 words.",
+          "If you speak quickly or slowly, adjust your target accordingly. Rehearsing out loud with a timer is the most reliable check.",
         ],
       },
     ],
     faqItems: [
       {
-        question: "Does this word counter count characters too?",
+        question: "How do I check if my essay is within the word limit?",
         answer:
-          "Yes. It counts words, characters, and sentences so you can check multiple writing limits in one place.",
+          "Paste your essay into the box and type the limit into the Word limit field. The tool shows how many words you have left, or how many you are over, with a progress bar that turns red when you go past the limit.",
       },
       {
-        question: "Can I use this for essays and blog posts?",
+        question: "Is my text uploaded or stored anywhere?",
         answer:
-          "Yes. It works well for essays, assignments, articles, captions, and other writing where length matters.",
+          "No. Counting happens entirely in your browser and your text is never sent to a server. Your latest draft is saved in your browser's local storage on this device only, so it survives a page refresh. Press Clear to remove it.",
       },
       {
-        question: "Is the count updated live?",
+        question: "Why is my word count different from Microsoft Word or Google Docs?",
         answer:
-          "Yes. The counts update as you type or paste text, so you can adjust your writing immediately.",
+          "Editors handle symbols, URLs, and abbreviations differently. This tool counts any space-separated text that contains a letter or number as a word and ignores standalone symbols, so the counts may differ by a few words.",
       },
       {
-        question: "Does this tool show reading time?",
+        question: "Do hyphenated words and numbers count as words?",
         answer:
-          "Yes. It estimates reading time based on an average reading speed of 200 words per minute, which is useful for blog posts and articles.",
+          "Yes. A hyphenated word like \"state-of-the-art\" counts as one word, and a number like 2026 counts as one word.",
       },
       {
-        question: "Can I check paragraph count?",
+        question: "How many words is a 5-minute speech?",
         answer:
-          "Yes. The paragraph count shows how many distinct paragraphs your text contains, which is helpful when structuring essays or long-form content.",
+          "About 650 words at a typical pace of 130 words per minute. Paste your script into the tool and check the Speaking Time card.",
       },
       {
-        question: "Is this useful for checking essay word limits?",
+        question: "How many words fit on one page?",
         answer:
-          "Yes. Paste your essay into the tool and the word count updates instantly, making it easy to stay within your required word limit.",
+          "About 500 words single-spaced or 250 words double-spaced, using a 12-point font and standard margins.",
+      },
+      {
+        question: "Does it count characters with and without spaces?",
+        answer:
+          "Yes. Characters includes every letter, space, and punctuation mark, while Characters (No Spaces) excludes spaces, tabs, and line breaks. For character-only limits, the Character Counter tool also shows line counts.",
       },
     ],
     relatedToolSlugs: [
       "character-counter",
+      "word-frequency-counter",
       "line-break-remover",
       "remove-extra-spaces",
-      "text-reverser",
     ],
   },
   {

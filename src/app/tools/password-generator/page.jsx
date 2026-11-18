@@ -19,6 +19,7 @@ const Page = () => {
       howToSteps={tool?.howToSteps}
       seoSections={tool?.seoSections}
       faqItems={tool?.faqItems}
+      relatedToolSlugs={tool?.relatedToolSlugs}
     >
       <PasswordGeneratorTool />
     </ToolLayout>

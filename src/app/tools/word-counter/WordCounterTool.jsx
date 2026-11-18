@@ -1,29 +1,54 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import ToolTextarea from "@/app/components/tools/ToolTextarea";
 import ToolActions from "@/app/components/tools/ToolActions";
 import ToolStatsCard from "@/app/components/tools/ToolStatsCard";
+import { Label } from "@/components/ui/label";
+import { getLimitStatus, getTextStats } from "@/lib/wordCountUtils";
+
+const STORAGE_KEY = "toolzmint:word-counter";
 
 const WordCounterTool = () => {
   const [text, setText] = useState("");
+  const [limit, setLimit] = useState("");
   const [copied, setCopied] = useState(false);
+  const hasRestored = useRef(false);
 
-  const { words, characters, charactersNoSpaces, sentences, paragraphs, readingTimeMinutes } =
-    useMemo(() => {
-      const w = text.trim() ? text.trim().split(/\s+/).length : 0;
-      return {
-        words: w,
-        characters: text.length,
-        charactersNoSpaces: text.replace(/\s/g, "").length,
-        sentences: text.trim() ? text.split(/[.!?]+/).filter(Boolean).length : 0,
-        paragraphs: text.trim()
-          ? text.split(/\n\s*\n/).filter((p) => p.trim()).length
-          : 0,
-        readingTimeMinutes:
-          w === 0 ? "0 min" : w < 200 ? "< 1 min" : `${Math.ceil(w / 200)} min`,
-      };
-    }, [text]);
+  // Restore the last draft so a refresh does not lose the user's essay.
+  useEffect(() => {
+    let saved = null;
+    try {
+      saved = JSON.parse(window.localStorage.getItem(STORAGE_KEY));
+    } catch {}
+
+    if (!saved) {
+      hasRestored.current = true;
+      return;
+    }
+
+    const restoreTimer = window.setTimeout(() => {
+      setText(saved.text || "");
+      setLimit(saved.limit || "");
+      hasRestored.current = true;
+    }, 0);
+
+    return () => window.clearTimeout(restoreTimer);
+  }, []);
+
+  useEffect(() => {
+    if (!hasRestored.current) return;
+    try {
+      if (text || limit) {
+        window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ text, limit }));
+      } else {
+        window.localStorage.removeItem(STORAGE_KEY);
+      }
+    } catch {}
+  }, [text, limit]);
+
+  const stats = useMemo(() => getTextStats(text), [text]);
+  const limitStatus = getLimitStatus(stats.words, Number(limit));
 
   const handleClear = useCallback(() => setText(""), []);
 
@@ -52,24 +77,61 @@ const WordCounterTool = () => {
         copied={copied}
       />
 
-      {/* Info */}
-      <p className="text-sm text-muted-foreground">
-        See live counts for words, characters, sentences, paragraphs, and
-        estimated reading time as you type.
-      </p>
-
       {/* Stats */}
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-5">
-        <ToolStatsCard label="Words" value={words} />
-        <ToolStatsCard label="Characters" value={characters} />
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <ToolStatsCard label="Words" value={stats.words} />
+        <ToolStatsCard label="Characters" value={stats.characters} />
         <ToolStatsCard
           label="Characters (No Spaces)"
-          value={charactersNoSpaces}
+          value={stats.charactersNoSpaces}
         />
-        <ToolStatsCard label="Sentences" value={sentences} />
-        <ToolStatsCard label="Paragraphs" value={paragraphs} />
-        <ToolStatsCard label="Reading Time" value={readingTimeMinutes} />
+        <ToolStatsCard label="Sentences" value={stats.sentences} />
+        <ToolStatsCard label="Paragraphs" value={stats.paragraphs} />
+        <ToolStatsCard label="Reading Time" value={stats.readingTime} />
+        <ToolStatsCard label="Speaking Time" value={stats.speakingTime} />
       </div>
+
+      {/* Word limit */}
+      <div className="space-y-3 rounded-3xl bg-muted p-4 shadow-sm">
+        <div className="flex flex-wrap items-center gap-3">
+          <Label htmlFor="word-limit" className="text-sm font-medium">
+            Word limit (optional)
+          </Label>
+          <input
+            id="word-limit"
+            type="number"
+            min={1}
+            inputMode="numeric"
+            value={limit}
+            onChange={(e) => setLimit(e.target.value)}
+            placeholder="e.g. 500"
+            className="w-28 rounded-2xl bg-card px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+          />
+          {limitStatus && (
+            <p
+              className={`text-sm font-medium ${limitStatus.isOver ? "text-red-500" : "text-muted-foreground"}`}
+              aria-live="polite"
+            >
+              {stats.words} / {limit} words · {limitStatus.message}
+            </p>
+          )}
+        </div>
+
+        {limitStatus && (
+          <div className="h-2 w-full overflow-hidden rounded-full bg-card">
+            <div
+              className={`h-full rounded-full transition-all ${limitStatus.isOver ? "bg-red-500" : "bg-primary"}`}
+              style={{ width: `${limitStatus.percent}%` }}
+            />
+          </div>
+        )}
+      </div>
+
+      {/* Info */}
+      <p className="text-sm text-muted-foreground">
+        Your draft is saved only in this browser, so it is still here if you
+        refresh. Clear removes it.
+      </p>
     </div>
   );
 };
