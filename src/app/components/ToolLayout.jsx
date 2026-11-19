@@ -117,12 +117,12 @@ const ToolLayout = ({
                 className="space-y-2 rounded-3xl bg-card p-5 shadow-sm shadow-black/5"
               >
                 <p className="text-sm font-medium">Input</p>
-                <pre className="text-sm text-muted-foreground whitespace-pre-wrap">
+                <pre className="text-sm text-muted-foreground whitespace-pre-wrap wrap-anywhere">
                   {example?.input}
                 </pre>
 
                 <p className="text-sm font-medium mt-2">Output</p>
-                <pre className="text-sm text-muted-foreground whitespace-pre-wrap">
+                <pre className="text-sm text-muted-foreground whitespace-pre-wrap wrap-anywhere">
                   {example?.output}
                 </pre>
               </div>
