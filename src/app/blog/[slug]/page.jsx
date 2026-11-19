@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { blogPosts, getBlogPost } from "@/lib/blogPosts";
+import { BLOG_AUTHOR, blogPosts, getBlogPost } from "@/lib/blogPosts";
 import { getMetadata } from "@/lib/metadata";
 
 export const generateStaticParams = () =>
@@ -26,13 +26,29 @@ const formatDate = (dateStr) => {
   });
 };
 
+// Turns [label](/path) inside post text into internal links.
+const renderInline = (text) =>
+  text.split(/(\[[^\]]+\]\([^)]+\))/g).map((part, i) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (!match) return part;
+    return (
+      <Link
+        key={i}
+        href={match[2]}
+        className="font-medium text-primary underline-offset-4 hover:underline"
+      >
+        {match[1]}
+      </Link>
+    );
+  });
+
 const renderContent = (content) =>
   content.map((block, i) => {
     switch (block.type) {
       case "p":
         return (
           <p key={i} className="text-muted-foreground leading-relaxed">
-            {block.text}
+            {renderInline(block.text)}
           </p>
         );
       case "h2":
@@ -50,7 +66,7 @@ const renderContent = (content) =>
                 className="flex items-start gap-3 text-muted-foreground"
               >
                 <span className="mt-2 inline-block size-1.5 shrink-0 rounded-full bg-primary/60" />
-                <span className="leading-relaxed">{item}</span>
+                <span className="leading-relaxed">{renderInline(item)}</span>
               </li>
             ))}
           </ul>
@@ -63,6 +79,33 @@ const renderContent = (content) =>
           >
             <code>{block.text}</code>
           </pre>
+        );
+      case "table":
+        return (
+          <div key={i} className="overflow-x-auto rounded-2xl bg-muted">
+            <table className="w-full text-left text-sm">
+              <thead>
+                <tr>
+                  {block.headers.map((header) => (
+                    <th key={header} className="px-4 py-3 font-semibold">
+                      {header}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {block.rows.map((row) => (
+                  <tr key={row[0]} className="border-t border-border/60">
+                    {row.map((cell, j) => (
+                      <td key={j} className="px-4 py-2.5 text-muted-foreground">
+                        {cell}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         );
       default:
         return null;
@@ -80,7 +123,13 @@ const BlogPostPage = async ({ params }) => {
     headline: post.title,
     description: post.metaDescription,
     datePublished: post.publishedAt,
-    dateModified: post.publishedAt,
+    dateModified: post.updatedAt || post.publishedAt,
+    author: {
+      "@type": "Person",
+      name: BLOG_AUTHOR.name,
+      url: BLOG_AUTHOR.url,
+      sameAs: BLOG_AUTHOR.sameAs,
+    },
     publisher: {
       "@type": "Organization",
       name: "Toolzmint",
@@ -123,7 +172,14 @@ const BlogPostPage = async ({ params }) => {
             </h1>
 
             <p className="text-sm text-muted-foreground">
-              {formatDate(post.publishedAt)}
+              By{" "}
+              <Link href="/about" className="font-medium text-foreground hover:text-primary">
+                {BLOG_AUTHOR.name}
+              </Link>
+              {" · "}
+              {post.updatedAt
+                ? `Updated ${formatDate(post.updatedAt)}`
+                : formatDate(post.publishedAt)}
             </p>
           </header>
 

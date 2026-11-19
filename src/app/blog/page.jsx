@@ -5,7 +5,7 @@ import { blogPosts } from "@/lib/blogPosts";
 export const metadata = getMetadata({
   title: "Blog – Toolzmint",
   description:
-    "Guides and explainers on developer tools, text processing, encoding, and more — from the team behind Toolzmint.",
+    "Practical guides on developer tools, text cleanup, encoding, and writing, from the developer who builds Toolzmint.",
   path: "/blog",
 });
 
