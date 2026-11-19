@@ -84,12 +84,12 @@ const ThemeToggle = () => {
       type="button"
       onClick={handleCycleTheme}
       className="cursor-pointer rounded-full px-3 py-2 text-sm text-foreground transition-all hover:-translate-y-0.5 hover:bg-card hover:text-primary hover:shadow-sm"
-      aria-label="Cycle theme"
+      aria-label={`Theme: ${label}. Click to change.`}
       title="Cycle theme"
     >
       <span className="inline-flex items-center gap-2" suppressHydrationWarning>
         <Icon className="size-4" />
-        <span>{label}</span>
+        <span className="hidden sm:inline">{label}</span>
       </span>
     </button>
   );

@@ -62,7 +62,7 @@ const RootLayout = ({ children }) => {
       <body className="font-sans antialiased bg-background text-foreground">
         <div className="min-h-screen flex flex-col">
           <header className="sticky top-0 z-40 border-b border-border/40 bg-background/85 backdrop-blur-xl">
-            <div className="w-full max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
+            <div className="w-full max-w-6xl mx-auto flex items-center justify-between gap-3 px-4 py-4">
               <Link
                 href="/"
                 className="group flex items-center gap-3 rounded-2xl px-2 py-1 transition-all hover:bg-muted/50"
@@ -74,31 +74,31 @@ const RootLayout = ({ children }) => {
                   <p className="text-lg font-semibold tracking-tight transition-colors group-hover:text-primary">
                     Toolzmint
                   </p>
-                  <p className="text-xs text-muted-foreground transition-colors group-hover:text-foreground/70">
+                  <p className="hidden text-xs text-muted-foreground transition-colors group-hover:text-foreground/70 sm:block">
                     Fast utilities, cleaner workflows
                   </p>
                 </div>
               </Link>
 
               <div className="flex items-center gap-2">
-                <nav className="app-shell-nav rounded-full p-1.5 shadow-sm flex items-center gap-2 bg-muted/75">
+                <nav className="app-shell-nav rounded-full p-1 shadow-sm flex items-center gap-0.5 bg-muted/75 sm:p-1.5 sm:gap-2">
                   <Link
                     href="/"
-                    className="app-shell-link rounded-full px-4 py-2 text-sm text-foreground transition-all hover:-translate-y-0.5 hover:bg-card hover:text-primary hover:shadow-sm"
+                    className="app-shell-link hidden rounded-full px-3 py-2 text-sm sm:block sm:px-4 text-foreground transition-all hover:-translate-y-0.5 hover:bg-card hover:text-primary hover:shadow-sm"
                   >
                     Home
                   </Link>
 
                   <Link
                     href="/tools"
-                    className="app-shell-link rounded-full px-4 py-2 text-sm text-foreground transition-all hover:-translate-y-0.5 hover:bg-card hover:text-primary hover:shadow-sm"
+                    className="app-shell-link rounded-full px-3 py-2 text-sm sm:px-4 text-foreground transition-all hover:-translate-y-0.5 hover:bg-card hover:text-primary hover:shadow-sm"
                   >
                     Tools
                   </Link>
 
                   <Link
                     href="/blog"
-                    className="app-shell-link rounded-full px-4 py-2 text-sm text-foreground transition-all hover:-translate-y-0.5 hover:bg-card hover:text-primary hover:shadow-sm"
+                    className="app-shell-link rounded-full px-3 py-2 text-sm sm:px-4 text-foreground transition-all hover:-translate-y-0.5 hover:bg-card hover:text-primary hover:shadow-sm"
                   >
                     Blog
                   </Link>

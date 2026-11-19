@@ -2348,94 +2348,113 @@ export const tools = [
     slug: "line-break-remover",
     name: "Line Break Remover",
     type: "transformer",
+    updatedAt: "2026-11-19",
     description:
-      "Remove line breaks, paragraph breaks, and extra new lines from text instantly.",
-    metaTitle: "Line Break Remover - Remove Line Breaks from Text Online",
+      "Remove line breaks from text copied from PDFs, emails, and documents. Join everything into one line, or keep paragraphs and fix words split across lines.",
+    metaTitle: "Line Break Remover – Remove Line Breaks & Newlines Online",
     metaDescription:
-      "Remove line breaks, paragraph breaks, and extra new lines from text instantly with this free online line break remover.",
+      "Remove line breaks from text copied from PDFs, emails, or Word. Keep paragraphs, join lines with spaces or commas, and fix split words. Free and private.",
     examples: [
-      {
-        input: "Hello\nWorld",
-        output: "Hello World",
-      },
       {
         input: "First line\nSecond line\nThird line",
         output: "First line Second line Third line",
       },
       {
-        input: "Paragraph one.\n\nParagraph two.",
-        output: "Paragraph one. Paragraph two.",
+        input:
+          "Text copied from a PDF often\nbreaks in the middle of a\nsentence.\n\nA new paragraph starts here.",
+        output:
+          "Keep paragraphs:\nText copied from a PDF often breaks in the middle of a sentence.\n\nA new paragraph starts here.",
       },
       {
-        input: "Name: Toolzmint\nRole: Utility Website\nStatus: Active",
-        output: "Name: Toolzmint Role: Utility Website Status: Active",
+        input: "alice@example.com\nbob@example.com\ncarol@example.com",
+        output: "Replace with comma:\nalice@example.com, bob@example.com, carol@example.com",
+      },
+      {
+        input: "This infor-\nmation was copied from a PDF.",
+        output: "Fix words split by hyphens:\nThis information was copied from a PDF.",
       },
     ],
     aboutText:
-      "Use this line break remover to turn multi-line text into a clean single line. It is useful when you need to remove paragraph breaks, pasted email formatting, or extra new lines before sending text to forms, spreadsheets, or code fields.",
+      "This line break remover cleans up text that has unwanted new lines, which usually happens when you copy from a PDF, an email, a website, or a Word document. You can join everything into one line, or keep the paragraphs and only remove the breaks inside them. It handles Windows and Mac line endings, trims stray spaces, and runs entirely in your browser, so your text is never uploaded.",
     howToSteps: [
-      "Paste or type the text that contains line breaks.",
-      "Review the cleaned single-line output instantly.",
-      "Copy the result and use it wherever you need plain text.",
+      "Choose \"Remove all line breaks\" for a single line, or \"Keep paragraphs\" to keep blank-line paragraph breaks.",
+      "Choose what replaces each line break: a space for normal text, a comma for lists, or nothing for split URLs and codes.",
+      "If the text came from a PDF, turn on \"Fix words split by hyphens\" to rejoin words like \"infor-mation\".",
+      "Paste your text. The cleaned result appears instantly, then press Copy.",
     ],
     seoSections: [
       {
-        title: "When to use a line break remover",
+        title: "Remove all line breaks or keep paragraphs?",
         paragraphs: [
-          "A line break remover is helpful when copied text contains unwanted new lines from PDFs, emails, websites, or documents. Instead of manually deleting each break, you can clean the text in one step.",
-          "This is especially useful for converting multi-line text into a single line for spreadsheets, CMS fields, database entries, prompts, or form inputs that should not contain paragraph breaks.",
+          "Remove all line breaks when the destination only accepts one line, such as a spreadsheet cell, a form field, a database column, a JSON string, or a prompt for an AI tool. Every line, including blank lines between paragraphs, is joined into a single line.",
+          "Keep paragraphs when you want readable text back. This mode joins the lines inside each paragraph but keeps the blank line between paragraphs. It is the best choice for text copied from PDFs, e-books, and emails that you plan to paste into a document, blog post, or message.",
         ],
       },
       {
-        title: "What this tool removes",
+        title: "Fixing text copied from a PDF",
         paragraphs: [
-          "This tool removes line breaks and paragraph breaks while keeping the text readable. It is a simple way to strip new lines from text without installing any software.",
-          "If you need to remove line breaks online after copying content from a PDF, email, or website, this tool turns the text into a single line quickly and keeps the workflow simple.",
+          "A PDF stores text as it looks on the page, so every visual line ends with a line break. When you copy it, sentences break in the middle and long words split across lines with a hyphen, like \"infor-\" at the end of one line and \"mation\" at the start of the next.",
+          "To fix it, choose Keep paragraphs, keep Space as the replacement, and turn on Fix words split by hyphens. Then scan the result for genuinely hyphenated words that happened to fall at a line end. For example, \"well-known\" split across two lines will be joined as \"wellknown\", so add the hyphen back where it belongs.",
         ],
       },
       {
-        title: "Online line removal for copied text",
+        title: "Turn a list into a comma-separated line",
         paragraphs: [
-          "Online line removal is a common task when copying text from PDFs, emails, or web pages that preserve their original formatting. Instead of pressing backspace on each line manually, you can paste the text and complete line removal in one step.",
-          "This free line removal tool runs entirely in your browser. No sign-up, no install, and no data is sent to a server. Paste your text, and the cleaned output is ready to use immediately.",
+          "Choose Replace with Comma to convert a list with one item per line into a single comma-separated line. This is handy for pasting several email addresses into the To field, turning a column of IDs into a list for a SQL IN clause, or writing tags and keywords.",
+          "Empty lines are skipped automatically, so you will not get double commas, and spaces around each item are trimmed.",
+        ],
+      },
+      {
+        title: "How to remove line breaks in Word, Excel, and code",
+        paragraphs: [
+          "Microsoft Word: press Ctrl+H (Cmd+H on a Mac) to open Find and Replace. In Find what, type ^p to find paragraph breaks (made with Enter), or ^l to find manual line breaks (made with Shift+Enter). Type a space in Replace with, then click Replace All.",
+          "Excel: select the cells, press Ctrl+H, click in Find what, and press Ctrl+J to enter a line break character. Type a space in Replace with and click Replace All. You can also use a formula: =SUBSTITUTE(A1, CHAR(10), \" \"). The same formula works in Google Sheets.",
+          "In code: in JavaScript, use text.replace(/\\r?\\n/g, \" \"). In Python, use \" \".join(text.splitlines()). Both also handle Windows line endings.",
+        ],
+      },
+      {
+        title: "Line breaks explained: LF, CRLF, and CR",
+        paragraphs: [
+          "Computers mark the end of a line with invisible characters. Linux and macOS use a line feed (LF, written \\n). Windows uses a carriage return followed by a line feed (CRLF, written \\r\\n). Very old Mac systems used a carriage return alone (CR, \\r).",
+          "Simple find-and-replace methods often remove only \\n and leave a hidden \\r behind, which can cause odd spacing or errors when the text is imported somewhere else. This tool converts all three styles before removing them, so the result is clean whichever system the text came from.",
         ],
       },
     ],
     faqItems: [
       {
-        question: "What does a line break remover do?",
+        question: "How do I remove line breaks but keep paragraphs?",
         answer:
-          "It removes new lines and paragraph breaks from text so multiple lines can be turned into a cleaner single line.",
+          "Select Keep paragraphs. Lines inside each paragraph are joined with a space, and the blank line between paragraphs is kept, so the text stays readable.",
       },
       {
-        question: "Does this tool remove paragraph breaks too?",
+        question: "How do I remove line breaks from PDF text?",
         answer:
-          "Yes. It removes both regular line breaks and empty-line paragraph breaks from pasted text.",
+          "Copy the text from the PDF and paste it into the tool. Choose Keep paragraphs and turn on Fix words split by hyphens to rejoin words that were broken across lines. Then copy the clean result.",
       },
       {
-        question: "How is this different from removing extra spaces?",
+        question: "Can I replace line breaks with commas?",
         answer:
-          "Removing extra spaces cleans repeated spaces, while a line break remover specifically removes new lines and paragraph breaks between lines of text.",
+          "Yes. Choose Replace with Comma to turn a list with one item per line into a single comma-separated line. Empty lines are skipped.",
       },
       {
-        question: "How do I perform line removal from copied text?",
+        question: "Why are some hyphenated words joined incorrectly?",
         answer:
-          "Paste the text with line breaks into the input area. Line removal happens automatically and the cleaned single-line output appears instantly, ready to copy.",
+          "When Fix words split by hyphens is on, any word that ends with a hyphen at the end of a line is joined to the next line. That is right for words a PDF split, but a real compound word like \"well-known\" that falls at a line end will lose its hyphen. Leave the option off if your text has many compound words, or check the result.",
       },
       {
-        question: "Can I remove line breaks from PDF text?",
+        question: "What is the difference between a line break and a paragraph break?",
         answer:
-          "Yes. Text copied from PDFs often has a line break after each line of the original page layout. Paste it here and all the breaks are removed to produce clean, readable text.",
+          "A line break ends a line, while a paragraph break is usually an empty line between two blocks of text. Remove all line breaks removes both. Keep paragraphs removes only the line breaks inside each paragraph.",
       },
       {
-        question: "Does this work for removing line breaks from emails?",
+        question: "Does this work with Windows line endings?",
         answer:
-          "Yes. Forwarded or copied email text often contains line breaks from the original message formatting. This tool removes them so you can paste the content cleanly into other fields or documents.",
+          "Yes. Windows (CRLF), Linux and macOS (LF), and old Mac (CR) line endings are all handled, so no hidden characters are left behind.",
       },
       {
-        question: "Is this line break remover free?",
+        question: "Is my text uploaded or saved?",
         answer:
-          "Yes. The tool is completely free with no account required. Everything runs in your browser and nothing is stored.",
+          "No. The tool runs entirely in your browser. Your text is never sent to a server or stored.",
       },
     ],
     relatedToolSlugs: [

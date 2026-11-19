@@ -53,6 +53,35 @@ export const textToSlug = (text) => {
   return formattedText;
 };
 
-export const removeLineBreaks = (text) => {
-  return text?.replace(/\n+/g, " ");
+const joinLines = (text, separator) =>
+  text
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .join(separator);
+
+// keepParagraphs joins lines inside each paragraph but keeps blank-line
+// breaks between paragraphs. joinHyphenated repairs words that PDFs split
+// across lines, like "informa-\ntion" -> "information".
+export const removeLineBreaks = (
+  text,
+  { keepParagraphs = false, separator = " ", joinHyphenated = false } = {},
+) => {
+  if (!text) return "";
+
+  let normalized = text.replace(/\r\n?/g, "\n");
+
+  if (joinHyphenated) {
+    normalized = normalized.replace(/(\p{L})-[ \t]*\n[ \t]*(\p{L})/gu, "$1$2");
+  }
+
+  if (!keepParagraphs) return joinLines(normalized, separator);
+
+  return normalized
+    .split(/\n[ \t]*\n\s*/)
+    .map((paragraph) => joinLines(paragraph, separator))
+    .filter(Boolean)
+    .join("\n\n");
 };
+
+export const countLineBreaks = (text) => (text?.match(/\r\n|\r|\n/g) || []).length;
