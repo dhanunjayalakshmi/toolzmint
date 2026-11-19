@@ -1019,59 +1019,110 @@ export const tools = [
     slug: "jwt-decoder",
     name: "JWT Decoder",
     type: "modifier",
-    description: "Decode JWT header and payload instantly.",
-    metaTitle: "JWT Decoder - Decode JWT Tokens Online",
+    updatedAt: "2026-11-20",
+    description:
+      "Decode a JSON Web Token to read its header and payload, see whether it has expired, and understand each claim. Runs in your browser, so the token is never uploaded.",
+    metaTitle: "JWT Decoder – Decode JWT Tokens & Check Expiry Online",
     metaDescription:
-      "Free online JWT decoder tool. Decode JWT header, payload, and timing claims instantly in your browser.",
+      "Decode JWT tokens instantly. See the header, payload, and claims, check if a token is expired, and paste Bearer headers. Private: runs in your browser.",
     examples: [
       {
-        input: "JWT token with HS256 header and JSON payload claims",
+        input:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkphbmUgRG9lIiwicm9sZSI6ImVkaXRvciIsImlzcyI6Imh0dHBzOi8vYXV0aC5leGFtcGxlLmNvbSIsImF1ZCI6InRvb2x6bWludC1kZW1vIiwiaWF0IjoxNzY3MjI1NjAwLCJleHAiOjQxMDI0NDQ4MDB9.9XZUmizfBOaFOOP8A3tLoF9QR3loj4xLbvTpA315MWI",
         output:
-          'Header: {"alg":"HS256","typ":"JWT"} | Payload: {"sub":"1234567890","name":"Toolzmint","admin":true}',
+          'Header: {"alg": "HS256", "typ": "JWT"}\nPayload: {"sub": "1234567890", "name": "Jane Doe", "role": "editor", "iss": "https://auth.example.com", "aud": "toolzmint-demo", "iat": 1767225600, "exp": 4102444800}\nStatus: not expired (expires 1 January 2100)',
       },
       {
-        input: "JWT token with exp, iat, and nbf claims",
+        input: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...",
         output:
-          "Shows decoded header, payload, signature, and readable timing values such as Expires At and Issued At.",
+          "The Bearer prefix is removed automatically, so you can paste an Authorization header straight from your browser's network tab.",
       },
     ],
     aboutText:
-      "Use this JWT decoder to inspect the header and payload of a JSON Web Token directly in your browser. It is useful for debugging authentication flows, checking claims, reading expiry times, and understanding token contents quickly.",
+      "This JWT decoder reads the header and payload of a JSON Web Token, tells you whether the token has expired, and explains the standard claims it contains. It is built for debugging logins and APIs: paste a token or a full Bearer header and see what is inside in a second. Decoding happens entirely in your browser, which matters because a JWT is often a live credential.",
     howToSteps: [
-      "Paste the JWT token into the input field.",
-      "Review the decoded header, payload, and signature instantly.",
-      "Check timing claims like expiry or issue time if they exist.",
+      "Paste a JWT, or a full Authorization header starting with Bearer. Use Try an example to see how it works.",
+      "Check the status line to see whether the token is expired, not yet valid, or has no expiry.",
+      "Read the decoded header and payload, and the standard claims table for issuer, audience, and timing.",
+      "Press Copy to copy the decoded header, payload, and signature as formatted JSON.",
     ],
     seoSections: [
       {
-        title: "What a JWT decoder helps with",
+        title: "What is a JWT?",
         paragraphs: [
-          "A JWT decoder helps you inspect the header and payload of a JSON Web Token without manually base64-decoding each section. This is useful when debugging authentication flows, checking custom claims, or confirming token metadata.",
-          "This online JWT decoder also surfaces common timing claims such as expiry, issued-at, and not-before values in a more readable form.",
+          "A JSON Web Token (JWT, pronounced \"jot\") is a compact way to pass signed information between systems. It is defined in RFC 7519 and is widely used for logins, API access tokens, and single sign-on. After you sign in, a server can give your browser or app a JWT, which is then sent with each request, usually in an Authorization: Bearer header.",
+          "A JWT has three parts separated by dots: header.payload.signature. The header says how the token is signed, for example \"alg\": \"HS256\". The payload holds the claims, such as the user ID and expiry time. The signature lets the server check that nobody changed the header or payload.",
+          "The header and payload are only Base64URL-encoded, not encrypted. That is why this tool can read them without any key, and why you should never put passwords or other secrets in a JWT payload.",
         ],
       },
       {
-        title: "Decode versus verify",
+        title: "Standard JWT claims explained",
         paragraphs: [
-          "Decoding a JWT lets you read its contents. It does not prove that the token is valid or trusted. This tool is for inspection and debugging, not signature verification.",
+          "iss (issuer) identifies who created the token, often your login service's URL. sub (subject) identifies who the token is about, usually a user ID. aud (audience) says which service the token is meant for, and a server should reject tokens meant for someone else.",
+          "exp (expiration time), nbf (not before), and iat (issued at) are Unix timestamps: the number of seconds since 1 January 1970 UTC. This tool shows them as readable dates in your local time zone. jti (JWT ID) is a unique ID that servers can use to stop a token from being reused.",
+          "Any other fields, such as name, role, scope, or email, are custom claims chosen by whoever issued the token.",
+        ],
+      },
+      {
+        title: "Decoding is not verifying",
+        paragraphs: [
+          "Decoding lets you read a token. Verifying proves that it was signed by someone you trust and has not been changed. Anyone can create a token with any payload, so a server must always verify the signature, and check exp, nbf, iss, and aud, before trusting it.",
+          "With HS256 the same shared secret is used to sign and verify. With RS256 or ES256 the issuer signs with a private key, and anyone can verify with the matching public key, often published at a JWKS URL. Verification belongs in your server code, using a well-maintained JWT library rather than hand-written checks.",
+          "If a token's header says \"alg\": \"none\", it is unsigned. This tool shows a warning, because accepting unsigned tokens has been a source of real security vulnerabilities.",
+        ],
+      },
+      {
+        title: "Common JWT problems and what they mean",
+        paragraphs: [
+          "Token expired: the exp time has passed. Access tokens are often short-lived, from a few minutes to an hour, and the app is expected to get a new one, typically with a refresh token.",
+          "Token not valid yet: the nbf time is in the future. This can happen when the server that issued the token and the server checking it have clocks that disagree. Many libraries allow a small clock-skew tolerance for this reason.",
+          "Invalid token or wrong number of parts: the token was usually cut off while copying, or it is a different kind of token. Opaque access tokens from some providers are not JWTs at all, and an encrypted JWT (JWE) has five parts and cannot be read without the decryption key.",
+        ],
+      },
+      {
+        title: "How to decode a JWT in code",
+        paragraphs: [
+          "In Node.js, split the token on dots and decode the payload with JSON.parse(Buffer.from(token.split(\".\")[1], \"base64url\").toString()).",
+          "In Python, add the missing padding before decoding: part = token.split(\".\")[1], then json.loads(base64.urlsafe_b64decode(part + \"=\" * (-len(part) % 4))).",
+          "Both only decode. To verify a token in production, use a maintained library such as jsonwebtoken or jose in JavaScript, or PyJWT in Python.",
         ],
       },
     ],
     faqItems: [
       {
-        question: "Does this JWT decoder verify the token signature?",
+        question: "Is it safe to paste my JWT here?",
         answer:
-          "No. It decodes the token contents only. Signature verification requires the correct secret or public key and is outside the scope of this tool.",
+          "This tool decodes the token entirely in your browser and never sends it to a server. Still, treat any token from a production system as a password: it may grant access until it expires. Prefer test tokens when you can, and never share live tokens in chats or tickets.",
       },
       {
-        question: "Can I see JWT expiry time here?",
+        question: "How do I check if a JWT is expired?",
         answer:
-          "Yes. If the token includes common timing claims such as exp, iat, or nbf, the tool shows readable values for them.",
+          "Paste the token and look at the status line. It compares the exp claim with your device's current time and shows how long ago the token expired, or how long it has left.",
       },
       {
-        question: "Is the token decoded locally?",
+        question: "Does this JWT decoder verify the signature?",
         answer:
-          "Yes. The decoding happens in your browser so you can inspect a token without sending it elsewhere just to read the header and payload.",
+          "No. It only decodes. Verifying a signature needs the secret or public key, and should be done by your server with a trusted JWT library.",
+      },
+      {
+        question: "Can I paste a Bearer token?",
+        answer:
+          "Yes. If the value starts with Bearer, the prefix is removed automatically, so you can paste the Authorization header value straight from your browser's developer tools.",
+      },
+      {
+        question: "Why can anyone read my JWT payload?",
+        answer:
+          "The payload is Base64URL-encoded, not encrypted. The signature stops people from changing it, but it does not hide it. Never put secrets in a JWT payload.",
+      },
+      {
+        question: "What does the exp value 1767225600 mean?",
+        answer:
+          "JWT times are Unix timestamps in seconds. 1767225600 is 1 January 2026, 00:00 UTC. This tool converts these values to readable dates, and the Unix Timestamp Converter can convert any timestamp.",
+      },
+      {
+        question: "Why does my token have five parts?",
+        answer:
+          "A five-part token is an encrypted JWT (JWE). Its payload is encrypted, so it cannot be read without the decryption key.",
       },
     ],
     relatedToolSlugs: [
